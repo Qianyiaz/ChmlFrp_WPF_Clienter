@@ -23,6 +23,7 @@ namespace ChmlFrpLauncher_cs.pages
     {
         public Launcher()
         {
+
             InitializeComponent();
         }
 

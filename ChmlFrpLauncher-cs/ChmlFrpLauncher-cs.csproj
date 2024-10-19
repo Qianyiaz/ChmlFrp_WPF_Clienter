@@ -102,10 +102,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pages\LauncherPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="pages\TextBox-ini.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -114,9 +110,6 @@
   <ItemGroup>
     <Compile Include="pages\Launcher.xaml.cs">
       <DependentUpon>Launcher.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pages\LauncherPage.xaml.cs">
-      <DependentUpon>LauncherPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\TextBox-ini.xaml.cs">
       <DependentUpon>TextBox-ini.xaml</DependentUpon>

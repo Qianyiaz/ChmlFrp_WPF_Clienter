@@ -6,13 +6,23 @@
         mc:Ignorable="d"
         Title="ChmlFrpLauncher" Height="450" Icon="pack://application:,,,/icon/favicon.ico" Width="800">
     
-    <Grid  Background="#252525" >
+    <Grid >
+        
         <Border BorderThickness="1">
-            <ContentControl Margin="-1,9,-1,-1">
+            <ContentControl >
                 <ContentControl.Content>
-                    <Frame Source="pack://application:,,,/pages/LauncherPage.xaml" Margin="0,90,0,0" />
+                    <Frame Source="pack://application:,,,/pages/Launcher.xaml" Margin="0,90,400,0" />
                 </ContentControl.Content>
             </ContentControl>
         </Border>
+        
+        <Border BorderThickness="1" >
+            <ContentControl >
+                <ContentControl.Content>
+                    <Frame Source="pack://application:,,,/pages/Textbox-ini.xaml" Margin="400,90,0,0" />
+                </ContentControl.Content>
+            </ContentControl>
+        </Border>
+        
     </Grid>
 </Window>
