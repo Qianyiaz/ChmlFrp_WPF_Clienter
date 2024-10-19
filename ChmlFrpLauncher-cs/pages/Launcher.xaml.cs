@@ -21,15 +21,9 @@ namespace ChmlFrpLauncher_cs.pages
     /// </summary>
     public partial class Launcher : Page
     {
-        public Launcher()
-        {
-
-            InitializeComponent();
-        }
-
         private void Launch(object sender, RoutedEventArgs e)
         {
-            string command = "frpc >.logs 2>&1";
+            string command = "frpc >%cd%/CFL/.logs 2>&1";
 
             ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c " + command)
             {

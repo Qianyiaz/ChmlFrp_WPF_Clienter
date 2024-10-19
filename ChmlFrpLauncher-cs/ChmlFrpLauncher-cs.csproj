@@ -62,10 +62,14 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>icon\favicon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Resources\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -142,7 +146,6 @@
   <ItemGroup>
     <Resource Include="icon\favicon.ico" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
       <Visible>False</Visible>
@@ -155,5 +158,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
