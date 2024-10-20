@@ -17,3 +17,5 @@ C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Debug\
 C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Debug\ChmlFrpLauncher-cs.pdb
 C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Debug\pages\TextBox-ini.g.cs
 C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Debug\pages\TextBox-ini.baml
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Debug\ChmlFrpLauncher-cs.csproj.SuggestedBindingRedirects.cache
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Debug\ChmlFrpLauncher-cs.exe.config

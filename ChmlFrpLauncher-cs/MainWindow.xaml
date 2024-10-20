@@ -5,24 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="ChmlFrpLauncher" Height="450" Icon="pack://application:,,,/icon/favicon.ico" Width="800">
-    
-    <Grid >
-        
-        <Border BorderThickness="1">
+
+    <Grid  >
+
+        <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
+
+        <Border BorderThickness="1" Grid.ColumnSpan="2">
             <ContentControl >
                 <ContentControl.Content>
                     <Frame Source="pack://application:,,,/pages/Launcher.xaml" Margin="0,90,400,0" />
                 </ContentControl.Content>
             </ContentControl>
         </Border>
-        
-        <Border BorderThickness="1" >
+
+        <Border BorderThickness="1" Grid.ColumnSpan="2" >
             <ContentControl >
                 <ContentControl.Content>
                     <Frame Source="pack://application:,,,/pages/Textbox-ini.xaml" Margin="400,90,0,0" />
                 </ContentControl.Content>
             </ContentControl>
         </Border>
-        
+
     </Grid>
 </Window>

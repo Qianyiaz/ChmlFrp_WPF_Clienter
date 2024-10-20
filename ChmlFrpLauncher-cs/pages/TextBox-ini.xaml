@@ -10,7 +10,7 @@
 
     <StackPanel>
         <TextBox x:Name="myTextBox" 
-                 Height="142" Width="224" FontSize="20" AcceptsReturn="True" Foreground="Black">
+                 Height="142" Width="224" FontSize="15" AcceptsReturn="True" Foreground="Black">
             <TextBox.Resources>
                 <Style TargetType="{x:Type TextBox}">
                     <Setter Property="Template">
@@ -29,4 +29,5 @@
             </TextBox.Resources>
         </TextBox>
     </StackPanel>
+    
 </Page>

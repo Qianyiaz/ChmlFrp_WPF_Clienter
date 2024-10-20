@@ -8,14 +8,16 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Launcher">
 
-<StackPanel>
-            <Button BorderBrush="Gray" Foreground="Black"  Background="#EEEEEE" Content="启动 frpc"  Click="Launch" FontSize="13"  HorizontalAlignment="Center" Height="49" Width="169" Margin="0,75,0,0">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="20"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-</StackPanel>
+    <StackPanel>
+        
+        <Button BorderBrush="Gray" Foreground="Black"  Background="#EEEEEE" Content="启动 frpc"  Click="Launch" FontSize="13"  HorizontalAlignment="Center" Height="51" Width="204" Margin="0,75,0,0">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+    </StackPanel>
 
 </Page>

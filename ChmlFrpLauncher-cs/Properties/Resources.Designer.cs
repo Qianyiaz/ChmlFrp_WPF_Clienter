@@ -59,27 +59,5 @@ namespace ChmlFrpLauncher_cs.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   查找类似 MZ����@���	�!�L�!This program cannot be run in DOS mode.        ///
-        ///$PEL�)��&quot; 0�
-        ///&gt;�
-        /// �
-        ///  ��`���
-        ///O�
-        ///��
-        ////�
-        ///T  H.text�
-        /// �
-        /// `.rsrc��
-        ///�
-        ///@@.reloc�
-        ///@B [字符串的其余部分被截断]&quot;; 的本地化字符串。
-        /// </summary>
-        internal static string Newtonsoft_Json {
-            get {
-                return ResourceManager.GetString("Newtonsoft.Json", resourceCulture);
-            }
-        }
     }
 }
