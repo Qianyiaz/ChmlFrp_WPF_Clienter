@@ -1,2 +1,9 @@
-'frpc' ²»ÊÇÄÚ²¿»òÍâ²¿ÃüÁî£¬Ò²²»ÊÇ¿ÉÔËÐÐµÄ³ÌÐò
-»òÅú´¦ÀíÎÄ¼þ¡£
+WARNING: ini format is deprecated and the support will be removed in the future, please use yaml/json/toml format instead!
+[1;34m2024-10-20 14:51:34.004 [I] [sub/root.go:142] start frpc service for config file [C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\Debug\CFL\frp\frpc.ini]
+[0m[1;34m2024-10-20 14:51:34.155 [I] [client/service.go:294] try to connect to server...
+[0m[1;34m2024-10-20 14:51:34.506 [I] [client/service.go:286] [HpH53Y5MACwyeE8ymeXdPYrX-13a0ad3da97ee371] login to server success, get run id [HpH53Y5MACwyeE8ymeXdPYrX-13a0ad3da97ee371]
+[0m[1;34m2024-10-20 14:51:34.507 [I] [proxy/proxy_manager.go:173] [HpH53Y5MACwyeE8ymeXdPYrX-13a0ad3da97ee371] proxy added: [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD]
+[0m[1;34m2024-10-20 14:51:34.772 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-13a0ad3da97ee371] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] start proxy success
+[0m[1;34m2024-10-20 14:51:34.961 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-13a0ad3da97ee371] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] start proxy success
+[0m[1;34m2024-10-20 14:51:35.273 [I] [proxy/udp.go:93] [HpH53Y5MACwyeE8ymeXdPYrX-13a0ad3da97ee371] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] incoming a new work connection for udp proxy, 27.25.158.240:7000
+[0m

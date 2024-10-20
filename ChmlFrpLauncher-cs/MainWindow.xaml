@@ -4,27 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="ChmlFrpLauncher" Height="450" Icon="pack://application:,,,/icon/favicon.ico" Width="800">
+        Title="ChmlFrpLauncher" Height="450"  Width="800" Icon="pack://application:,,,/icon/favicon.ico">
 
-    <Grid  >
 
-        <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
+    <Grid>
 
-        <Border BorderThickness="1" Grid.ColumnSpan="2">
-            <ContentControl >
-                <ContentControl.Content>
-                    <Frame Source="pack://application:,,,/pages/Launcher.xaml" Margin="0,90,400,0" />
-                </ContentControl.Content>
-            </ContentControl>
-        </Border>
+        <!--启动按钮-->
+        <StackPanel Margin="0,105,400,0">
+            <Border BorderThickness="1" Height="113" Width="375"/>
+            <Button BorderBrush="Gray" Foreground="Black"  Background="#EEEEEE" Content="启动 frpc"  Click="Launch" FontSize="13" Height="49" Width="176">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Border BorderThickness="1" Height="10"/>
+            <Button BorderBrush="Gray" Foreground="Black"  Background="#EEEEEE" Content="关闭 frpc"  Click="Killfrp" FontSize="13" Height="49" Width="176">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
 
-        <Border BorderThickness="1" Grid.ColumnSpan="2" >
-            <ContentControl >
-                <ContentControl.Content>
-                    <Frame Source="pack://application:,,,/pages/Textbox-ini.xaml" Margin="400,90,0,0" />
-                </ContentControl.Content>
-            </ContentControl>
-        </Border>
+        <TextBlock FontSize="15" HorizontalAlignment="Left" Margin="545,217,0,0" TextWrapping="Wrap" Text="该功能尚未完善" VerticalAlignment="Top" Height="21" Width="109"/>
+
 
     </Grid>
 </Window>
