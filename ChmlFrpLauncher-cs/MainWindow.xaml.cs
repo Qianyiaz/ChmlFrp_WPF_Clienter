@@ -65,7 +65,6 @@ namespace ChmlFrpLauncher_cs
             Process[] process = Process.GetProcesses();
             foreach (Process p1 in process)
             {
-
                 string processName = p1.ProcessName.ToLower().Trim();
                 if (processName == name)
                 {
