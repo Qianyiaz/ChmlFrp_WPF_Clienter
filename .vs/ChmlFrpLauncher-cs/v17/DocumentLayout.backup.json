@@ -18,24 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\wanglei\\Desktop\\Github\\ChmlFrpLauncher-cs\\ChmlFrpLauncher-cs\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "ChmlFrpLauncher-cs\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\wanglei\\Desktop\\Github\\ChmlFrpLauncher-cs\\ChmlFrpLauncher-cs\\MainWindow.xaml.cs*",
-              "RelativeToolTip": "ChmlFrpLauncher-cs\\MainWindow.xaml.cs*",
-              "ViewState": "AgIAABEAAAAAAAAAAAAvwCAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T12:25:38.277Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -46,7 +33,19 @@
               "ToolTip": "C:\\Users\\wanglei\\Desktop\\Github\\ChmlFrpLauncher-cs\\ChmlFrpLauncher-cs\\MainWindow.xaml",
               "RelativeToolTip": "ChmlFrpLauncher-cs\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-25T12:14:01.149Z",
+              "WhenOpened": "2024-10-27T03:43:22.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\wanglei\\Desktop\\Github\\ChmlFrpLauncher-cs\\ChmlFrpLauncher-cs\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ChmlFrpLauncher-cs\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\wanglei\\Desktop\\Github\\ChmlFrpLauncher-cs\\ChmlFrpLauncher-cs\\MainWindow.xaml.cs",
+              "RelativeToolTip": "ChmlFrpLauncher-cs\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T03:43:21.463Z",
               "EditorCaption": ""
             }
           ]

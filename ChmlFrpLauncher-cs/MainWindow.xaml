@@ -4,11 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="ChmlFrpLauncher" Height="450"  Width="800" Icon="pack://application:,,,/icon/favicon.ico">
-
-    <WindowChrome.WindowChrome>
-        <WindowChrome GlassFrameThickness="-1"/>
-    </WindowChrome.WindowChrome>
+        Title="ChmlFrpLauncher" Height="450"  Width="800" >
 
     <Grid>
 
@@ -73,34 +69,38 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="3*"/>
                     <RowDefinition Height="7*"/>
+                    <RowDefinition Height="3*"/>
                 </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Row="2">
-                    <TextBox  TextChanged="TextBox_ini" x:Name="TextBox1" 
-                 Height="142" Width="224" FontSize="13" AcceptsReturn="True" Foreground="Black">
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type TextBox}">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type TextBox}">
-                                            <Border Background="#EEEEEE"
+                    <Grid Grid.Column="0">
+                        <TextBox  TextChanged="TextBox_ini" x:Name="TextBox1" 
+                 FontSize="13" AcceptsReturn="True" Foreground="Black">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type TextBox}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type TextBox}">
+                                                <Border Background="#EEEEEE"
                                         CornerRadius="5"
                                         BorderBrush="Gray"
                                         BorderThickness="1">
-                                                <ScrollViewer x:Name="PART_ContentHost"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-                </StackPanel>
-
+                                                    <ScrollViewer x:Name="PART_ContentHost"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        
+                    </Grid>
+                </Grid>
             </Grid>
-
         </Grid>
-        
-        
     </Grid>
 </Window>

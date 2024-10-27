@@ -1,0 +1,16 @@
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\Release\ChmlFrpLauncher-cs.exe.config
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\Release\ChmlFrpLauncher-cs.exe
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\Release\ChmlFrpLauncher-cs.pdb
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs.csproj.AssemblyReference.cache
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs.csproj.SuggestedBindingRedirects.cache
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs.exe.config
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\MainWindow.baml
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\MainWindow.g.cs
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\App.g.cs
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs_MarkupCompile.cache
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs.g.resources
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher_cs.Properties.Resources.resources
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs.csproj.GenerateResource.cache
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs.csproj.CoreCompileInputs.cache
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs.exe
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs.pdb

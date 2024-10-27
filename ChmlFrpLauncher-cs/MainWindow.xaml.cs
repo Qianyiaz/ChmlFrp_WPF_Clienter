@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
-using System.Text.Json;
 using System.Windows;
-using System.Xml.Linq;
+using System.Text.Json;
 
 
 namespace ChmlFrpLauncher_cs
@@ -16,22 +14,26 @@ namespace ChmlFrpLauncher_cs
 
         public MainWindow()
         {
+            InitializeComponent();
             string CFL = Path.Combine(directoryPath, "CFL");
-
             string frp = Path.Combine(CFL, "frp"); 
-
             string frpc = Path.Combine(frp, "frpc.exe");
-
-            if (!File.Exists(frp))
+            if (!File.Exists(frp) && !File.Exists(frp))
+            {
+                Directory.CreateDirectory(CFL); Directory.CreateDirectory(frp);
+            }
+            if (!File.Exists(frpc))
             {
                 MessageBox.Show("要想启动frp需安装frpc", "注意frpc尚未安装", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-
             string frp_ini = Path.Combine(frp, "frpc.ini");
-
             if (File.Exists(frp_ini))
             {
-                TextBox1.Text = File.ReadAllText(frp_ini);
+                string ini = File.ReadAllText(frp_ini);
+                if (ini != null)
+                {
+                    TextBox1.Text = ini;
+                }
             }
         }
 
@@ -52,7 +54,9 @@ namespace ChmlFrpLauncher_cs
                 MessageBox.Show("要想启动frp需安装frpc", "注意frpc尚未安装", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
+
             NumFiles = NumFiles + 1;
+
             string command = frp + " -c " + frp_ini + " >%cd%/CFL/" + NumFiles + ".logs 2>&1";
 
             if (NumFiles == 5)
