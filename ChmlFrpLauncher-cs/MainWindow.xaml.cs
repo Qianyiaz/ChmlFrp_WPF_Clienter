@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Text.Json;
+using System.Threading;
 
 
 namespace ChmlFrpLauncher_cs
@@ -10,7 +11,6 @@ namespace ChmlFrpLauncher_cs
     public partial class MainWindow : Window
     {
         string directoryPath = Directory.GetCurrentDirectory();
-        int NumFiles = 0;
 
         public MainWindow()
         {
@@ -39,6 +39,7 @@ namespace ChmlFrpLauncher_cs
 
         private void Launch(object sender, RoutedEventArgs e)
         {
+            TextBox2.Text = null;
             directoryPath = Directory.GetCurrentDirectory();
             string folderPath = Path.Combine(directoryPath, "CFL");
             folderPath = Path.Combine(folderPath, "frp");
@@ -55,14 +56,9 @@ namespace ChmlFrpLauncher_cs
                 return;
             }
 
-            NumFiles = NumFiles + 1;
 
-            string command = frp + " -c " + frp_ini + " >%cd%/CFL/" + NumFiles + ".logs 2>&1";
+            string command = frp + " -c " + frp_ini + " >%cd%/CFL/" + ".logs 2>&1";
 
-            if (NumFiles == 5)
-            {
-                NumFiles = 0;
-            }
 
             ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c " + command)
             {
@@ -75,6 +71,13 @@ namespace ChmlFrpLauncher_cs
             {
                 process.StartInfo = processInfo;
                 process.Start();
+            }
+
+            string processName = "frpc"; 
+
+            if (IsProcessRunning(processName))
+            {
+                MessageBox.Show("frpc已启动", "", MessageBoxButton.OK);
             }
         }
 
@@ -105,6 +108,26 @@ namespace ChmlFrpLauncher_cs
             {
                 writer.Write(Text);
             }
+        }
+
+
+        private void Refurbish_Click(object sender, RoutedEventArgs e)
+        {
+            
+            for (int i = 0; i < 5; i++)
+            {
+                string logs = File.ReadAllText(Path.Combine(directoryPath, "CFL") + "/" + ".logs");
+                if (logs != null)
+                {
+                    TextBox2.Text = logs;
+                }
+            }
+        }
+
+        static bool IsProcessRunning(string processName)
+        {
+            Process[] processes = Process.GetProcessesByName(processName);
+            return processes.Length > 0;
         }
     }
 }

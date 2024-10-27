@@ -14,3 +14,7 @@ C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Releas
 C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs.csproj.CoreCompileInputs.cache
 C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs.exe
 C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs.pdb
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\Release\ChmlFrpLauncher-cs.exe.manifest
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\Release\ChmlFrpLauncher-cs.application
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs.exe.manifest
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\ChmlFrpLauncher-cs.application

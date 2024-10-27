@@ -4,7 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="ChmlFrpLauncher" Height="450"  Width="800" >
+        Title="ChmlFrpLauncher"
+        Height="450"
+        Width="800">
 
     <Grid>
 
@@ -14,15 +16,19 @@
         </Grid.RowDefinitions>
 
         <!--未开发区域-->
-        <StackPanel >
-            <TextBlock  Foreground="Red" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center"  Text="该区域尚未完善" />
+        <StackPanel>
+            <TextBlock  Foreground="Red"
+                    FontSize="35"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Text="该区域尚未完善"/>
         </StackPanel>
 
         <Grid Grid.Row="1">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="6*"/>
             </Grid.ColumnDefinitions>
 
             <!--按钮区域-->
@@ -40,55 +46,98 @@
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="1">
-                        <Button  BorderBrush="Gray" Foreground="#333333"  Background="#d8d8d8" Content="启动 frpc"  Click="Launch" FontSize="13" Height="50" Width="175">
+                        <Button  BorderBrush="Gray"
+                                Foreground="#333333"
+                                Background="#d8d8d8"
+                                Content="启动 frpc"
+                                Click="Launch"
+                                FontSize="13"
+                                Height="50"
+                                Width="175">
                             <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="15"/>
+                                    <Setter Property="CornerRadius"
+                                            Value="15"/>
                                 </Style>
                             </Button.Resources>
                         </Button>
                     </StackPanel>
                 </Grid>
 
-                <StackPanel Grid.Row="1" >
-                    <Button BorderBrush="Gray" Foreground="#333333"  Background="#d8d8d8" Content="关闭 frpc"  Click="Killfrp" FontSize="13" Height="50" Width="175">
+                <StackPanel Grid.Row="1">
+                    <Button BorderBrush="Gray"
+                            Foreground="#333333"
+                            Background="#d8d8d8"
+                            Content="关闭 frpc"
+                            Click="Killfrp"
+                            FontSize="13"
+                            Height="50"
+                            Width="175">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="15"/>
+                                <Setter Property="CornerRadius"
+                                        Value="15"/>
                             </Style>
                         </Button.Resources>
                     </Button>
                 </StackPanel>
-
             </Grid>
 
 
-            <!--未开发区域-->
-
+            <!--输入框部分-->
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="3*"/>
                     <RowDefinition Height="7*"/>
                     <RowDefinition Height="3*"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="1">
+                            <Button BorderBrush="Gray"
+                            Foreground="#333333"
+                            Background="#d8d8d8"
+                            Content="刷新"
+                            FontSize="13"
+                             Click="Refurbish_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius"
+                                        Value="15"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                        <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <TextBox  TextChanged="TextBox_ini" x:Name="TextBox1" 
-                 FontSize="13" AcceptsReturn="True" Foreground="Black">
+                        <TextBox  TextChanged="TextBox_ini"
+                                x:Name="TextBox1"
+                                FontSize="13"
+                                AcceptsReturn="True"
+                                Foreground="Black">
                             <TextBox.Resources>
                                 <Style TargetType="{x:Type TextBox}">
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="{x:Type TextBox}">
                                                 <Border Background="#EEEEEE"
-                                        CornerRadius="5"
-                                        BorderBrush="Gray"
-                                        BorderThickness="1">
+                                                        CornerRadius="5"
+                                                        BorderBrush="Gray"
+                                                        BorderThickness="1">
                                                     <ScrollViewer x:Name="PART_ContentHost"/>
                                                 </Border>
                                             </ControlTemplate>
@@ -97,8 +146,32 @@
                                 </Style>
                             </TextBox.Resources>
                         </TextBox>
-                        
                     </Grid>
+                    <Grid Grid.Column="1">
+                        <TextBox  TextChanged="TextBox_ini"
+                                x:Name="TextBox2"
+                                FontSize="13"
+                                AcceptsReturn="True"
+                                Foreground="Black">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type TextBox}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type TextBox}">
+                                                <Border Background="#EEEEEE"
+                                                        CornerRadius="5"
+                                                        BorderBrush="Gray"
+                                                        BorderThickness="1">
+                                                    <ScrollViewer x:Name="PART_ContentHost"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </Grid>
+                    
                 </Grid>
             </Grid>
         </Grid>
