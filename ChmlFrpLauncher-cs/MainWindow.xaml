@@ -76,7 +76,7 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="2">
-                    <TextBox  TextChanged="TextBox_ini" x:Name="myTextBox" 
+                    <TextBox  TextChanged="TextBox_ini" x:Name="TextBox1" 
                  Height="142" Width="224" FontSize="13" AcceptsReturn="True" Foreground="Black">
                         <TextBox.Resources>
                             <Style TargetType="{x:Type TextBox}">

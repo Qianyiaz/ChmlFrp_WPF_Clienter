@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 using System.Text.Json;
 using System.Windows;
 using System.Xml.Linq;
@@ -15,17 +16,23 @@ namespace ChmlFrpLauncher_cs
 
         public MainWindow()
         {
-            string folderPath = Path.Combine(directoryPath, "CFL");
+            string CFL = Path.Combine(directoryPath, "CFL");
 
-            Directory.CreateDirectory(folderPath); folderPath = Path.Combine(folderPath, "frp"); Directory.CreateDirectory(folderPath);
+            string frp = Path.Combine(CFL, "frp"); 
 
-            folderPath = Path.Combine(folderPath, "frpc.exe");
+            string frpc = Path.Combine(frp, "frpc.exe");
 
-            if (!File.Exists(folderPath))
+            if (!File.Exists(frp))
             {
                 MessageBox.Show("要想启动frp需安装frpc", "注意frpc尚未安装", MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
+            string frp_ini = Path.Combine(frp, "frpc.ini");
+
+            if (File.Exists(frp_ini))
+            {
+                TextBox1.Text = File.ReadAllText(frp_ini);
+            }
         }
 
         private void Launch(object sender, RoutedEventArgs e)
@@ -85,9 +92,10 @@ namespace ChmlFrpLauncher_cs
         private void TextBox_ini(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             string folderPath = Path.Combine(directoryPath, "CFL");
+            folderPath=Path.Combine(folderPath, "frp");
             string frp_ini = Path.Combine(folderPath, "frpc.ini");
-            string Text = myTextBox.Text;
-
+            string Text = TextBox1.Text;
+            TextBox1.Text = Text;
 
             using (StreamWriter writer = new StreamWriter(frp_ini, false)) 
             {
