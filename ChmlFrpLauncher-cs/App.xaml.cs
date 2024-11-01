@@ -6,10 +6,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace ChmlFrpLauncher_cs
+namespace UIKitTutorials
 {
     /// <summary>
-    /// App.xaml 的交互逻辑
+    /// Lógica de interacción para App.xaml
     /// </summary>
     public partial class App : Application
     {

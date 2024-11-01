@@ -1,8 +1,9 @@
-2024/10/27 15:00:02 [I] [root.go:119] 欢迎使用ChmlFrp映射客户端!
-2024/10/27 15:00:02 [I] [root.go:129] To Get Config File from ChmlFrp API...
-2024/10/27 15:00:02 [I] [root.go:326] start frpc service for config file [C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\Debug\CFL\frp\frpc.ini]
-2024/10/27 15:00:05 [I] [service.go:301] [HpH53Y5MACwyeE8ymeXdPYrX-0bdd55ccf781bf9d] 成功登录至服务器, 获取到RunID [HpH53Y5MACwyeE8ymeXdPYrX-0bdd55ccf781bf9d]
-2024/10/27 15:00:05 [I] [proxy_manager.go:150] [HpH53Y5MACwyeE8ymeXdPYrX-0bdd55ccf781bf9d] proxy added: [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx]
-2024/10/27 15:00:07 [I] [control.go:172] [HpH53Y5MACwyeE8ymeXdPYrX-0bdd55ccf781bf9d] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] 映射启动成功, 感谢您使用ChmlFrp!
-2024/10/27 15:00:07 [I] [control.go:172] [HpH53Y5MACwyeE8ymeXdPYrX-0bdd55ccf781bf9d] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] 映射启动成功, 感谢您使用ChmlFrp!
-2024/10/27 15:00:07 [I] [udp.go:91] [HpH53Y5MACwyeE8ymeXdPYrX-0bdd55ccf781bf9d] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] incoming a new work connection for udp proxy, 27.25.158.240:7000
+WARNING: ini format is deprecated and the support will be removed in the future, please use yaml/json/toml format instead!
+[1;34m2024-11-01 20:08:30.979 [I] [sub/root.go:142] start frpc service for config file [C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\Debug\CFL\frp\frpc.ini]
+[0m[1;34m2024-11-01 20:08:31.024 [I] [client/service.go:294] try to connect to server...
+[0m[1;34m2024-11-01 20:08:31.452 [I] [client/service.go:286] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] login to server success, get run id [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636]
+[0m[1;34m2024-11-01 20:08:31.455 [I] [proxy/proxy_manager.go:173] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] proxy added: [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx]
+[0m[1;34m2024-11-01 20:08:31.752 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] start proxy success
+[0m[1;34m2024-11-01 20:08:32.018 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] start proxy success
+[0m[1;34m2024-11-01 20:08:32.511 [I] [proxy/udp.go:93] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] incoming a new work connection for udp proxy, 27.25.158.240:7000
+[0m

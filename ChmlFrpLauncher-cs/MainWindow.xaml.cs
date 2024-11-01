@@ -1,133 +1,68 @@
 ﻿using System;
-using System.Diagnostics;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
-using System.Text.Json;
-using System.Threading;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using UIKitTutorials.Pages;
+using Path = System.IO.Path;
 
-
-namespace ChmlFrpLauncher_cs
+namespace UIKitTutorials
 {
+    /// <summary>
+    /// Lógica de interacción para MainWindow.xaml
+    /// </summary>
     public partial class MainWindow : Window
     {
-        string directoryPath = Directory.GetCurrentDirectory();
-
         public MainWindow()
         {
             InitializeComponent();
+
+            PagesNavigation.Navigate(new Uri("Pages/LaunchPage.xaml", UriKind.RelativeOrAbsolute));
+            string directoryPath = Directory.GetCurrentDirectory();
             string CFL = Path.Combine(directoryPath, "CFL");
-            string frp = Path.Combine(CFL, "frp"); 
+            string frp = Path.Combine(CFL, "frp");
             string frpc = Path.Combine(frp, "frpc.exe");
-            if (!File.Exists(frp) && !File.Exists(frp))
+            if (!File.Exists(CFL) && !File.Exists(frp))
             {
                 Directory.CreateDirectory(CFL); Directory.CreateDirectory(frp);
             }
-            if (!File.Exists(frpc))
-            {
-                MessageBox.Show("要想启动frp需安装frpc", "注意frpc尚未安装", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            string frp_ini = Path.Combine(frp, "frpc.ini");
-            if (File.Exists(frp_ini))
-            {
-                string ini = File.ReadAllText(frp_ini);
-                if (ini != null)
-                {
-                    TextBox1.Text = ini;
-                }
-            }
         }
 
-        private void Launch(object sender, RoutedEventArgs e)
+        private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            TextBox2.Text = null;
-            directoryPath = Directory.GetCurrentDirectory();
-            string folderPath = Path.Combine(directoryPath, "CFL");
-            folderPath = Path.Combine(folderPath, "frp");
-            string frp_ini = Path.Combine(folderPath, "frpc.ini");
-            string frp = Path.Combine(folderPath, "frpc.exe");
-            if (!File.Exists(frp_ini))
-            {
-                MessageBox.Show("要想启动frp配置frpc.ini", "注意 未配置ini", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
-            if (!File.Exists(frp))
-            {
-                MessageBox.Show("要想启动frp需安装frpc", "注意frpc尚未安装", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
-
-
-            string command = frp + " -c " + frp_ini + " >%cd%/CFL/" + ".logs 2>&1";
-
-
-            ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c " + command)
-            {
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-
-            using (Process process = new Process())
-            {
-                process.StartInfo = processInfo;
-                process.Start();
-            }
-
-            string processName = "frpc"; 
-
-            if (IsProcessRunning(processName))
-            {
-                MessageBox.Show("frpc已启动", "", MessageBoxButton.OK);
-            }
+            Close();
         }
 
-        private void Killfrp(object sender, RoutedEventArgs e)
+        private void btnRestore_Click(object sender, RoutedEventArgs e)
         {
-            string name = "frpc"; 
-            Process[] processes = Process.GetProcesses();
-
-            foreach (Process process in processes)
-            {
-                if (process.ProcessName.Equals(name, StringComparison.OrdinalIgnoreCase))
-                {
-                        process.Kill();
-                        process.WaitForExit(); 
-                }
-            }
+            if (WindowState == WindowState.Normal)
+                WindowState = WindowState.Maximized;
+            else
+                WindowState = WindowState.Normal;
         }
 
-        private void TextBox_ini(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
-            string folderPath = Path.Combine(directoryPath, "CFL");
-            folderPath=Path.Combine(folderPath, "frp");
-            string frp_ini = Path.Combine(folderPath, "frpc.ini");
-            string Text = TextBox1.Text;
-            TextBox1.Text = Text;
-
-            using (StreamWriter writer = new StreamWriter(frp_ini, false)) 
-            {
-                writer.Write(Text);
-            }
+            WindowState = WindowState.Minimized;
         }
 
-
-        private void Refurbish_Click(object sender, RoutedEventArgs e)
+        private void rdLaunchPage_Click(object sender, RoutedEventArgs e)
         {
-            
-            for (int i = 0; i < 5; i++)
-            {
-                string logs = File.ReadAllText(Path.Combine(directoryPath, "CFL") + "/" + ".logs");
-                if (logs != null)
-                {
-                    TextBox2.Text = logs;
-                }
-            }
+            PagesNavigation.Navigate(new Uri("Pages/LaunchPage.xaml", UriKind.RelativeOrAbsolute));
         }
-
-        static bool IsProcessRunning(string processName)
+        private void rdNotes_Click(object sender, RoutedEventArgs e)
         {
-            Process[] processes = Process.GetProcessesByName(processName);
-            return processes.Length > 0;
+            //PagesNavigation.Navigate(new System.Uri("Pages/NotesPage.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

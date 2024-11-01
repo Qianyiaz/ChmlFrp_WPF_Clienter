@@ -1,179 +1,106 @@
-﻿<Window x:Class="ChmlFrpLauncher_cs.MainWindow"
+﻿<Window x:Class="UIKitTutorials.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d"
-        Title="ChmlFrpLauncher"
+        xmlns:local="clr-namespace:UIKitTutorials"
+        mc:Ignorable="d" Name="home"
+        Title="ChmlFrpLauncher"        
         Height="450"
-        Width="800">
+        Width="800"
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        Background="Transparent" AllowsTransparency="True"
+        ResizeMode="NoResize" WindowState="Normal">
 
-    <Grid>
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="16*"/>
-        </Grid.RowDefinitions>
-
-        <!--未开发区域-->
-        <StackPanel>
-            <TextBlock  Foreground="Red"
-                    FontSize="35"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    Text="该区域尚未完善"/>
-        </StackPanel>
-
-        <Grid Grid.Row="1">
-
+    <Border CornerRadius="8" Background="{DynamicResource PrimaryBackgroundColor}">
+        <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
-            <!--按钮区域-->
-
-            <Grid Grid.Column="0">
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-
-                <Grid>
+            <!-- Start: GridColum Left-->
+            <Border CornerRadius="8 0 0 8" Background="{DynamicResource SecundaryBackgroundColor}">
+                <Grid x:Name="gridMenu" Width="60">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <StackPanel Grid.Row="1">
-                        <Button  BorderBrush="Gray"
-                                Foreground="#333333"
-                                Background="#d8d8d8"
-                                Content="启动 frpc"
-                                Click="Launch"
-                                FontSize="13"
-                                Height="50"
-                                Width="175">
-                            <Button.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius"
-                                            Value="15"/>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
+
+                    <!-- Logo -->
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top">
+                        <Path Data="{DynamicResource logo}" Margin="16 0 0 0" Stretch="Fill" Fill="{DynamicResource PrimaryBlueColor}" Width="25" Height="25" HorizontalAlignment="Left"/>
+                        <Label Content="ChmlFrpLauncher" Foreground="{DynamicResource PrimaryBlueColor}" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="14 0 0 0"/>
+                    </StackPanel>
+
+                    <!-- Menu -->
+                    <ToggleButton x:Name="btnMenu"  HorizontalAlignment="Right" BorderThickness="0" Background="Transparent" VerticalAlignment="Center" Style="{StaticResource MenuIconStyle}" Margin="0 0 15 0">
+                        <ToggleButton.Triggers>
+                            <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                <BeginStoryboard>
+                                    <Storyboard x:Name="HideStackPanel">
+                                        <DoubleAnimation Storyboard.TargetName="gridMenu" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="200" To="60" Duration="0:0:0.3">
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                <BeginStoryboard>
+                                    <Storyboard x:Name="ShowStackPanel">
+                                        <DoubleAnimation Storyboard.TargetName="gridMenu" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="60" To="200" Duration="0:0:0.3">
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ToggleButton.Triggers>
+                    </ToggleButton>
+
+                    <StackPanel Grid.Row="3">
+                        <RadioButton x:Name="rdHome" IsChecked="True" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Click="rdLaunchPage_Click"/>
+                        <!--<RadioButton x:Name="rdNotes" Content="Notes" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}" Click="rdNotes_Click"/>-->
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" VerticalAlignment="Bottom" Orientation="Horizontal" Width="200" Margin="0 0 0 20">
+                        <StackPanel Orientation="Vertical" Margin="8 0 0 0"/>
                     </StackPanel>
                 </Grid>
+            </Border>
+            <!-- End: GridColum Left-->
 
-                <StackPanel Grid.Row="1">
-                    <Button BorderBrush="Gray"
-                            Foreground="#333333"
-                            Background="#d8d8d8"
-                            Content="关闭 frpc"
-                            Click="Killfrp"
-                            FontSize="13"
-                            Height="50"
-                            Width="175">
-                        <Button.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius"
-                                        Value="15"/>
-                            </Style>
-                        </Button.Resources>
-                    </Button>
-                </StackPanel>
-            </Grid>
-
-
-            <!--输入框部分-->
+            <!-- Start: GridColumn Rigth -->
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="3*"/>
-                    <RowDefinition Height="7*"/>
-                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="4*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="1">
-                            <Button BorderBrush="Gray"
-                            Foreground="#333333"
-                            Background="#d8d8d8"
-                            Content="刷新"
-                            FontSize="13"
-                             Click="Refurbish_Click">
-                                <Button.Resources>
-                                    <Style TargetType="{x:Type Border}">
-                                        <Setter Property="CornerRadius"
-                                        Value="15"/>
-                                    </Style>
-                                </Button.Resources>
-                            </Button>
-                        </Grid>
-                    </Grid>
-                </Grid>
-                        <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0">
-                        <TextBox  TextChanged="TextBox_ini"
-                                x:Name="TextBox1"
-                                FontSize="13"
-                                AcceptsReturn="True"
-                                Foreground="Black">
-                            <TextBox.Resources>
-                                <Style TargetType="{x:Type TextBox}">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type TextBox}">
-                                                <Border Background="#EEEEEE"
-                                                        CornerRadius="5"
-                                                        BorderBrush="Gray"
-                                                        BorderThickness="1">
-                                                    <ScrollViewer x:Name="PART_ContentHost"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </TextBox.Resources>
-                        </TextBox>
-                    </Grid>
-                    <Grid Grid.Column="1">
-                        <TextBox  TextChanged="TextBox_ini"
-                                x:Name="TextBox2"
-                                FontSize="13"
-                                AcceptsReturn="True"
-                                Foreground="Black">
-                            <TextBox.Resources>
-                                <Style TargetType="{x:Type TextBox}">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type TextBox}">
-                                                <Border Background="#EEEEEE"
-                                                        CornerRadius="5"
-                                                        BorderBrush="Gray"
-                                                        BorderThickness="1">
-                                                    <ScrollViewer x:Name="PART_ContentHost"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </TextBox.Resources>
-                        </TextBox>
-                    </Grid>
-                    
-                </Grid>
+
+                <!-- Start: Button Close | Restore | Minimize -->
+                <StackPanel Grid.Row="0" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft">
+                    <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>
+                    <Button x:Name="btnRestore" Margin="5,0" Click="btnRestore_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource IconButtonsStyle}">
+                                <Setter Property="Content" Value="{DynamicResource maximize}"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=home, Path=WindowState}" Value="Maximized">
+                                        <Setter Property="Content" Value="{DynamicResource restore}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
+                </StackPanel>
+                <!-- End: Button Close | Restore | Minimize -->
+
+                <Border Grid.Row="1" Margin="10">
+                    <Frame x:Name="PagesNavigation" NavigationUIVisibility="Hidden" Margin="0,-30,0,0">
+                        <!-- Page Content -->
+                    </Frame>
+                </Border>
             </Grid>
+            <!-- Start: GridColumn Rigth -->
         </Grid>
-    </Grid>
+    </Border>
 </Window>
