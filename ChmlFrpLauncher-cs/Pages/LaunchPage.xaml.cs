@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System;
 
-namespace UIKitTutorials.Pages
+namespace ChmlFrpLauncher_cs.Pages
 {
     /// <summary>
     /// Lógica de interacción para HomePage.xaml
