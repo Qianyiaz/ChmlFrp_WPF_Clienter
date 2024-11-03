@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\wanglei\\Desktop\\Github\\ChmlFrpLauncher-cs\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5DAAE426-967A-4BDC-8793-3B9DBF260967}|ChmlFrpLauncher-cs\\ChmlFrpLauncher-cs.csproj|c:\\users\\wanglei\\desktop\\github\\chmlfrplauncher-cs\\chmlfrplauncher-cs\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DAAE426-967A-4BDC-8793-3B9DBF260967}|ChmlFrpLauncher-cs\\ChmlFrpLauncher-cs.csproj|solutionrelative:chmlfrplauncher-cs\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DAAE426-967A-4BDC-8793-3B9DBF260967}|ChmlFrpLauncher-cs\\ChmlFrpLauncher-cs.csproj|c:\\users\\wanglei\\desktop\\github\\chmlfrplauncher-cs\\chmlfrplauncher-cs\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5DAAE426-967A-4BDC-8793-3B9DBF260967}|ChmlFrpLauncher-cs\\ChmlFrpLauncher-cs.csproj|solutionrelative:chmlfrplauncher-cs\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +18,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\wanglei\\Desktop\\Github\\ChmlFrpLauncher-cs\\ChmlFrpLauncher-cs\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ChmlFrpLauncher-cs\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\wanglei\\Desktop\\Github\\ChmlFrpLauncher-cs\\ChmlFrpLauncher-cs\\MainWindow.xaml.cs",
+              "RelativeToolTip": "ChmlFrpLauncher-cs\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-03T08:00:22.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\wanglei\\Desktop\\Github\\ChmlFrpLauncher-cs\\ChmlFrpLauncher-cs\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "ChmlFrpLauncher-cs\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\wanglei\\Desktop\\Github\\ChmlFrpLauncher-cs\\ChmlFrpLauncher-cs\\MainWindow.xaml",
+              "RelativeToolTip": "ChmlFrpLauncher-cs\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-03T07:58:17.633Z",
+              "EditorCaption": ""
             }
           ]
         }
