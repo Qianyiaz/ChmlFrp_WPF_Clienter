@@ -25,11 +25,11 @@
                     <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="1">
-                    <Button Foreground="{DynamicResource TextPrimaryColor}" Background="{DynamicResource SecundaryGrayColor}" Content="" Width="200" Height="60" x:Name="LaunchButton" Click="Launch" FontSize="14">
+                    <Button Foreground="{DynamicResource TextPrimaryColor}" FontWeight="ExtraLight" Background="{DynamicResource SecundaryBackgroundColor}" Content="" Width="200" Height="60" x:Name="LaunchButton" Click="Launch" FontSize="12">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius"
-                                            Value="10"/>
+                                            Value="5"/>
                             </Style>
                         </Button.Resources>
                     </Button>

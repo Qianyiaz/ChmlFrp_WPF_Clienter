@@ -24,5 +24,15 @@ namespace ChmlFrpLauncher_cs.Pages
         {
             InitializeComponent();
         }
+
+        private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

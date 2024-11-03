@@ -44,8 +44,16 @@
                               Stretch="Fill"
                               Fill="{DynamicResource PrimaryBlueColor}"
                               Width="25"
-                              Height="25"
-                              HorizontalAlignment="Left"/>
+                              Height="25" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
                         <Label Content="ChmlFrpLauncher"
                                Foreground="{DynamicResource PrimaryBlueColor}"
                                FontWeight="Bold"
@@ -97,20 +105,18 @@
                     <StackPanel Grid.Row="3">
                         <RadioButton x:Name="rdHome"
                                      IsChecked="True"
-                                     Content="Home"
+                                     Content="主页"
+                                     FontWeight="Bold"
                                      Style="{DynamicResource MenuRadioButtonStyle}"
                                      Tag="{DynamicResource home}"
                                      Click="rdLaunchPage_Click"/>
-                        <!--<RadioButton x:Name="rdNotes" Content="Notes" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}" Click="rdNotes_Click"/>-->
+                        <!--<RadioButton x:Name="rdHome" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Click="rdLaunchPage_Click"/>-->
                     </StackPanel>
 
                     <StackPanel Grid.Row="3"
-                                VerticalAlignment="Bottom"
-                                Orientation="Horizontal"
-                                Width="200"
-                                Margin="0 0 0 20">
-                        <StackPanel Orientation="Vertical"
-                                    Margin="8 0 0 0"/>
+                                VerticalAlignment="Top"
+                                Margin="0,250,0,0">
+                        <RadioButton x:Name="rdNotes" FontWeight="Bold" Content="设置" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}" Click="rdNotes_Click"/>
                     </StackPanel>
                 </Grid>
             </Border>

@@ -46,7 +46,6 @@ namespace ChmlFrpLauncher_cs.Pages
                 LaunchButton.Content = "要想启动frp需安装frpc\n  注意frpc尚未安装";
                 return;
             }
-            LaunchButton.Content = "检测成功";
 
 
             string command = frp + " -c " + frp_ini + " >%cd%/CFL/" + ".logs 2>&1";
@@ -65,12 +64,12 @@ namespace ChmlFrpLauncher_cs.Pages
                 process.Start();
             }
 
-            string processName = "frpc";
-
-            if (IsProcessRunning(processName))
+            if (IsProcessRunning("frpc"))
             {
-                MessageBox.Show("frpc已启动", "", MessageBoxButton.OK);
+                LaunchButton.Content = "启动成功";
+                //MessageBox.Show("frpc已启动", "", MessageBoxButton.OK);
             }
+
             //kongzitaNavigation.Navigate(new System.Uri("Pages/NotesPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
