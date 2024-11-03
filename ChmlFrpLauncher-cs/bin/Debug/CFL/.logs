@@ -1,26 +1,19 @@
 WARNING: ini format is deprecated and the support will be removed in the future, please use yaml/json/toml format instead!
-[1;34m2024-11-01 20:08:30.979 [I] [sub/root.go:142] start frpc service for config file [C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\Debug\CFL\frp\frpc.ini]
-[0m[1;34m2024-11-01 20:08:31.024 [I] [client/service.go:294] try to connect to server...
-[0m[1;34m2024-11-01 20:08:31.452 [I] [client/service.go:286] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] login to server success, get run id [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636]
-[0m[1;34m2024-11-01 20:08:31.455 [I] [proxy/proxy_manager.go:173] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] proxy added: [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx]
-[0m[1;34m2024-11-01 20:08:31.752 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] start proxy success
-[0m[1;34m2024-11-01 20:08:32.018 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] start proxy success
-[0m[1;34m2024-11-01 20:08:32.511 [I] [proxy/udp.go:93] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] incoming a new work connection for udp proxy, 27.25.158.240:7000
-[0m[1;33m2024-11-02 13:37:56.152 [W] [proxy/udp.go:128] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] read from workConn for udp error: EOF
-[0m[1;34m2024-11-02 13:37:56.154 [I] [client/service.go:294] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] try to connect to server...
-[0m[1;34m2024-11-02 13:37:56.157 [I] [proxy/udp.go:142] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] writer goroutine for udp work connection closed
-[0m[1;34m2024-11-02 13:37:56.509 [I] [client/service.go:286] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] login to server success, get run id [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636]
-[0m[1;34m2024-11-02 13:37:56.511 [I] [proxy/proxy_manager.go:173] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] proxy added: [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx]
-[0m[1;34m2024-11-02 13:37:56.791 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] start proxy success
-[0m[1;34m2024-11-02 13:37:56.996 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] start proxy success
-[0m[1;34m2024-11-02 13:37:57.292 [I] [proxy/udp.go:93] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] incoming a new work connection for udp proxy, 27.25.158.240:7000
-[0m[1;34m2024-11-02 14:45:41.866 [I] [client/service.go:294] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] try to connect to server...
-[0m[1;33m2024-11-02 14:45:41.867 [W] [proxy/udp.go:128] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] read from workConn for udp error: EOF
-[0m[1;34m2024-11-02 14:45:41.867 [I] [proxy/udp.go:142] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] writer goroutine for udp work connection closed
-[0m[1;34m2024-11-02 14:45:42.233 [I] [client/service.go:286] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] login to server success, get run id [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636]
-[0m[1;34m2024-11-02 14:45:42.234 [I] [proxy/proxy_manager.go:173] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] proxy added: [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx]
-[0m[1;34m2024-11-02 14:45:42.491 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] start proxy success
-[0m[1;34m2024-11-02 14:45:42.759 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] start proxy success
-[0m[1;34m2024-11-02 14:45:42.999 [I] [proxy/udp.go:93] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] incoming a new work connection for udp proxy, 27.25.158.240:7000
-[0m[1;31m2024-11-02 15:08:15.809 [E] [proxy/proxy.go:206] [HpH53Y5MACwyeE8ymeXdPYrX-c6c6835bbc7d9636] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] connect to local service [127.0.0.1:25565] error: dial tcp 127.0.0.1:25565: connectex: No connection could be made because the target machine actively refused it.
+[1;34m2024-11-02 20:33:55.425 [I] [sub/root.go:142] start frpc service for config file [C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\Debug\CFL\frp\frpc.ini]
+[0m[1;34m2024-11-02 20:33:55.565 [I] [client/service.go:294] try to connect to server...
+[0m[1;34m2024-11-02 20:33:57.234 [I] [client/service.go:286] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] login to server success, get run id [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd]
+[0m[1;34m2024-11-02 20:33:57.236 [I] [proxy/proxy_manager.go:173] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] proxy added: [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx]
+[0m[1;34m2024-11-02 20:33:57.571 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] start proxy success
+[0m[1;34m2024-11-02 20:33:58.359 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] start proxy success
+[0m[1;34m2024-11-02 20:33:58.463 [I] [proxy/udp.go:93] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] incoming a new work connection for udp proxy, 27.25.158.240:7000
+[0m[1;31m2024-11-02 20:59:28.144 [E] [proxy/proxy.go:206] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] connect to local service [127.0.0.1:25565] error: dial tcp 127.0.0.1:25565: connectex: No connection could be made because the target machine actively refused it.
+[0m[1;31m2024-11-02 21:29:56.165 [E] [proxy/proxy.go:206] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] connect to local service [127.0.0.1:25565] error: dial tcp 127.0.0.1:25565: connectex: No connection could be made because the target machine actively refused it.
+[0m[1;34m2024-11-03 12:36:00.260 [I] [client/service.go:294] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] try to connect to server...
+[0m[1;33m2024-11-03 12:36:00.260 [W] [proxy/udp.go:128] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] read from workConn for udp error: EOF
+[0m[1;34m2024-11-03 12:36:00.261 [I] [proxy/udp.go:142] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] writer goroutine for udp work connection closed
+[0m[1;34m2024-11-03 12:36:00.592 [I] [client/service.go:286] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] login to server success, get run id [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd]
+[0m[1;34m2024-11-03 12:36:00.592 [I] [proxy/proxy_manager.go:173] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] proxy added: [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx]
+[0m[1;34m2024-11-03 12:36:00.869 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] start proxy success
+[0m[1;34m2024-11-03 12:36:01.061 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] start proxy success
+[0m[1;34m2024-11-03 12:36:01.385 [I] [proxy/udp.go:93] [HpH53Y5MACwyeE8ymeXdPYrX-aa51479f4d446ebd] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] incoming a new work connection for udp proxy, 27.25.158.240:7000
 [0m

@@ -13,10 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UIKitTutorials.Pages;
+using ChmlFrpLauncher_cs.Pages;
 using Path = System.IO.Path;
 
-namespace UIKitTutorials
+namespace ChmlFrpLauncher_cs
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
