@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Debug\
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Release\
 ChmlFrpLauncher_cs
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\App.xaml
 6-1650711416
 
-8-1238700926
+71134488249
 14185662031
 Assets\Icons\Icons.xaml;MainWindow.xaml;Pages\LaunchPage.xaml;Pages\ConfigPage.xaml;Styles\MainStyle.xaml;Themes\LightTheme.xaml;
 
