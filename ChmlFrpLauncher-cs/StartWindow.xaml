@@ -13,8 +13,8 @@
         AllowsTransparency="True"
         ResizeMode="NoResize"
         WindowState="Normal"
-        Title="StartWindow">
+        Title="ChmlFrpLauncher">
     <Grid>
-        <Image Source="Assets/Icons/favicon.ico"/>
+        <Image Source="/favicon.ico"/>
     </Grid>
 </Window>

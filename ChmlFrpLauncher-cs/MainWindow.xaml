@@ -125,7 +125,7 @@
             <!-- Start: GridColumn Rigth -->
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
@@ -171,8 +171,7 @@
                 <Border Grid.Row="1"
                         Margin="10">
                     <Frame x:Name="PagesNavigation"
-                           NavigationUIVisibility="Hidden"
-                           Margin="0,-30,0,0">
+                           NavigationUIVisibility="Hidden">
                         <!-- Page Content -->
                     </Frame>
                 </Border>

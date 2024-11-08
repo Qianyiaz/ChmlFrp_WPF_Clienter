@@ -1,45 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
+using System;
+using System.IO;
+using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace ChmlFrpLauncher_cs
 {
-    /// <summary>
-    /// StartWindow.xaml 的交互逻辑
-    /// </summary>
     public partial class StartWindow : Window
     {
+        public class Person
+        {
+            public string Versions { get; set; }
+            public int Counter { get; set; }
+        }
+
+        private Timer timer;
+
         public StartWindow()
         {
             InitializeComponent();
-        }
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(3);
-            timer.Tick += Timer_Tick;
-            timer.Start();
+
+            string directoryPath = Directory.GetCurrentDirectory();
+            string CFL = Path.Combine(directoryPath, "CFL");
+            string frp = Path.Combine(CFL, "frp");
+            string frpc = Path.Combine(frp, "frpc.exe");
+            string json = Path.Combine(CFL, "CFL.config");
+            if (!File.Exists(CFL) && !File.Exists(frp) && !File.Exists(frp))
+            {
+                Directory.CreateDirectory(CFL); Directory.CreateDirectory(frp);
+
+                Person person = new Person
+                {
+                    Versions = "0.0.0.3",
+                    Counter = 0,
+                };
+
+                string json_1 = JsonConvert.SerializeObject(person, Formatting.Indented);
+                File.WriteAllText(json, json_1);
+            }
+            //进入 3 s 的计时
+            timer = new Timer(TimerCallback, null, TimeSpan.FromSeconds(3), Timeout.InfiniteTimeSpan);
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
+        private void TimerCallback(object state)
         {
-            timer.Stop();
-            MainWindow MainWindow = new();
-            MainWindow isw = MainWindow;
-            isw.ShowDialog();
-            Window window = Window.GetWindow(this);
-            window.Close();
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                //程序退出，弹出MainWindow。
+                MainWindow mainWindow = new MainWindow();
+                Window window = Window.GetWindow(this);
+                window.Close();
+                mainWindow.Show();
+            });
         }
     }
 }
+
