@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="![CFL](https://github.com/user-attachments/assets/03c056eb-f0f2-42e6-953d-6b15bf83222c)"
+    <img src="![CFL](https://github.com/user-attachments/assets/91792b42-e4a2-4fbe-84a3-013993d1c1f8)"
         height="195">
 </p>
 <div align="center">
@@ -12,11 +12,14 @@
 [![GitHub Releases Stats](https://img.shields.io/github/downloads/Qianyiaz/ChmlFrpLauncher_cs/total.svg?logo=github)](https://github.com/Qianyiaz/ChmlFrpLauncher_cs)
 <br/>
 
-### 目前正在构建中.....
-
+### 目前正在构建中
 
 <br/>
 
-###### 如果想合作请进入我的主页，打开billbill，私信交流。
+因为目前作者正在上初一，没法更多的编写C#和xaml，并且我的xaml编写的很不好，目前正在寻找有经验的xaml老手。
+
+<br/>
+
+###### 如果想合作请进入我的主页，打开billbill，私信交流
 
 </div>
