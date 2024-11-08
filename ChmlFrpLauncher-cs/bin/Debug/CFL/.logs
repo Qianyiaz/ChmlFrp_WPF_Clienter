@@ -6,4 +6,6 @@ WARNING: ini format is deprecated and the support will be removed in the future,
 [0m[1;34m2024-11-08 21:48:37.366 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-33fc0f69e0caa468] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] start proxy success
 [0m[1;34m2024-11-08 21:48:37.566 [I] [client/control.go:168] [HpH53Y5MACwyeE8ymeXdPYrX-33fc0f69e0caa468] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] start proxy success
 [0m[1;34m2024-11-08 21:48:38.070 [I] [proxy/udp.go:93] [HpH53Y5MACwyeE8ymeXdPYrX-33fc0f69e0caa468] [HpH53Y5MACwyeE8ymeXdPYrX.XG5DCBdx] incoming a new work connection for udp proxy, 27.25.158.240:7000
+[0m[1;31m2024-11-08 22:07:59.210 [E] [proxy/proxy.go:206] [HpH53Y5MACwyeE8ymeXdPYrX-33fc0f69e0caa468] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] connect to local service [127.0.0.1:25565] error: dial tcp 127.0.0.1:25565: connectex: No connection could be made because the target machine actively refused it.
+[0m[1;31m2024-11-08 22:24:56.199 [E] [proxy/proxy.go:206] [HpH53Y5MACwyeE8ymeXdPYrX-33fc0f69e0caa468] [HpH53Y5MACwyeE8ymeXdPYrX.7RuCtHjD] connect to local service [127.0.0.1:25565] error: dial tcp 127.0.0.1:25565: connectex: No connection could be made because the target machine actively refused it.
 [0m

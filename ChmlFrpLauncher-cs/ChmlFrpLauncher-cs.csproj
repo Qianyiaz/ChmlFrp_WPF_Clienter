@@ -5,11 +5,7 @@
     <PublishTrimmed>true</PublishTrimmed>
     <LangVersion>10.0</LangVersion>
     <PostBuildEvent>
-    rmdir /S /Q "$(ProjectDir)obj\Debug\TempPE\"
-    rmdir /S /Q "$(ProjectDir)obj\Debug\"
-    rmdir /S /Q "$(ProjectDir)obj\Release\TempPE\"
-    rmdir /S /Q "$(ProjectDir)obj\Release\"
-    rmdir /S /Q "$(ProjectDir)obj\"</PostBuildEvent>
+    </PostBuildEvent>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5DAAE426-967A-4BDC-8793-3B9DBF260967}</ProjectGuid>
