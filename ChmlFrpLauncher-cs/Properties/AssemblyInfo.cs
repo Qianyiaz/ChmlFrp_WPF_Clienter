@@ -49,5 +49,5 @@ using System.Windows;
 //      修订号
 //
 [assembly: AssemblyVersion("0.0.0.3")]
-[assembly: AssemblyFileVersion("0.0.0.2")]
+[assembly: AssemblyFileVersion("0.0.0.3")]
 [assembly: NeutralResourcesLanguage("zh-CN")]

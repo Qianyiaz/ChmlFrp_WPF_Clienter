@@ -24,3 +24,5 @@ C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\Debug\
 C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Debug\ChmlFrpL.C270892E.Up2Date
 C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Debug\Pages\ConfigPage.g.cs
 C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Debug\Pages\ConfigPage.baml
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Debug\StartWindow.g.cs
+C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\Debug\StartWindow.baml

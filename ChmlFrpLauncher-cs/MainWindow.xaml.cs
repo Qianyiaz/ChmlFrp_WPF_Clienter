@@ -117,5 +117,9 @@ namespace ChmlFrpLauncher_cs
             rdHome.IsChecked = false;
             PagesNavigation.Navigate(new System.Uri("Pages/ConfigPage.xaml", UriKind.RelativeOrAbsolute));
         }
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }
