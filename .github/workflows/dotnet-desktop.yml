@@ -8,13 +8,8 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-  
-    if: github.repository_owner == 'Qianyiaz'
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v2
 
