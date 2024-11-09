@@ -1,7 +1,8 @@
 <p align="center">
-    <img src="![CFL](https://github.com/user-attachments/assets/91792b42-e4a2-4fbe-84a3-013993d1c1f8)"
+    <img src=".github/CFL.png"
         height="195">
 </p>
+
 <div align="center">
 
 # ChmlFrpLauncher_cs
