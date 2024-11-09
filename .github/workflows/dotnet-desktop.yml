@@ -1,44 +1,17 @@
-name: Build
-on:
-  push:
-    paths:
-      - 'ChmlFrpLauncher_cs/**'
-      - '.github/workflows/**'
-  pull_request:
-    paths:
-      - 'ChmlFrpLauncher_cs/**'
-      - '.github/workflows/**'
-  workflow_dispatch:
-
+name: Build .NET Framework Application
+ 
+on: [push]
+ 
 jobs:
   build:
-    name: Build
     runs-on: windows-latest
-    strategy:  
-       matrix:  
-         configuration: [Debug, Release]
+ 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Set Describe
-      shell: bash
-      run: |
-          describe=`git describe --tags --always`
-          echo "describe=$describe" >> $GITHUB_ENV
-    - name: Setup MSBuild.exe
+    - name: Checkout code
+      uses: actions/checkout@v2
+ 
+    - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v2
-      with:
-        msbuild-architecture: x64
-    - name: Replace
-      run: |
-        (gc ".code\ChmlFrpLauncher-cs\MainWindow.xaml.cs") -replace 'Public Const OAuthClientId As String = ""', 'Public Const OAuthClientId As String = "${{ secrets.CLIENT_ID }}"' | Out-File ".code\ChmlFrpLauncher-cs\MainWindow.xaml.cs"
-        (gc ".code\ChmlFrpLauncher-cs\StartWindow.xaml.cs") -replace 'Public Const CurseForgeAPIKey As String = ""', 'Public Const CurseForgeAPIKey As String = "${{ secrets.CURSEFORGE_API_KEY }}"' | Out-File ".code\ChmlFrpLauncher-cs\StartWindow.xaml.cs"
-    - name: Build
-      run: msbuild ".code\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs.csproj" -p:Configuration=${{ matrix.configuration }}
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ matrix.configuration }} ${{ env.describe }}
-        path: ChmlFrpLauncher_cs\obj\${{ matrix.configuration }}\ChmlFrpLauncher_cs.exe
+ 
+    - name: Build app for release
+      run: msbuild .code\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs.csproj -t:rebuild -verbosity:diag -property:Configuration=Release
