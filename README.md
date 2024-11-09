@@ -11,18 +11,13 @@
 
 <a href="https://github.com/Qianyiaz/ChmlFrpLauncher_cs">![Github stars](https://img.shields.io/github/stars/Qianyiaz/ChmlFrpLauncher_cs.svg)</a>
 [![GitHub Releases Stats](https://img.shields.io/github/downloads/Qianyiaz/ChmlFrpLauncher_cs/total.svg?logo=github)](https://github.com/Qianyiaz/ChmlFrpLauncher_cs)
-<br/>
-
-### 目前正在构建中
 
 <br/>
 
-因为目前作者正在上初一，没法更多的编写C#和xaml，并且我的xaml编写的很不好，目前正在寻找有经验的xaml老手。
-
-如果想查看代码可以[点击这里](https://github.com/Qianyiaz/ChmlFrpLauncher_cs/tree/main/.code/ChmlFrpLauncher-cs)
+### ChmlFrpLauncher_csapi
 
 <br/>
 
-###### 如果想合作请进入我的主页，打开billbill，私信交流
+此分支是ChmlFrpLauncher_cs的更新和其他的api。目前正在构建中 ....
 
-</div>
+<br/>
