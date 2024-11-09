@@ -40,4 +40,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.configuration }} ${{ env.describe }}
-        path: Plain Craft Launcher 2\obj\${{ matrix.configuration }}\ChmlFrpLauncher_cs.exe
+        path: ChmlFrpLauncher_cs\obj\${{ matrix.configuration }}\ChmlFrpLauncher_cs.exe
