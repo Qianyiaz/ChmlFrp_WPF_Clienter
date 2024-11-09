@@ -20,4 +20,8 @@
 
 此分支是ChmlFrpLauncher_cs的更新和其他的api。目前正在构建中 ....
 
+github: <https://raw.githubusercontent.com/Qianyiaz/ChmlFrpLauncher_cs/refs/heads/api/DownloadLink.json>
+
+gitee:<https://gitee.com/Qianyiaz/ChmlFrpLauncher_cs/raw/api/DownloadLink.json>
+
 <br/>
