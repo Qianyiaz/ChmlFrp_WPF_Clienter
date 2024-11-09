@@ -7,7 +7,7 @@
 
 # ChmlFrpLauncher_cs
 
-`ChmlFrpLauncher_cs` 是 [frp](https://github.com/fatedier/frp) 的第三方应用，适用于 Windows 11/10 或更低版本 的 WPF + C# + .net framework 的图形化应用.
+`ChmlFrpLauncher_cs` 是 [frp](https://github.com/fatedier/frp) 的第三方应用，适用于 Windows 11/10 或更低版本。 使用 WPF + C# + .net framework 开发的图形化应用.
 
 <a href="https://github.com/Qianyiaz/ChmlFrpLauncher_cs">![Github stars](https://img.shields.io/github/stars/Qianyiaz/ChmlFrpLauncher_cs.svg)</a>
 [![GitHub Releases Stats](https://img.shields.io/github/downloads/Qianyiaz/ChmlFrpLauncher_cs/total.svg?logo=github)](https://github.com/Qianyiaz/ChmlFrpLauncher_cs)
