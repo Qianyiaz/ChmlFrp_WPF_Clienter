@@ -19,6 +19,8 @@
 
 因为目前作者正在上初一，没法更多的编写C#和xaml，并且我的xaml编写的很不好，目前正在寻找有经验的xaml老手。
 
+如果想查看代码可以[点击这里](https://github.com/Qianyiaz/ChmlFrpLauncher_cs/tree/main/ChmlFrpLauncher-cs)
+
 <br/>
 
 ###### 如果想合作请进入我的主页，打开billbill，私信交流
