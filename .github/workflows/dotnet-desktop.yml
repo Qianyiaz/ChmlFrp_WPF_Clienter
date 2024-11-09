@@ -31,6 +31,10 @@ jobs:
       uses: microsoft/setup-msbuild@v2
       with:
         msbuild-architecture: x64
+    - name: Replace
+      run: |
+        (gc ".code\ChmlFrpLauncher-cs\MainWindow.xaml.cs") -replace 'Public Const OAuthClientId As String = ""', 'Public Const OAuthClientId As String = "${{ secrets.CLIENT_ID }}"' | Out-File ".code\ChmlFrpLauncher-cs\MainWindow.xaml.cs"
+        (gc ".code\ChmlFrpLauncher-cs\StartWindow.xaml.cs") -replace 'Public Const CurseForgeAPIKey As String = ""', 'Public Const CurseForgeAPIKey As String = "${{ secrets.CURSEFORGE_API_KEY }}"' | Out-File ".code\ChmlFrpLauncher-cs\StartWindow.xaml.cs"
     - name: Build
       run: msbuild ".code\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs.csproj" -p:Configuration=${{ matrix.configuration }}
     - name: Upload a Build Artifact
