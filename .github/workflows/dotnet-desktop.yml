@@ -31,11 +31,8 @@ jobs:
       uses: microsoft/setup-msbuild@v2
       with:
         msbuild-architecture: x64
-    - name: Replace
-      run: |
-      
     - name: Build
-      run: msbuild "Plain Craft Launcher 2\Plain Craft Launcher 2.vbproj" -p:Configuration=${{ matrix.configuration }}
+      run: msbuild ".code\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs.csproj" -p:Configuration=${{ matrix.configuration }}
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4
       with:
