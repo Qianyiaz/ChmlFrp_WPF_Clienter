@@ -1,24 +1,35 @@
-name: Build .NET Framework Application
-
-on: [push]
+name: Build
+on:
+  push:
+    paths:
+      - '.code/ChmlFrpLauncher-cs**'
+      - '.github/workflows/**'
+  pull_request:
+    paths:
+      - '.code/ChmlFrpLauncher-cs/**'
+      - '.github/workflows/**'
+  workflow_dispatch:
 
 jobs:
   build:
+    name: Build
     runs-on: windows-latest
-
+    strategy:  
+       matrix:  
+         configuration: [Debug, Release]
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Set Describe
+      shell: bash
+      run: |
+          describe=`git describe --tags --always`
+          echo "describe=$describe" >> $GITHUB_ENV
+          
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v2
 
-      - name: Print MSBuild Path
-        run: msbuild ".code\\ChmlFrpLauncher-cs.sln" -p:Configuration=${{ matrix.configuration }}
-
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v2
-
-      - name: Restore NuGet Packages
-        run: nuget restore .code\ChmlFrpLauncher-cs.sln
-
-      - name: Build and Publish WPF C# App
-        run: |
-          & "$env:MSBUILD_PATH\\msbuild.exe" ".code\\ChmlFrpLauncher-cs.sln" "/p:Configuration=Release" "/p:DeployOnBuild=true" "/p:PublishProfile=FolderProfile" "/v:diag"
+    - name: Build
+      run: msbuild ".code\\ChmlFrpLauncher-cs.sln" -p:Configuration=${{ matrix.configuration }}
