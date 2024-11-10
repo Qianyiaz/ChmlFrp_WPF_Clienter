@@ -18,9 +18,3 @@ jobs:
 
       - name: Build and Publish Web App
         run: msbuild .code\ChmlFrpLauncher-cs.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1.0.0
-        with:
-          name: published_webapp
-          path: .code\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\Release\
