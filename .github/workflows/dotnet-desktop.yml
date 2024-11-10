@@ -1,4 +1,4 @@
-name: Build
+name: Build .NET Framework Application
 on:
   push:
     paths:
