@@ -10,9 +10,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup MSBuild Path
-        run: echo "MSBUILD_PATH=C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\MSBuild\\Current\\Bin" >> $GITHUB_ENV
-
       - name: Print MSBuild Path
         run: msbuild ".code\\ChmlFrpLauncher-cs.sln" -p:Configuration=${{ matrix.configuration }}
 
