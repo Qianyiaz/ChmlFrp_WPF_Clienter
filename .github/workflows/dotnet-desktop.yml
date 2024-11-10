@@ -33,3 +33,9 @@ jobs:
 
     - name: Build
       run: msbuild ".code\\ChmlFrpLauncher-cs.sln" -p:Configuration=${{ matrix.configuration }}
+      
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.configuration }} ${{ env.describe }}
+        path: .code\\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\${{ matrix.configuration }}\ChmlFrpLauncher_cs.exe
