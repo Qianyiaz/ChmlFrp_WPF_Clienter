@@ -14,14 +14,7 @@ jobs:
         run: echo "MSBUILD_PATH=C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\MSBuild\\Current\\Bin" >> $GITHUB_ENV
 
       - name: Print MSBuild Path
-        run: |
-          echo "MSBUILD_PATH: $env:MSBUILD_PATH"
-          if (Test-Path "$env:MSBUILD_PATH\\msbuild.exe") {
-            Write-Host "MSBuild found at path."
-          } else {
-            Write-Host "MSBuild not found at path."
-            exit 1
-          }
+        run: msbuild ".code\\ChmlFrpLauncher-cs.sln" -p:Configuration=${{ matrix.configuration }}
 
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v2
