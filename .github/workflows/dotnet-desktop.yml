@@ -38,4 +38,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.configuration }} ${{ env.describe }}
-        path: .code\\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\${{ matrix.configuration }}\ChmlFrpLauncher_cs.exe
+        path: .code\\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\${{ matrix.configuration }}\ChmlFrpLauncher_cs.exe
