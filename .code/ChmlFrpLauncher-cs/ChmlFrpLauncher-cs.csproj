@@ -204,7 +204,4 @@
     </ItemGroup>
     <Delete Files="@(OtherFiles)" />
   </Target>
-  <Target Name="CleanObj" AfterTargets="Build">
-    <RemoveDir Directories="$(BaseIntermediateOutputPath)" Condition="Exists('$(BaseIntermediateOutputPath)')" />
-  </Target>
 </Project>
