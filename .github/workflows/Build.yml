@@ -16,7 +16,7 @@ jobs:
     runs-on: windows-latest
     strategy:  
        matrix:  
-         configuration: [Debug, Release]
+         configuration: [Release]
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -39,3 +39,4 @@ jobs:
       with:
         name: ${{ matrix.configuration }} ${{ env.describe }}
         path: .code\\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\obj\${{ matrix.configuration }}\ChmlFrpLauncher_cs.exe
+    
