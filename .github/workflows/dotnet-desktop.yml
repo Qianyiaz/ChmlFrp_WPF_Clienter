@@ -1,17 +1,29 @@
 name: Build .NET Framework Application
 
-on:
-  push:
-    branches:
-      - master
+on: [push]
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-      - name: Add msbuild to PATH
-        uses: microsoft/setup-msbuild@v2
+      - uses: actions/checkout@v1
+        name: Checkout Code
 
-      - name: Build app for release
-        run: msbuild .code\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs.csproj -t:rebuild -verbosity:diag -property:Configuration=Release
+      - name: Setup MSBuild Path
+        uses: warrenbuckley/Setup-MSBuild@v2
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v2
+
+      - name: Restore NuGet Packages
+        run: nuget restore .code\ChmlFrpLauncher-cs.sln
+
+      - name: Build and Publish Web App
+        run: msbuild .code\ChmlFrpLauncher-cs.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: published_webapp
+          path: .code\ChmlFrpLauncher-cs\ChmlFrpLauncher-cs\bin\Release\
