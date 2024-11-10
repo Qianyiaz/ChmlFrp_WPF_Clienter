@@ -16,5 +16,5 @@ jobs:
       - name: Restore NuGet Packages
         run: nuget restore .code\ChmlFrpLauncher-cs.sln
 
-      - name: Build and Publish Web App
+      - name: Build and Publish WPF C# App
         run: msbuild .code\ChmlFrpLauncher-cs.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
