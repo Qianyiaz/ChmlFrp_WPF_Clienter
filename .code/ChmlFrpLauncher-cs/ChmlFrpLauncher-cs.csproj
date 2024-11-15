@@ -206,4 +206,5 @@
   </Target>
   <Target 名字="CleanObj" AfterTargets="Build">
     <RemoveDir Directories="$(BaseIntermediateOutputPath)" Condition="Exists('$(BaseIntermediateOutputPath)')" />
+  </Target>
 </Project>
