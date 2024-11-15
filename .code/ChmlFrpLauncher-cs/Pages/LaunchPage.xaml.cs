@@ -3,7 +3,6 @@ using System.IO;
 using Path = System.IO.Path;
 using System.Windows;
 using System.Windows.Controls;
-using System;
 
 namespace ChmlFrpLauncher_cs.Pages
 {
@@ -19,11 +18,8 @@ namespace ChmlFrpLauncher_cs.Pages
             string folderPath = System.IO.Path.Combine(directoryPath, "CFL");
             folderPath = Path.Combine(folderPath, "frp");
             string frp = Path.Combine(folderPath, "frpc.exe");
-
             LaunchButton.Content = " 启动 frpc";
             LaunchButton.FontSize = 15;
-
-
         }
         string directoryPath = Directory.GetCurrentDirectory();
 
@@ -46,24 +42,18 @@ namespace ChmlFrpLauncher_cs.Pages
                 LaunchButton.Content = "要想启动frp需安装frpc\n  注意frpc尚未安装";
                 return;
             }
-
-
             string command = frp + " -c " + frp_ini + " >%cd%/CFL/" + ".logs 2>&1";
-
-
             ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c " + command)
             {
                 RedirectStandardOutput = true,
                 UseShellExecute = false,
                 CreateNoWindow = true
             };
-
             using (Process process = new Process())
             {
                 process.StartInfo = processInfo;
                 process.Start();
             }
-
             if (IsProcessRunning("frpc"))
             {
                 LaunchButton.Content = "启动成功";
@@ -72,12 +62,10 @@ namespace ChmlFrpLauncher_cs.Pages
 
             //kongzitaNavigation.Navigate(new System.Uri("Pages/NotesPage.xaml", UriKind.RelativeOrAbsolute));
         }
-
         static bool IsProcessRunning(string processName)
         {
             Process[] processes = Process.GetProcessesByName(processName);
             return processes.Length > 0;
         }
-
     }
 }
