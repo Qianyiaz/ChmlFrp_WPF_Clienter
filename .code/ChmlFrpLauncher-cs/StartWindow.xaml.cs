@@ -37,7 +37,7 @@ namespace ChmlFrpLauncher_cs
                     Directory.CreateDirectory(CFL); Directory.CreateDirectory(frp); Directory.CreateDirectory(temp);
 
                     data = new IniData();
-                    data["ChmlFrpLauncher_cs Setup"]["Versions"] = "0.0.0.3";
+                    data["ChmlFrpLauncher_cs Setup"]["Versions"] = "0.0.0.0.3";
                     parser.WriteFile(ini, data);
                 }
                 try

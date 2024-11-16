@@ -10,7 +10,7 @@
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
-            <Button Click="Button_Update_Click"/>
+            <!--<Button Click="Button_Update_Click"/>-->
             <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="4*"/>
