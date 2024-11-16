@@ -21,23 +21,34 @@ namespace ChmlFrpLauncher_cs
         private void TimerCallback(object state)
         {
             Application.Current.Dispatcher.Invoke(() =>
-            {
-
+            { 
+                start:
                 string directoryPath = Directory.GetCurrentDirectory();
                 string CFL = Path.Combine(directoryPath, "CFL");
                 string frp = Path.Combine(CFL, "frp");
+                string temp = Path.Combine(CFL, "temp");
                 string frpc = Path.Combine(frp, "frpc.exe");
                 string ini = Path.Combine(CFL, "Setup.ini");
+                var parser = new FileIniDataParser();
+                IniData data;
 
-                if (!File.Exists(CFL) && !File.Exists(frp) && !File.Exists(ini))
+                if (!File.Exists(CFL) && !File.Exists(frp) && !File.Exists(ini) && !File.Exists(temp))
                 {
-                    Directory.CreateDirectory(CFL); Directory.CreateDirectory(frp);
+                    Directory.CreateDirectory(CFL); Directory.CreateDirectory(frp); Directory.CreateDirectory(temp);
 
-                    var parser = new FileIniDataParser();
-                    IniData data;
                     data = new IniData();
                     data["ChmlFrpLauncher_cs Setup"]["Versions"] = "0.0.0.3";
                     parser.WriteFile(ini, data);
+                }
+                try
+                {
+                    data = parser.ReadFile(ini);
+                    string V = data["ChmlFrpLauncher_cs Setup"]["Versions"];
+                }
+                catch 
+                {
+                    File.Delete(ini);
+                    goto start;
                 }
 
                 //程序退出，弹出MainWindow。

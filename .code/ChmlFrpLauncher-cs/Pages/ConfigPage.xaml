@@ -9,8 +9,9 @@
       Title="NotesPage">
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-        <!--<Grid>
-            <Grid.ColumnDefinitions>
+        <Grid>
+            <Button Click="Button_Update_Click"/>
+            <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="6*"/>
@@ -34,10 +35,10 @@
                             <ToggleButton x:Name="toggleSwitch" Width="60" Height="30" Content="Off"
                       Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked"/>
                         </Grid>
-                    </Grid>
-                </Grid>
-            </Grid>
-        </Grid>-->
+                    </Grid>--><!--
+                </Grid>--><!--
+            </Grid>-->
+        </Grid>
     </Border>
 </Page>
 

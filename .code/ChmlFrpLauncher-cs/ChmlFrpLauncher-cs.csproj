@@ -149,7 +149,7 @@
     <Compile Include="Pages\LaunchPage.xaml.cs">
       <DependentUpon>LaunchPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\.xaml.cs">
+    <Compile Include="Pages\ConfigPage.xaml.cs">
       <DependentUpon>ConfigPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">

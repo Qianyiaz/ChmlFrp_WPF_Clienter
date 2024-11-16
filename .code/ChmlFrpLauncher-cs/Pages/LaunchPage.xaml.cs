@@ -15,7 +15,7 @@ namespace ChmlFrpLauncher_cs.Pages
         {
             InitializeComponent();
             directoryPath = Directory.GetCurrentDirectory();
-            string folderPath = System.IO.Path.Combine(directoryPath, "CFL");
+            string folderPath = Path.Combine(directoryPath, "CFL");
             folderPath = Path.Combine(folderPath, "frp");
             string frp = Path.Combine(folderPath, "frpc.exe");
             LaunchButton.Content = " 启动 frpc";
