@@ -34,12 +34,12 @@
                         <Button Foreground="{DynamicResource TextPrimaryColor}"
                                 FontWeight="ExtraLight"
                                 Background="{DynamicResource SecundaryBackgroundColor}"
-                                Content=""
+                                Content="未找到配置文件"
+                                FontSize="15"
                                 Width="200"
                                 Height="60"
                                 x:Name="LaunchButton"
-                                Click="Launch"
-                                FontSize="12">
+                                Click="Launch">
                             <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius"
