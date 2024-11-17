@@ -25,7 +25,8 @@
 <br/>
 
 ### Memo on Bugs
-- [ ] 1. startwindow 启动检测进程退出，发现有没有都退出。
+
+- [ ] 1. startwindow 启动检测进程退出，发现有没有都退出。＜（＾－＾）＞ 已修复
 
 <br/>
 
