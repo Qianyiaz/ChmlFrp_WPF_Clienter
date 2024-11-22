@@ -35,7 +35,7 @@ namespace ChmlFrpLauncher_cs
                 string directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL");string frp = Path.Combine(CFL, "frp");string temp = Path.Combine(CFL, "temp");string frpc = Path.Combine(frp, "frpc.exe");string ini = Path.Combine(CFL, "Setup.ini");
                 //创建ini实例
                 var parser = new FileIniDataParser();
-                IniData data = parser.ReadFile(ini);
+                IniData data;
                 for (int i = 1; i < 6; i++) {
                     if (!File.Exists(Path.Combine(CFL, i + ".logs")))
                     {
