@@ -47,6 +47,7 @@ namespace ChmlFrpLauncher_cs
                 if (!File.Exists(CFL) && !File.Exists(frp) && !File.Exists(ini) && !File.Exists(temp))
                 {
                     Directory.CreateDirectory(CFL); Directory.CreateDirectory(frp); Directory.CreateDirectory(temp); //创建文件夹
+                    data = new IniData();
                     data["ChmlFrpLauncher_cs Setup"]["Versions"] = "0.0.0.0.3";
                     //data["ChmlFrpLauncher_cs Setup"]["number"] = "0";
                     parser.WriteFile(ini, data);
