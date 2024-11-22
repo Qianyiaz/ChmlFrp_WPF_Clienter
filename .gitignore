@@ -1,4 +1,4 @@
-
 .code/ChmlFrpLauncher-cs/bin/Debug/CFL/frp/frpc.ini
-/.code/.vs
-/.code/ChmlFrpLauncher-cs/obj
+.code/ChmlFrpLauncher-cs/obj
+.code/.vs
+.code/ChmlFrpLauncher-cs/.vs
