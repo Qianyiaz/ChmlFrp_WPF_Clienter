@@ -35,14 +35,18 @@ namespace ChmlFrpLauncher_cs
                 string directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL");string frp = Path.Combine(CFL, "frp");string temp = Path.Combine(CFL, "temp");string frpc = Path.Combine(frp, "frpc.exe");string ini = Path.Combine(CFL, "Setup.ini");
                 //创建ini实例
                 var parser = new FileIniDataParser();
-                IniData data;
-                for (int i = 1; i < 6; i++) { File.Delete(Path.Combine(CFL, i + ".logs")); }//删除logs日志文件
-                for (int i = 1; i < 6; i++) { File.Create(Path.Combine(CFL, i + ".logs")); }//创建logs日志文件
+                IniData data = parser.ReadFile(ini);
+                for (int i = 1; i < 6; i++) {
+                    if (!File.Exists(Path.Combine(CFL, i + ".logs")))
+                    {
+                        File.Create(Path.Combine(CFL, i + ".logs")); //创建logs日志文件
+                        return;
+                    }
+                }
                 //检测是否有相关配置文件
                 if (!File.Exists(CFL) && !File.Exists(frp) && !File.Exists(ini) && !File.Exists(temp))
                 {
                     Directory.CreateDirectory(CFL); Directory.CreateDirectory(frp); Directory.CreateDirectory(temp); //创建文件夹
-                    data = new IniData();
                     data["ChmlFrpLauncher_cs Setup"]["Versions"] = "0.0.0.0.3";
                     //data["ChmlFrpLauncher_cs Setup"]["number"] = "0";
                     parser.WriteFile(ini, data);

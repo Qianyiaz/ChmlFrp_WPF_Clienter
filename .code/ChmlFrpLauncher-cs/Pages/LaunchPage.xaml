@@ -12,7 +12,6 @@
     <Border CornerRadius="5"
             Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
-            <TextBlock Height="6" VerticalAlignment="Top"  Background="{DynamicResource SecundaryBackgroundColor}"/>
             <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" >
             <Button Foreground="{DynamicResource TextPrimaryColor}"
                                 FontWeight="ExtraLight"

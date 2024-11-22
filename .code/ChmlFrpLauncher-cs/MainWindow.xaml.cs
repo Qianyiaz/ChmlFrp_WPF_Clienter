@@ -76,7 +76,7 @@ namespace ChmlFrpLauncher_cs
             LaunchPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             ChmlfrpPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             ChmlfrpPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
-            PagesNavigation.Navigate(new Uri("Pages/ChmFlrp.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new Uri("Pages/ChmFrp.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

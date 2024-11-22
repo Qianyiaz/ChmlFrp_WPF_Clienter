@@ -1,5 +1,6 @@
 ﻿using IniParser;
 using IniParser.Model;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
@@ -18,15 +19,15 @@ namespace ChmlFrpLauncher_cs.Pages
             InitializeComponent();
             //创建路径函数
             directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string frp_path = Path.Combine(CFL, "frp"); string frp_ini = Path.Combine(frp_path, "frpc.ini"); string frp = Path.Combine(frp_path, "frpc.exe"); string ini = Path.Combine(CFL, "Setup.ini");
-            if (IsProcessRunning("frpc", 5))
+            if (!IsProcessRunning("frpc", 0))
             {
-                LaunchButton.Content = "启动已达上线";
+                LaunchButton.Content = "点击关闭 frpc";
+                LaunchButton.Click += Killfrp;
                 return;
             }
             if (File.Exists(frp_ini) && File.Exists(frp))
             {
                 LaunchButton.Content = "启动 frpc";
-                return;
             }
         }
         string directoryPath = Directory.GetCurrentDirectory();
@@ -34,6 +35,7 @@ namespace ChmlFrpLauncher_cs.Pages
 
         private void Launch(object sender, RoutedEventArgs e)
         {
+            LaunchButton.Click -= Launch;
             //创建路径函数
             directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string frp_path = Path.Combine(CFL, "frp"); string frp_ini = Path.Combine(frp_path, "frpc.ini"); string frp = Path.Combine(frp_path, "frpc.exe"); string ini = Path.Combine(CFL, "Setup.ini");
             //创建ini实例
@@ -41,17 +43,8 @@ namespace ChmlFrpLauncher_cs.Pages
             IniData data = parser.ReadFile(ini);
             data = parser.ReadFile(ini);
             LaunchButton.Content = "正在启动中...";
+            if (i == 5) { i = 0; }
             i++; string logs = Path.Combine(CFL, i + ".logs");
-            if (IsProcessRunning("frpc", 5))
-            {
-                LaunchButton.Content = "启动已达上线";
-                return;
-            }
-            if (i == 6)
-            {
-                LaunchButton.Content = "启动已达上线";
-                return;
-            }
             ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c " + frp + " -c " + frp_ini + " >" + logs + " 2>&1")
             {
                 RedirectStandardOutput = true,
@@ -62,7 +55,8 @@ namespace ChmlFrpLauncher_cs.Pages
             {
                 process.StartInfo = processInfo;
                 process.Start();
-                LaunchButton.Content = "启动成功";
+                LaunchButton.Content = "点击关闭 frpc";
+                LaunchButton.Click += Killfrp;
             }
             //kongzitaNavigation.Navigate(new System.Uri("Pages/NotesPage.xaml", UriKind.RelativeOrAbsolute));
         }
@@ -70,6 +64,29 @@ namespace ChmlFrpLauncher_cs.Pages
         {
             Process[] processes = Process.GetProcessesByName(processName);
             return processes.Length >= count;
+        }
+        private void Killfrp(object sender, RoutedEventArgs e)
+        {
+            LaunchButton.Click -= Killfrp;
+            if (!IsProcessRunning("frpc", 0))
+            {
+                LaunchButton.Content = "启动 frpc";
+                LaunchButton.Click += Launch;
+                return;
+            }
+            string name = "frpc";
+            Process[] processes = Process.GetProcesses();
+
+            foreach (Process process in processes)
+            {
+                if (process.ProcessName.Equals(name, StringComparison.OrdinalIgnoreCase))
+                {
+                    process.Kill();
+                    process.WaitForExit();
+                }
+            }
+            LaunchButton.Content = "启动 frpc";
+            LaunchButton.Click += Launch;
         }
     }
 }
