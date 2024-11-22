@@ -33,32 +33,27 @@
 
 using System;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+
 
 namespace ChmlFrpLauncher_cs
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// MainWindow.xaml 的交互逻辑
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             InitializeComponent();
+            LaunchPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
+            LaunchPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
             PagesNavigation.Navigate(new Uri("Pages/LaunchPage.xaml", UriKind.RelativeOrAbsolute));
         }
-
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
-        }
-
-        private void btnRestore_Click(object sender, RoutedEventArgs e)
-        {
-            if (WindowState == WindowState.Normal)
-                WindowState = WindowState.Maximized;
-            else
-                WindowState = WindowState.Normal;
         }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
@@ -68,13 +63,20 @@ namespace ChmlFrpLauncher_cs
 
         private void rdLaunchPage_Click(object sender, RoutedEventArgs e)
         {
-            rdNotes.IsChecked = false;
+            ChmlfrpPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
+            ChmlfrpPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
+            LaunchPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
+            LaunchPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
             PagesNavigation.Navigate(new Uri("Pages/LaunchPage.xaml", UriKind.RelativeOrAbsolute));
         }
-        private void rdNotes_Click(object sender, RoutedEventArgs e)
+
+        private void rdChmlfrpPage_Click(object sender, RoutedEventArgs e)
         {
-            rdHome.IsChecked = false;
-            PagesNavigation.Navigate(new System.Uri("Pages/ConfigPage.xaml", UriKind.RelativeOrAbsolute));
+            LaunchPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
+            LaunchPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
+            ChmlfrpPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
+            ChmlfrpPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
+            PagesNavigation.Navigate(new Uri("Pages/ChmFlrp.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

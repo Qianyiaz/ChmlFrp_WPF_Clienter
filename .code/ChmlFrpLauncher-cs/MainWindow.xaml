@@ -5,8 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChmlFrpLauncher_cs"
         mc:Ignorable="d"
-        Name="home"
-        Title="ChmlFrpLauncher"
         Height="450"
         Width="800"
         WindowStartupLocation="CenterScreen"
@@ -14,35 +12,28 @@
         Background="Transparent"
         AllowsTransparency="True"
         ResizeMode="NoResize"
-        WindowState="Normal">
-
+        WindowState="Normal"
+        Title="ChmlFrpLauncher">
     <Border CornerRadius="8"
-            Background="{DynamicResource PrimaryBackgroundColor}">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <!-- Start: GridColum Left-->
-            <Border CornerRadius="8 0 0 8"
-                    Background="{DynamicResource SecundaryBackgroundColor}">
-                <Grid x:Name="gridMenu"
-                      Width="60">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="60"/>
-                        <RowDefinition Height="80"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
+            Background="Transparent">
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Border Grid.Row="0" CornerRadius="8" Height="50"
+            Background="#1276DB">
+                <Grid>
+                    <Grid Margin="0,0,520,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
 
-                    <!-- Logo -->
-                    <StackPanel Grid.Row="1"
-                                Orientation="Horizontal"
-                                VerticalAlignment="Top">
                         <Path Data="{DynamicResource logo}"
-                              Margin="16 0 0 0"
                               Stretch="Fill"
-                              Fill="{DynamicResource PrimaryBlueColor}"
+                              Fill="#CFE2F7"
                               Width="25"
                               Height="25" RenderTransformOrigin="0.5,0.5">
                             <Path.RenderTransform>
@@ -54,129 +45,78 @@
                                 </TransformGroup>
                             </Path.RenderTransform>
                         </Path>
-                        <Label Content="ChmlFrpLauncher"
-                               Foreground="{DynamicResource PrimaryBlueColor}"
-                               FontWeight="Bold"
-                               FontSize="15"
-                               VerticalAlignment="Center"
-                               HorizontalContentAlignment="Left"
-                               HorizontalAlignment="Left"
-                               Margin="14 0 0 0"/>
-                    </StackPanel>
+                        <Grid Grid.Column="1">
+                            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" >
+                                <TextBlock FontSize="21" Text="CFL" Foreground="#f9f9f9"
+                               FontWeight="Bold" />
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
 
-                    <!-- Menu -->
-                    <ToggleButton x:Name="btnMenu"
-                                  HorizontalAlignment="Right"
-                                  BorderThickness="0"
-                                  Background="Transparent"
-                                  VerticalAlignment="Center"
-                                  Style="{StaticResource MenuIconStyle}"
-                                  Margin="0 0 15 0">
-                        <ToggleButton.Triggers>
-                            <EventTrigger RoutedEvent="ToggleButton.Unchecked">
-                                <BeginStoryboard>
-                                    <Storyboard x:Name="HideStackPanel">
-                                        <DoubleAnimation Storyboard.TargetName="gridMenu"
-                                                         Storyboard.TargetProperty="Width"
-                                                         BeginTime="0:0:0"
-                                                         From="200"
-                                                         To="60"
-                                                         Duration="0:0:0.3">
-                                        </DoubleAnimation>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                            <EventTrigger RoutedEvent="ToggleButton.Checked">
-                                <BeginStoryboard>
-                                    <Storyboard x:Name="ShowStackPanel">
-                                        <DoubleAnimation Storyboard.TargetName="gridMenu"
-                                                         Storyboard.TargetProperty="Width"
-                                                         BeginTime="0:0:0"
-                                                         From="60"
-                                                         To="200"
-                                                         Duration="0:0:0.3">
-                                        </DoubleAnimation>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </ToggleButton.Triggers>
-                    </ToggleButton>
+                    <Grid Width="280">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                            <Button Foreground="#f9f9f9"
+                                FontWeight="ExtraLight"
+                                Background="#1276DB"
+                                Content="启动"
+                                FontSize="13"
+                                Width="75"
+                                Height="28"
+                                BorderBrush="{x:Null}"
+                                x:Name="LaunchPageButton"
+                                Click="rdLaunchPage_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius"
+                                            Value="15"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button Foreground="#f9f9f9"
+                                FontWeight="ExtraLight"
+                                Background="#1276DB"
+                                Content="Chmlfrp"
+                                FontSize="13"
+                                Width="75"
+                                Height="28"
+                                BorderBrush="{x:Null}"
+                                x:Name="ChmlfrpPageButton"
+                                Click="rdChmlfrpPage_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius"
+                                            Value="15"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
 
-                    <StackPanel Grid.Row="3">
-                        <RadioButton x:Name="rdHome"
-                                     IsChecked="True"
-                                     Content="主页"
-                                     FontWeight="Bold"
-                                     Style="{DynamicResource MenuRadioButtonStyle}"
-                                     Tag="{DynamicResource home}"
-                                     Click="rdLaunchPage_Click"/>
-                        <!--<RadioButton x:Name="rdHome" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Click="rdLaunchPage_Click"/>-->
-                    </StackPanel>
+                    <TextBlock Height="6" VerticalAlignment="Bottom"  Background="#1276DB"/>
 
-                    <StackPanel Grid.Row="3"
-                                VerticalAlignment="Top"
-                                Margin="0,250,0,0">
-                        <RadioButton x:Name="rdNotes" FontWeight="Bold" Content="设置" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}" Click="rdNotes_Click"/>
-                    </StackPanel>
-                </Grid>
-            </Border>
-            <!-- End: GridColum Left-->
-
-            <!-- Start: GridColumn Rigth -->
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-
-                <!-- Start: Button Close | Restore | Minimize -->
-                <StackPanel Grid.Row="0"
-                            Grid.Column="4"
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Top"
-                            Margin="0,5,10,0"
-                            Height="30"
+                    <StackPanel HorizontalAlignment="Right"
                             Orientation="Horizontal"
-                            FlowDirection="RightToLeft">
-                    <Button x:Name="btnClose"
+                            FlowDirection="RightToLeft" Height="50" Width="100">
+                        <Grid Width="15"/>
+                        <Button x:Name="btnClose" Margin="5"
                             Style="{StaticResource IconButtonsStyle}"
                             Content="{DynamicResource close}"
                             Click="btnClose_Click"
-                            Tag="IsCloseButton"/>
-                    <Button x:Name="btnRestore"
-                            Margin="5,0"
-                            Click="btnRestore_Click">
-                        <Button.Style>
-                            <Style TargetType="{x:Type Button}"
-                                   BasedOn="{StaticResource IconButtonsStyle}">
-                                <Setter Property="Content"
-                                        Value="{DynamicResource maximize}"/>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding ElementName=home, Path=WindowState}"
-                                                 Value="Maximized">
-                                        <Setter Property="Content"
-                                                Value="{DynamicResource restore}"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                    </Button>
-                    <Button x:Name="btnMinimize"
+                            Tag="IsCloseButton" />
+                        <Button x:Name="btnMinimize"
                             Style="{DynamicResource IconButtonsStyle}"
                             Content="{DynamicResource minimize}"
-                            Click="btnMinimize_Click"/>
-                </StackPanel>
-                <!-- End: Button Close | Restore | Minimize -->
-
-                <Border Grid.Row="1"
-                        Margin="10">
+                            Click="btnMinimize_Click" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="1">
+                <Border>
                     <Frame x:Name="PagesNavigation"
                            NavigationUIVisibility="Hidden">
-                        <!-- Page Content -->
                     </Frame>
                 </Border>
             </Grid>
-            <!-- Start: GridColumn Rigth -->
         </Grid>
     </Border>
 </Window>

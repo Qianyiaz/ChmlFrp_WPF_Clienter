@@ -54,10 +54,10 @@ namespace ChmlFrpLauncher_cs
                 //catch{ File.Delete(ini);goto start; }
 
                 //界面退出，弹出MainWindow。
-                MainWindow mainWindow = new MainWindow();
+                MainWindow MainWindow = new MainWindow();
                 Window window = Window.GetWindow(this);
                 window.Close();
-                mainWindow.Show();
+                MainWindow.Show();
             });
         }
     }

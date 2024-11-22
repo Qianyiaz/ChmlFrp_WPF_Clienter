@@ -1,12 +1,10 @@
-﻿using System.Diagnostics;
+﻿using IniParser;
+using IniParser.Model;
+using System.Diagnostics;
 using System.IO;
-using Path = System.IO.Path;
 using System.Windows;
 using System.Windows.Controls;
-using IniParser;
-using IniParser.Model;
-using System.Windows.Markup;
-using System;
+using Path = System.IO.Path;
 
 namespace ChmlFrpLauncher_cs.Pages
 {
@@ -37,7 +35,7 @@ namespace ChmlFrpLauncher_cs.Pages
         private void Launch(object sender, RoutedEventArgs e)
         {
             //创建路径函数
-            directoryPath = Directory.GetCurrentDirectory();string CFL = Path.Combine(directoryPath, "CFL");string frp_path = Path.Combine(CFL, "frp");string frp_ini = Path.Combine(frp_path, "frpc.ini");string frp = Path.Combine(frp_path , "frpc.exe");string ini = Path.Combine(CFL, "Setup.ini");
+            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string frp_path = Path.Combine(CFL, "frp"); string frp_ini = Path.Combine(frp_path, "frpc.ini"); string frp = Path.Combine(frp_path, "frpc.exe"); string ini = Path.Combine(CFL, "Setup.ini");
             //创建ini实例
             var parser = new FileIniDataParser();
             IniData data = parser.ReadFile(ini);

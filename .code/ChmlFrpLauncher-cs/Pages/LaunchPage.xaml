@@ -5,33 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:ChmlFrpLauncher_cs.Pages"
       mc:Ignorable="d"
-      d:DesignHeight="450"
-      d:DesignWidth="800"
+      d:DesignHeight="370"
+      d:DesignWidth="770"
       Title="HomePage">
 
     <Border CornerRadius="5"
             Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="7*"/>
-                <ColumnDefinition Width="4*"/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Border Grid.Row="1"
-                        Margin="10">
-                    <Frame x:Name="kongzitaNavigation"
-                           NavigationUIVisibility="Hidden"/>
-                </Border>
-            </Grid>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="100"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="1">
-                    <StackPanel>
-
-                        <Button Foreground="{DynamicResource TextPrimaryColor}"
+            <TextBlock Height="6" VerticalAlignment="Top"  Background="{DynamicResource SecundaryBackgroundColor}"/>
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+            <Button Foreground="{DynamicResource TextPrimaryColor}"
                                 FontWeight="ExtraLight"
                                 Background="{DynamicResource SecundaryBackgroundColor}"
                                 Content="未找到配置文件"
@@ -39,17 +22,16 @@
                                 Width="200"
                                 Height="60"
                                 x:Name="LaunchButton"
-                                Click="Launch">
-                            <Button.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius"
+                                Click="Launch"
+                                Margin="15">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius"
                                             Value="5"/>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
-                    </StackPanel>
-                </Grid>
-            </Grid>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            </StackPanel>
         </Grid>
     </Border>
 </Page>
