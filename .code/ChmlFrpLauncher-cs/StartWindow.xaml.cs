@@ -36,13 +36,6 @@ namespace ChmlFrpLauncher_cs
                 //创建ini实例
                 var parser = new FileIniDataParser();
                 IniData data;
-                for (int i = 1; i < 6; i++) {
-                    if (!File.Exists(Path.Combine(CFL, i + ".logs")))
-                    {
-                        File.Create(Path.Combine(CFL, i + ".logs")); //创建logs日志文件
-                        return;
-                    }
-                }
                 //检测是否有相关配置文件
                 if (!File.Exists(CFL) && !File.Exists(frp) && !File.Exists(ini) && !File.Exists(temp))
                 {
@@ -52,8 +45,15 @@ namespace ChmlFrpLauncher_cs
                     //data["ChmlFrpLauncher_cs Setup"]["number"] = "0";
                     parser.WriteFile(ini, data);
                 }
+                for (int i = 1; i < 6; i++)
+                {
+                    if (!File.Exists(Path.Combine(CFL, i + ".logs")))
+                    {
+                        File.Create(Path.Combine(CFL, i + ".logs")); //创建logs日志文件
+                    }
+                }
                 //检测ini文件创建正确
-                try{ data = parser.ReadFile(ini);string V = data["ChmlFrpLauncher_cs Setup"]["Versions"]; }
+                try { data = parser.ReadFile(ini);string V = data["ChmlFrpLauncher_cs Setup"]["Versions"]; }
                 catch{ File.Delete(ini);goto start; }
                 //try{ data = parser.ReadFile(ini);string N = data["ChmlFrpLauncher_cs Setup"]["number"]; }
                 //catch{ File.Delete(ini);goto start; }
