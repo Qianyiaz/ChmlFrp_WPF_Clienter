@@ -3,3 +3,5 @@
 .code/.vs
 .code/ChmlFrpLauncher-cs/.vs
 .code/ChmlFrpLauncher-cs/bin/Debug/CFL/temp/Chmlfrp_api.json
+/.code/ChmlFrpLauncher-cs/bin/Debug/CFL
+/.code/ChmlFrpLauncher-cs/bin/Release/CFL
