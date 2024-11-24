@@ -19,9 +19,10 @@ namespace ChmlFrpLauncher_cs.Pages
             InitializeComponent();
             //创建路径函数
             directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string frp_path = Path.Combine(CFL, "frp"); string frp_ini = Path.Combine(frp_path, "frpc.ini"); string frp = Path.Combine(frp_path, "frpc.exe"); string ini = Path.Combine(CFL, "Setup.ini");
-            if (!IsProcessRunning("frpc", 0))
+            if (IsProcessRunning("frpc", 1))
             {
                 LaunchButton.Content = "点击关闭 frpc";
+                LaunchButton.Click -= Launch;
                 LaunchButton.Click += Killfrp;
                 return;
             }
@@ -38,6 +39,11 @@ namespace ChmlFrpLauncher_cs.Pages
             LaunchButton.Click -= Launch;
             //创建路径函数
             directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string frp_path = Path.Combine(CFL, "frp"); string frp_ini = Path.Combine(frp_path, "frpc.ini"); string frp = Path.Combine(frp_path, "frpc.exe"); string ini = Path.Combine(CFL, "Setup.ini");
+            if (!File.Exists(frp_ini) && !File.Exists(frp))
+            {
+                LaunchButton.Content = "未找到配置文件";
+                return;
+            }
             //创建ini实例
             var parser = new FileIniDataParser();
             IniData data = parser.ReadFile(ini);

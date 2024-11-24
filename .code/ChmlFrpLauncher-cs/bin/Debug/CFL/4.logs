@@ -1,0 +1,3 @@
+2024/11/24 15:18:29 [I] [root.go:119] 欢迎使用ChmlFrp映射客户端!
+2024/11/24 15:18:29 [I] [root.go:129] To Get Config File from ChmlFrp API...
+2024/11/24 15:18:29 [I] [root.go:326] start frpc service for config file [C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\.code\ChmlFrpLauncher-cs\bin\Debug\CFL\frp\frpc.ini]

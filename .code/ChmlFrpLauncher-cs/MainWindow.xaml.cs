@@ -32,9 +32,14 @@
 */
 
 using System;
+using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
+
 
 
 namespace ChmlFrpLauncher_cs
@@ -47,10 +52,25 @@ namespace ChmlFrpLauncher_cs
         public MainWindow()
         {
             InitializeComponent();
+            string directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string page_image = Path.Combine(CFL, "pictures");
+            string[] imageFiles = Directory.GetFiles(page_image, "*.*")
+                .Where(file => file.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                               file.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
+                .ToArray();
+
+            if (imageFiles.Length > 0)
+            {
+                Random random = new Random();
+                string randomImage = imageFiles[random.Next(imageFiles.Length)];
+                Imagewallpaper.ImageSource = new BitmapImage(new Uri(randomImage, UriKind.RelativeOrAbsolute));
+                Imagewallpaper.Stretch = Stretch.UniformToFill;
+            }
             LaunchPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             LaunchPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
-            PagesNavigation.Navigate(new Uri("Pages/LaunchPage.xaml", UriKind.RelativeOrAbsolute));
+            Uri uri = new Uri("Pages/LaunchPage.xaml", UriKind.Relative);
+            PagesNavigation.Source = uri;
         }
+
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -67,7 +87,9 @@ namespace ChmlFrpLauncher_cs
             ChmlfrpPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             LaunchPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             LaunchPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
-            PagesNavigation.Navigate(new Uri("Pages/LaunchPage.xaml", UriKind.RelativeOrAbsolute));
+            //PagesNavigation.Navigate(new Uri("Pages/LaunchPage.xaml", UriKind.RelativeOrAbsolute));
+            Uri uri = new Uri("Pages/LaunchPage.xaml", UriKind.Relative);
+            PagesNavigation.Source = uri;
         }
 
         private void rdChmlfrpPage_Click(object sender, RoutedEventArgs e)
@@ -76,7 +98,13 @@ namespace ChmlFrpLauncher_cs
             LaunchPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             ChmlfrpPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             ChmlfrpPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
-            PagesNavigation.Navigate(new Uri("Pages/ChmFrp.xaml", UriKind.RelativeOrAbsolute));
+            //PagesNavigation.Navigate(new Uri("Pages/ChmFrp.xaml", UriKind.RelativeOrAbsolute));
+            Uri uri = new Uri("Pages/ChmFrp.xaml", UriKind.Relative);
+            PagesNavigation.Source = uri;
+        }
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

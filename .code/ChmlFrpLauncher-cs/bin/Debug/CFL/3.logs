@@ -1,3 +1,26 @@
-2024/11/22 21:37:37 [I] [root.go:119] 欢迎使用ChmlFrp映射客户端!
-2024/11/22 21:37:37 [I] [root.go:129] To Get Config File from ChmlFrp API...
-2024/11/22 21:37:37 [I] [root.go:326] start frpc service for config file [C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\.code\ChmlFrpLauncher-cs\bin\Debug\CFL\frp\frpc.ini]
+2024/11/24 15:18:15 [I] [root.go:119] 欢迎使用ChmlFrp映射客户端!
+2024/11/24 15:18:15 [I] [root.go:129] To Get Config File from ChmlFrp API...
+2024/11/24 15:18:15 [I] [root.go:326] start frpc service for config file [C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\.code\ChmlFrpLauncher-cs\bin\Debug\CFL\frp\frpc.ini]
+2024/11/24 15:18:15 [W] [service.go:133] 无法连接至服务器: EOF
+2024/11/24 15:18:15 [I] [root.go:342] frpc service for config file [C:\Users\wanglei\Desktop\Github\ChmlFrpLauncher-cs\.code\ChmlFrpLauncher-cs\bin\Debug\CFL\frp\frpc.ini] stopped
+panic: sync: negative WaitGroup counter
+
+goroutine 1 [running]:
+sync.(*WaitGroup).Add(0xc0000670c0?, 0x118c380?)
+	sync/waitgroup.go:62 +0xe5
+sync.(*WaitGroup).Done(0xc00050f5a0?)
+	sync/waitgroup.go:87 +0x25
+github.com/fatedier/frp/cmd/frpc/sub.runClient({0xc0000d2070, 0x66}, 0x1302504?)
+	github.com/fatedier/frp/cmd/frpc/sub/root.go:313 +0x1f4
+github.com/fatedier/frp/cmd/frpc/sub.glob..func5(0x18e25c0?, {0x12dcada?, 0x2?, 0x3?})
+	github.com/fatedier/frp/cmd/frpc/sub/root.go:226 +0x5a5
+github.com/spf13/cobra.(*Command).execute(0x18e25c0, {0xc0000d4010, 0x2, 0x3})
+	github.com/spf13/cobra@v1.7.0/command.go:940 +0x862
+github.com/spf13/cobra.(*Command).ExecuteC(0x18e25c0)
+	github.com/spf13/cobra@v1.7.0/command.go:1068 +0x3bd
+github.com/spf13/cobra.(*Command).Execute(...)
+	github.com/spf13/cobra@v1.7.0/command.go:992
+github.com/fatedier/frp/cmd/frpc/sub.Execute()
+	github.com/fatedier/frp/cmd/frpc/sub/root.go:256 +0x25
+main.main()
+	github.com/fatedier/frp/cmd/frpc/main.go:23 +0x17

@@ -21,8 +21,8 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
-            <Border Grid.Row="0" CornerRadius="8" Height="50"
+
+            <Border  CornerRadius="10,10,0,0" MouseLeftButtonDown="Border_MouseLeftButtonDown" Grid.Row="0" Height="50"
             Background="#1276DB">
                 <Grid>
                     <Grid Margin="0,0,520,0">
@@ -92,8 +92,6 @@
                         </StackPanel>
                     </Grid>
 
-                    <TextBlock Height="6" VerticalAlignment="Bottom"  Background="#1276DB"/>
-
                     <StackPanel HorizontalAlignment="Right"
                             Orientation="Horizontal"
                             FlowDirection="RightToLeft" Height="50" Width="100">
@@ -111,8 +109,13 @@
                 </Grid>
             </Border>
             <Grid Grid.Row="1">
-                <TextBlock Height="6" VerticalAlignment="Top"  Background="{DynamicResource SecundaryBackgroundColor}"/>
-                <Border>
+                <Border Background="#f9f9f9" CornerRadius="0,0,10,10"/>
+                <Border CornerRadius="0,0,10,10">
+                    <Border.Background>
+                        <ImageBrush Opacity="0.8" x:Name="Imagewallpaper"/>
+                    </Border.Background>
+                </Border>
+                <Border CornerRadius="0,0,10,10">
                     <Frame x:Name="PagesNavigation"
                            NavigationUIVisibility="Hidden">
                     </Frame>

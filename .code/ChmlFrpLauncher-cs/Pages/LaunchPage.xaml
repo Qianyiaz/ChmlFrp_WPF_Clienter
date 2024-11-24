@@ -9,13 +9,11 @@
       d:DesignWidth="770"
       Title="HomePage">
 
-    <Border CornerRadius="5"
-            Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
             <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" >
-            <Button Foreground="{DynamicResource TextPrimaryColor}"
+                <Button Foreground="{DynamicResource TextPrimaryColor}"
                                 FontWeight="ExtraLight"
-                                Background="{DynamicResource SecundaryBackgroundColor}"
+                                Background="Transparent"
                                 Content="未找到配置文件"
                                 FontSize="15"
                                 Width="200"
@@ -23,14 +21,13 @@
                                 x:Name="LaunchButton"
                                 Click="Launch"
                                 Margin="15">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius"
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius"
                                             Value="5"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </StackPanel>
         </Grid>
-    </Border>
 </Page>

@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Net;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.Threading;
 
 namespace ChmlFrpLauncher_cs.Pages
 {
@@ -18,6 +19,7 @@ namespace ChmlFrpLauncher_cs.Pages
     /// </summary>
     public partial class ChmFrp : Page
     {
+        private Timer timer;
         public ChmFrp()
         {
             InitializeComponent();
@@ -25,14 +27,10 @@ namespace ChmlFrpLauncher_cs.Pages
             if (File.Exists(temp_Username))
             {
                 IniData data;
-                data = new IniData();
                 var parser = new FileIniDataParser();
                 data = parser.ReadFile(temp_Username);
-                Username_TextBox.Text = data["ChmlFrpLauncher_cs Setup"]["Username"];
-                Userpassword_TextBox.Text = data["ChmlFrpLauncher_cs Setup"]["Password"];
-                text_msg.Text = null;
                 directoryPath = Directory.GetCurrentDirectory(); string temp_api = Path.Combine(temp_path, "Chmlfrp_api.json");
-                string url = "https://cf-v2.uapis.cn/login?username=" + Username_TextBox.Text + "&password=" + Userpassword_TextBox.Text;
+                string url = "https://cf-v2.uapis.cn/login?username=" + data["ChmlFrpLauncher_cs Setup"]["Username"] + "&password=" + data["ChmlFrpLauncher_cs Setup"]["Password"];
                 using (HttpClient client = new HttpClient())
                 {
                     try
@@ -51,12 +49,21 @@ namespace ChmlFrpLauncher_cs.Pages
                 string formattedJson = parsedJson.ToString(Formatting.Indented);
                 var jsonObject = JObject.Parse(jsonContent);
                 string msg = jsonObject["msg"]?.ToString();
-                text_msg.Text = msg;
                 if (msg == "登录成功")
                 {
-
+                    timer = new Timer(TimerCallback, null, TimeSpan.FromSeconds(0), Timeout.InfiniteTimeSpan);
                 }
+                Username_TextBox.Text = data["ChmlFrpLauncher_cs Setup"]["Username"];
+                Userpassword_TextBox.Text = data["ChmlFrpLauncher_cs Setup"]["Password"];
             }
+        }
+        private void TimerCallback(object state)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                var ChmlFrpPage = new ChmlfrpPage();
+                NavigationService.Navigate(ChmlFrpPage);
+            });
         }
         string directoryPath = Directory.GetCurrentDirectory();
         private void TextBox_Username_ini(object sender, TextChangedEventArgs e)
@@ -112,10 +119,11 @@ namespace ChmlFrpLauncher_cs.Pages
             string formattedJson = parsedJson.ToString(Formatting.Indented);
             var jsonObject = JObject.Parse(jsonContent);
             string msg = jsonObject["msg"]?.ToString();
-            text_msg.Text = msg;
+            //text_msg.Text = msg;
             if (msg == "登录成功")
             {
-
+                var ChmlFrpPage = new ChmlfrpPage();
+                NavigationService.Navigate(ChmlFrpPage);
             }
             else
             {
