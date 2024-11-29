@@ -9,25 +9,35 @@
       d:DesignWidth="770"
       Title="HomePage">
 
-        <Grid>
-            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" >
-                <Button Foreground="{DynamicResource TextPrimaryColor}"
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Border Opacity="0.8" Background="#f9f9f9" CornerRadius="0,0,10,0">
+                <Grid>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" >
+                        <Button Foreground="{DynamicResource TextPrimaryColor}"
                                 FontWeight="ExtraLight"
                                 Background="Transparent"
                                 Content="未找到配置文件"
                                 FontSize="15"
-                                Width="200"
+                                Width="250"
                                 Height="60"
                                 x:Name="LaunchButton"
                                 Click="Launch"
-                                Margin="15">
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius"
+                                Margin="10">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius"
                                             Value="5"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
-            </StackPanel>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
         </Grid>
+    </Grid>
 </Page>

@@ -9,12 +9,13 @@
       d:DesignWidth="620">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top">
-            <Ellipse Width="100" Height="100" >
+        <Grid Margin="10" Width="150" Height="150" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Border Opacity="0.8" CornerRadius="10"  Background="#f9f9f9"/>
+            <Ellipse Margin="5">
                 <Ellipse.Fill>
-                    <ImageBrush x:Name="UserImage" ImageSource="\Assets\Icons\SolarUserCircleLineDuotone.png" Stretch="UniformToFill"/>
+                    <ImageBrush x:Name="UserImage" ImageSource="\Icons\SolarUserCircleLineDuotone.png" Stretch="UniformToFill"/>
                 </Ellipse.Fill>
             </Ellipse>
-        </StackPanel>
+        </Grid>
     </Grid>
 </Page>

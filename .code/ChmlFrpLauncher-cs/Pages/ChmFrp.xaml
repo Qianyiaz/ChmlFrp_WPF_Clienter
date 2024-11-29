@@ -9,12 +9,13 @@
       Title="ChmFrp">
 
     <Grid>
+        <Border Margin="25" Opacity="0.8" Background="#f9f9f9" CornerRadius="10" Grid.Row="0"/>
         <Grid Margin="50">
             <Grid.RowDefinitions>
                 <RowDefinition Height="200"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Border BorderBrush="Black" CornerRadius="10" Grid.Row="0"/>
+            <TextBlock Text="ChmlFrp 启动页" FontSize="20" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="150"/>

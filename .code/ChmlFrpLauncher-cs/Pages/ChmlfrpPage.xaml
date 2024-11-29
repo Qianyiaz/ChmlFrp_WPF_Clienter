@@ -10,11 +10,11 @@
       Title="ChmlfrpPage">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="130"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
-            <Border Opacity="0.7"  Background="#f9f9f9" CornerRadius="10"/>
+            <Border Opacity="0.8"  Background="#f9f9f9" CornerRadius="0,0,0,10"/>
         </Grid>
         <StackPanel Grid.Column="0" VerticalAlignment="Top" Orientation="Vertical">
             <RadioButton IsChecked="True"  Content="首页" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Click="rdLaunchPage_Click"/>

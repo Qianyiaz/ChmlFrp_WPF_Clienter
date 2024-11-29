@@ -67,10 +67,10 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C6EF3BB162B87EF328CF6C14C74A1EE704F55364</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>BA761F3595C17471BA05BE06F2BACD795CFD69BF</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>cert.pfx</ManifestKeyFile>
+    <ManifestKeyFile>root.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -78,6 +78,9 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestTimestampUrl>http://timestamp.digicert.com</ManifestTimestampUrl>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="INIFileParser, Version=2.5.2.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
@@ -127,9 +130,13 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Assets\Icons\Icons.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Icons\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\ChmFrp.xaml">
       <SubType>Designer</SubType>
@@ -155,13 +162,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\MainStyle.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Theme.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\LightTheme.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
@@ -209,9 +212,8 @@
     <Resource Include="favicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Icons\SolarUserCircleLineDuotone.png" />
+    <Resource Include="Icons\SolarUserCircleLineDuotone.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterResolveReferences">
     <ItemGroup>
