@@ -7,59 +7,67 @@
         mc:Ignorable="d"
         Height="450"
         Width="800"
+        MinWidth="800"
+        MinHeight="450"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        Background="Transparent"
         AllowsTransparency="True"
         ResizeMode="NoResize"
+        Background="Transparent"
         WindowState="Normal"
         Title="ChmlFrpLauncher">
-    <Grid Margin="15">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
 
-        <Border  CornerRadius="10,10,0,0"
+    <!--<WindowChrome.WindowChrome >
+        <WindowChrome ResizeBorderThickness="20" GlassFrameThickness="-1"/>
+    </WindowChrome.WindowChrome>-->
+
+    <Border Margin="15" Background="Transparent" CornerRadius="10" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border  CornerRadius="10,10,0,0"
                  MouseLeftButtonDown="Border_MouseLeftButtonDown"
                  Grid.Row="0"
                  Height="50"
                  Background="#1276DB">
-            <Grid>
-                <Grid Margin="0,0,520,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="60"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid Margin="0,0,520,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
 
-                    <Path Data="{DynamicResource logo}"
+                        <Path Data="{DynamicResource logo}"
                           Stretch="Fill"
                           Fill="#CFE2F7"
                           Width="25"
                           Height="25"
                           RenderTransformOrigin="0.5,0.5">
-                        <Path.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform ScaleX="-1"/>
-                                <SkewTransform/>
-                                <RotateTransform Angle="-180"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Path.RenderTransform>
-                    </Path>
-                    <!--<Grid Grid.Column="1">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                        <!--<Grid Grid.Column="1">
                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" >
                             <TextBlock FontSize="21" Text="CFL" Foreground="#f9f9f9"
                                FontWeight="Bold" />
                         </StackPanel>
                     </Grid>-->
-                </Grid>
+                    </Grid>
 
-                <Grid Width="280">
-                    <StackPanel HorizontalAlignment="Center"
+                    <Grid Width="280">
+                        <StackPanel HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 Orientation="Horizontal">
-                        <Button Foreground="#f9f9f9"
+                            <Button Foreground="#f9f9f9"
                                 FontWeight="ExtraLight"
                                 Background="#1276DB"
                                 Content="启动"
@@ -69,14 +77,14 @@
                                 BorderBrush="{x:Null}"
                                 x:Name="LaunchPageButton"
                                 Click="rdLaunchPage_Click">
-                            <Button.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius"
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius"
                                             Value="15"/>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
-                        <Button Foreground="#f9f9f9"
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button Foreground="#f9f9f9"
                                 FontWeight="ExtraLight"
                                 Background="#1276DB"
                                 Content="Chmlfrp"
@@ -86,49 +94,50 @@
                                 BorderBrush="{x:Null}"
                                 x:Name="ChmlfrpPageButton"
                                 Click="rdChmlfrpPage_Click">
-                            <Button.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius"
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius"
                                             Value="15"/>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
-                    </StackPanel>
-                </Grid>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
 
-                <StackPanel HorizontalAlignment="Right"
+                    <StackPanel HorizontalAlignment="Right"
                             Orientation="Horizontal"
                             FlowDirection="RightToLeft"
                             Height="50"
                             Width="100">
-                    <Grid Width="15"/>
-                    <Button x:Name="btnClose"
+                        <Grid Width="15"/>
+                        <Button x:Name="btnClose"
                             Margin="5"
                             Style="{StaticResource IconButtonsStyle}"
                             Content="{DynamicResource close}"
                             Click="btnClose_Click"
                             Tag="IsCloseButton"/>
-                    <Button x:Name="btnMinimize"
+                        <Button x:Name="btnMinimize"
                             Style="{DynamicResource IconButtonsStyle}"
                             Content="{DynamicResource minimize}"
                             Click="btnMinimize_Click"/>
-                </StackPanel>
-            </Grid>
-        </Border>
-        <Grid Grid.Row="1">
-            <Border Background="#C7D7EE"
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="1">
+                <Border Background="#C7D7EE"
                     CornerRadius="0,0,10,10"/>
-            <Border CornerRadius="0,0,10,10">
-                <Border.Background>
-                    <ImageBrush Opacity="0.8"
+                <Border CornerRadius="0,0,10,10">
+                    <Border.Background>
+                        <ImageBrush Opacity="0.8"
                                 x:Name="Imagewallpaper"/>
-                </Border.Background>
-            </Border>
-            <Border CornerRadius="0,0,10,10">
-                <Frame x:Name="PagesNavigation"
+                    </Border.Background>
+                </Border>
+                <Border CornerRadius="0,0,10,10">
+                    <Frame x:Name="PagesNavigation"
                        NavigationUIVisibility="Hidden">
-                </Frame>
-            </Border>
+                    </Frame>
+                </Border>
+            </Grid>
         </Grid>
-    </Grid>
+    </Border>
 </Window>

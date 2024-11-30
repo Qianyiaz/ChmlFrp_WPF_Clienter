@@ -110,6 +110,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\BlankPage.xaml.cs">
+      <DependentUpon>BlankPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ChmFrp.xaml.cs">
       <DependentUpon>ChmFrp.xaml</DependentUpon>
     </Compile>
@@ -133,6 +136,10 @@
     <Page Include="Icons\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BlankPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Style.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -213,6 +220,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\SolarUserCircleLineDuotone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\FluentEmojiHighContrastConstruction.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterResolveReferences">

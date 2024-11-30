@@ -83,6 +83,8 @@ namespace ChmlFrp_WPF_Clienter
 
         private void rdLaunchPage_Click(object sender, RoutedEventArgs e)
         {
+            LaunchPageButton.Click -= rdLaunchPage_Click;
+            ChmlfrpPageButton.Click += rdChmlfrpPage_Click;
             ChmlfrpPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
             ChmlfrpPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             LaunchPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
@@ -94,6 +96,8 @@ namespace ChmlFrp_WPF_Clienter
 
         private void rdChmlfrpPage_Click(object sender, RoutedEventArgs e)
         {
+            ChmlfrpPageButton.Click -= rdChmlfrpPage_Click;
+            LaunchPageButton.Click += rdLaunchPage_Click;
             LaunchPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
             LaunchPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             ChmlfrpPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
@@ -102,9 +106,10 @@ namespace ChmlFrp_WPF_Clienter
             Uri uri = new Uri("Pages/ChmFrp.xaml", UriKind.Relative);
             PagesNavigation.Source = uri;
         }
+
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+            DragMove();
         }
     }
 }
