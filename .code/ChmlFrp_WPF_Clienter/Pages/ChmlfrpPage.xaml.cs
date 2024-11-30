@@ -20,8 +20,8 @@ namespace ChmlFrp_WPF_Clienter.Pages
         {
             InitializeComponent();
             directoryPath = Directory.GetCurrentDirectory();
-            string CWC = Path.Combine(directoryPath, "CWC");
-            string temp_path = Path.Combine(CWC, "temp");
+            string CFL = Path.Combine(directoryPath, "CFL");
+            string temp_path = Path.Combine(CFL, "temp");
             string temp_api = Path.Combine(temp_path, "Chmlfrp_api.json");
             Uri uri = new Uri("/Pages/Chmlfrp/HomePage.xaml", UriKind.Relative);
             Pages1Navigation.Source = uri;

@@ -23,7 +23,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
         public ChmFrp()
         {
             InitializeComponent();
-            directoryPath = Directory.GetCurrentDirectory(); string CWC = Path.Combine(directoryPath, "CWC"); string temp_path = Path.Combine(CWC, "temp"); string temp_Username = Path.Combine(CWC, "Setup.ini");
+            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_path = Path.Combine(CFL, "temp"); string temp_Username = Path.Combine(CFL, "Setup.ini");
             if (File.Exists(temp_Username))
             {
                 IniData data;
@@ -69,7 +69,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
         private void TextBox_Username_ini(object sender, TextChangedEventArgs e)
         {
             //创建路径函数
-            directoryPath = Directory.GetCurrentDirectory(); string CWC = Path.Combine(directoryPath, "CWC"); string temp_Username = Path.Combine(CWC, "Setup.ini");
+            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_Username = Path.Combine(CFL, "Setup.ini");
             var parser = new FileIniDataParser();
             IniData data = parser.ReadFile(temp_Username);
             data["ChmlFrp_WPF_Clienter Setup"]["Username"] = Username_TextBox.Text;
@@ -83,7 +83,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
 
         private void TextBox_password_ini(object sender, TextChangedEventArgs e)
         {
-            directoryPath = Directory.GetCurrentDirectory(); string CWC = Path.Combine(directoryPath, "CWC"); string temp_Username = Path.Combine(CWC, "Setup.ini");
+            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_Username = Path.Combine(CFL, "Setup.ini");
             var parser = new FileIniDataParser();
             IniData data = parser.ReadFile(temp_Username);
             data["ChmlFrp_WPF_Clienter Setup"]["Password"] = Userpassword_TextBox.Text;
@@ -98,7 +98,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
         private void logon(object sender, RoutedEventArgs e)
         {
             logonButton.Click -= logon;
-            directoryPath = Directory.GetCurrentDirectory(); string CWC = Path.Combine(directoryPath, "CWC"); string temp_path = Path.Combine(CWC, "temp"); string temp_api = Path.Combine(temp_path, "Chmlfrp_api.json");
+            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_path = Path.Combine(CFL, "temp"); string temp_api = Path.Combine(temp_path, "Chmlfrp_api.json");
             string url = "https://cf-v2.uapis.cn/login?username=" + Username_TextBox.Text + "&password=" + Userpassword_TextBox.Text;
             using (HttpClient client = new HttpClient())
             {

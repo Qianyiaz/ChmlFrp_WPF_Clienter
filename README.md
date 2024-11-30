@@ -1,5 +1,5 @@
 <p align="center">
-    <img src=".github/icon/CWC.png"
+    <img src=".github/icon/CFL.png"
         height="195">
 </p>
 

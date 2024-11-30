@@ -31,23 +31,23 @@ namespace ChmlFrp_WPF_Clienter
             Application.Current.Dispatcher.Invoke(() =>
             {
                 //创建路径函数
-                string directoryPath = Directory.GetCurrentDirectory(); string CWC = Path.Combine(directoryPath, "CWC"); string page_image = Path.Combine(CWC, "pictures"); string frp = Path.Combine(CWC, "frp"); string temp = Path.Combine(CWC, "temp"); string frpc = Path.Combine(frp, "frpc.exe"); string ini = Path.Combine(CWC, "Setup.ini");
+                string directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string page_image = Path.Combine(CFL, "pictures"); string frp = Path.Combine(CFL, "frp"); string temp = Path.Combine(CFL, "temp"); string frpc = Path.Combine(frp, "frpc.exe"); string ini = Path.Combine(CFL, "Setup.ini");
                 //创建ini实例
                 var parser = new FileIniDataParser();
                 IniData data;
                 //检测是否有相关配置文件
-                if (!File.Exists(CWC) && !File.Exists(frp) && !File.Exists(ini) && !File.Exists(page_image) && !File.Exists(temp))
+                if (!File.Exists(CFL) && !File.Exists(frp) && !File.Exists(ini) && !File.Exists(page_image) && !File.Exists(temp))
                 {
-                    Directory.CreateDirectory(CWC); Directory.CreateDirectory(frp); Directory.CreateDirectory(page_image); Directory.CreateDirectory(temp); //创建文件夹
+                    Directory.CreateDirectory(CFL); Directory.CreateDirectory(frp); Directory.CreateDirectory(page_image); Directory.CreateDirectory(temp); //创建文件夹
                     data = new IniData();
                     data["ChmlFrp_WPF_Clienter Setup"]["Versions"] = "0.0.0.0.3";
                     parser.WriteFile(ini, data);
                 }
                 for (int i = 1; i < 6; i++)
                 {
-                    if (!File.Exists(Path.Combine(CWC, i + ".logs")))
+                    if (!File.Exists(Path.Combine(CFL, i + ".logs")))
                     {
-                        File.Create(Path.Combine(CWC, i + ".logs")); //创建logs日志文件
+                        File.Create(Path.Combine(CFL, i + ".logs")); //创建logs日志文件
                     }
                 }
                 //界面退出，弹出MainWindow。

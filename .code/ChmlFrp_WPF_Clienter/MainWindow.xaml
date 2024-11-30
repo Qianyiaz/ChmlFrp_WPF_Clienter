@@ -49,7 +49,7 @@
                     </Path>
                     <!--<Grid Grid.Column="1">
                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" >
-                            <TextBlock FontSize="21" Text="CWC" Foreground="#f9f9f9"
+                            <TextBlock FontSize="21" Text="CFL" Foreground="#f9f9f9"
                                FontWeight="Bold" />
                         </StackPanel>
                     </Grid>-->
