@@ -42,7 +42,7 @@ using System.Windows.Media.Imaging;
 
 
 
-namespace ChmlFrpLauncher_cs
+namespace ChmlFrp_WPF_Clienter
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
@@ -52,7 +52,7 @@ namespace ChmlFrpLauncher_cs
         public MainWindow()
         {
             InitializeComponent();
-            string directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string page_image = Path.Combine(CFL, "pictures");
+            string directoryPath = Directory.GetCurrentDirectory(); string CWC = Path.Combine(directoryPath, "CWC"); string page_image = Path.Combine(CWC, "pictures");
             string[] imageFiles = Directory.GetFiles(page_image, "*.*")
                 .Where(file => file.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
                                file.EndsWith(".png", StringComparison.OrdinalIgnoreCase))

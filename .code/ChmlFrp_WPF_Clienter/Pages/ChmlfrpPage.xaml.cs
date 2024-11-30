@@ -8,7 +8,7 @@ using System.Windows.Media.Imaging;
 using System.Net;
 
 
-namespace ChmlFrpLauncher_cs.Pages
+namespace ChmlFrp_WPF_Clienter.Pages
 {
     /// <summary>
     /// ChmlfrpPage.xaml 的交互逻辑
@@ -20,8 +20,8 @@ namespace ChmlFrpLauncher_cs.Pages
         {
             InitializeComponent();
             directoryPath = Directory.GetCurrentDirectory();
-            string CFL = Path.Combine(directoryPath, "CFL");
-            string temp_path = Path.Combine(CFL, "temp");
+            string CWC = Path.Combine(directoryPath, "CWC");
+            string temp_path = Path.Combine(CWC, "temp");
             string temp_api = Path.Combine(temp_path, "Chmlfrp_api.json");
             Uri uri = new Uri("/Pages/Chmlfrp/HomePage.xaml", UriKind.Relative);
             Pages1Navigation.Source = uri;

@@ -34,7 +34,7 @@
 //using System;
 //using System.Windows;
 
-//namespace ChmlFrpLauncher_cs
+//namespace ChmlFrp_WPF_Clienter
 //{
 //    /// <summary>
 //    /// Lógica de interacción para MainWindow.xaml

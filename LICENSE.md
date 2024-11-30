@@ -175,4 +175,4 @@
 
    END OF TERMS AND CONDITIONS
 
-   Copyright [ChmlFrpLauncher-cs] [Qusay Diaz/Qianyiaz(https://github.com/Qianyiaz)]
+   Copyright [ChmlFrp_WPF_Clienter] [Qusay Diaz/Qianyiaz(https://github.com/Qianyiaz)]

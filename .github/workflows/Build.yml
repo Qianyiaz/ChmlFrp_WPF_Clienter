@@ -2,40 +2,40 @@ name: Build .NET Framework Application
 on:
   push:
     paths:
-      - '.code/ChmlFrpLauncher-cs**'
-      - '.github/workflows/**'
+      - ".code/ChmlFrp_WPF_Clienter**"
+      - ".github/workflows/**"
   pull_request:
     paths:
-      - '.code/ChmlFrpLauncher-cs/**'
-      - '.github/workflows/**'
+      - ".code/ChmlFrp_WPF_Clienter/**"
+      - ".github/workflows/**"
   workflow_dispatch:
 
 jobs:
   build:
     name: Build
     runs-on: windows-latest
-    strategy:  
-       matrix:  
-         configuration: [Release]
+    strategy:
+      matrix:
+        configuration: [Release]
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Set Describe
-      shell: bash
-      run: |
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set Describe
+        shell: bash
+        run: |
           describe=`git describe --tags --always`
           echo "describe=$describe" >> $GITHUB_ENV
-          
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v2
 
-    - name: Build
-      run: msbuild ".code\\ChmlFrpLauncher-cs.sln" -p:Configuration=${{ matrix.configuration }}
-      
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ matrix.configuration }}-0.0.0.3
-        path: .code\ChmlFrpLauncher-cs\bin\Release\ChmlFrpLauncher_cs.exe
+      - name: Setup MSBuild.exe
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build
+        run: msbuild ".code\\ChmlFrp_WPF_Clienter.sln" -p:Configuration=${{ matrix.configuration }}
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.configuration }}-0.0.0.3
+          path: .code\ChmlFrp_WPF_Clienter\bin\Release\ChmlFrp_WPF_Clienter.exe

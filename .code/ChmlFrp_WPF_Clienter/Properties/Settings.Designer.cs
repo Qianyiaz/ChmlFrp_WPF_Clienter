@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ChmlFrpLauncher_cs.Properties
+namespace ChmlFrp_WPF_Clienter.Properties
 {
 
 

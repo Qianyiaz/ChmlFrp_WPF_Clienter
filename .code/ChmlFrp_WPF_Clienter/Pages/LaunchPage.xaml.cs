@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Path = System.IO.Path;
 
-namespace ChmlFrpLauncher_cs.Pages
+namespace ChmlFrp_WPF_Clienter.Pages
 {
     /// <summary>
     /// Lógica de interacción para HomePage.xaml
@@ -18,7 +18,7 @@ namespace ChmlFrpLauncher_cs.Pages
         {
             InitializeComponent();
             //创建路径函数
-            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string frp_path = Path.Combine(CFL, "frp"); string frp_ini = Path.Combine(frp_path, "frpc.ini"); string frp = Path.Combine(frp_path, "frpc.exe"); string ini = Path.Combine(CFL, "Setup.ini");
+            directoryPath = Directory.GetCurrentDirectory(); string CWC = Path.Combine(directoryPath, "CWC"); string frp_path = Path.Combine(CWC, "frp"); string frp_ini = Path.Combine(frp_path, "frpc.ini"); string frp = Path.Combine(frp_path, "frpc.exe"); string ini = Path.Combine(CWC, "Setup.ini");
             if (IsProcessRunning("frpc", 1))
             {
                 LaunchButton.Content = "点击关闭 frpc";
@@ -38,7 +38,7 @@ namespace ChmlFrpLauncher_cs.Pages
         {
             LaunchButton.Click -= Launch;
             //创建路径函数
-            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string frp_path = Path.Combine(CFL, "frp"); string frp_ini = Path.Combine(frp_path, "frpc.ini"); string frp = Path.Combine(frp_path, "frpc.exe"); string ini = Path.Combine(CFL, "Setup.ini");
+            directoryPath = Directory.GetCurrentDirectory(); string CWC = Path.Combine(directoryPath, "CWC"); string frp_path = Path.Combine(CWC, "frp"); string frp_ini = Path.Combine(frp_path, "frpc.ini"); string frp = Path.Combine(frp_path, "frpc.exe"); string ini = Path.Combine(CWC, "Setup.ini");
             if (!File.Exists(frp_ini) && !File.Exists(frp))
             {
                 LaunchButton.Content = "未找到配置文件";
@@ -50,7 +50,7 @@ namespace ChmlFrpLauncher_cs.Pages
             data = parser.ReadFile(ini);
             LaunchButton.Content = "正在启动中...";
             if (i == 5) { i = 0; }
-            i++; string logs = Path.Combine(CFL, i + ".logs");
+            i++; string logs = Path.Combine(CWC, i + ".logs");
             ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c " + frp + " -c " + frp_ini + " >" + logs + " 2>&1")
             {
                 RedirectStandardOutput = true,

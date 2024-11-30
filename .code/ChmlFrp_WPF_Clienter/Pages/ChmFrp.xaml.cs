@@ -12,7 +12,7 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Threading;
 
-namespace ChmlFrpLauncher_cs.Pages
+namespace ChmlFrp_WPF_Clienter.Pages
 {
     /// <summary>
     /// ChmFrp.xaml 的交互逻辑
@@ -23,14 +23,14 @@ namespace ChmlFrpLauncher_cs.Pages
         public ChmFrp()
         {
             InitializeComponent();
-            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_path = Path.Combine(CFL, "temp"); string temp_Username = Path.Combine(CFL, "Setup.ini");
+            directoryPath = Directory.GetCurrentDirectory(); string CWC = Path.Combine(directoryPath, "CWC"); string temp_path = Path.Combine(CWC, "temp"); string temp_Username = Path.Combine(CWC, "Setup.ini");
             if (File.Exists(temp_Username))
             {
                 IniData data;
                 var parser = new FileIniDataParser();
                 data = parser.ReadFile(temp_Username);
                 directoryPath = Directory.GetCurrentDirectory(); string temp_api = Path.Combine(temp_path, "Chmlfrp_api.json");
-                string url = "https://cf-v2.uapis.cn/login?username=" + data["ChmlFrpLauncher_cs Setup"]["Username"] + "&password=" + data["ChmlFrpLauncher_cs Setup"]["Password"];
+                string url = "https://cf-v2.uapis.cn/login?username=" + data["ChmlFrp_WPF_Clienter Setup"]["Username"] + "&password=" + data["ChmlFrp_WPF_Clienter Setup"]["Password"];
                 using (HttpClient client = new HttpClient())
                 {
                     try
@@ -53,8 +53,8 @@ namespace ChmlFrpLauncher_cs.Pages
                 {
                     timer = new Timer(TimerCallback, null, TimeSpan.FromSeconds(0), Timeout.InfiniteTimeSpan);
                 }
-                Username_TextBox.Text = data["ChmlFrpLauncher_cs Setup"]["Username"];
-                Userpassword_TextBox.Text = data["ChmlFrpLauncher_cs Setup"]["Password"];
+                Username_TextBox.Text = data["ChmlFrp_WPF_Clienter Setup"]["Username"];
+                Userpassword_TextBox.Text = data["ChmlFrp_WPF_Clienter Setup"]["Password"];
             }
         }
         private void TimerCallback(object state)
@@ -69,13 +69,13 @@ namespace ChmlFrpLauncher_cs.Pages
         private void TextBox_Username_ini(object sender, TextChangedEventArgs e)
         {
             //创建路径函数
-            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_Username = Path.Combine(CFL, "Setup.ini");
+            directoryPath = Directory.GetCurrentDirectory(); string CWC = Path.Combine(directoryPath, "CWC"); string temp_Username = Path.Combine(CWC, "Setup.ini");
             var parser = new FileIniDataParser();
             IniData data = parser.ReadFile(temp_Username);
-            data["ChmlFrpLauncher_cs Setup"]["Username"] = Username_TextBox.Text;
+            data["ChmlFrp_WPF_Clienter Setup"]["Username"] = Username_TextBox.Text;
             try
             {
-                data["ChmlFrpLauncher_cs Setup"]["Password"] = Userpassword_TextBox.Text;
+                data["ChmlFrp_WPF_Clienter Setup"]["Password"] = Userpassword_TextBox.Text;
             }
             catch { }
             parser.WriteFile(temp_Username, data);
@@ -83,13 +83,13 @@ namespace ChmlFrpLauncher_cs.Pages
 
         private void TextBox_password_ini(object sender, TextChangedEventArgs e)
         {
-            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_Username = Path.Combine(CFL, "Setup.ini");
+            directoryPath = Directory.GetCurrentDirectory(); string CWC = Path.Combine(directoryPath, "CWC"); string temp_Username = Path.Combine(CWC, "Setup.ini");
             var parser = new FileIniDataParser();
             IniData data = parser.ReadFile(temp_Username);
-            data["ChmlFrpLauncher_cs Setup"]["Password"] = Userpassword_TextBox.Text;
+            data["ChmlFrp_WPF_Clienter Setup"]["Password"] = Userpassword_TextBox.Text;
             try
             {
-                data["ChmlFrpLauncher_cs Setup"]["Username"] = Username_TextBox.Text;
+                data["ChmlFrp_WPF_Clienter Setup"]["Username"] = Username_TextBox.Text;
             }
             catch { }
             parser.WriteFile(temp_Username, data);
@@ -98,7 +98,7 @@ namespace ChmlFrpLauncher_cs.Pages
         private void logon(object sender, RoutedEventArgs e)
         {
             logonButton.Click -= logon;
-            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_path = Path.Combine(CFL, "temp"); string temp_api = Path.Combine(temp_path, "Chmlfrp_api.json");
+            directoryPath = Directory.GetCurrentDirectory(); string CWC = Path.Combine(directoryPath, "CWC"); string temp_path = Path.Combine(CWC, "temp"); string temp_api = Path.Combine(temp_path, "Chmlfrp_api.json");
             string url = "https://cf-v2.uapis.cn/login?username=" + Username_TextBox.Text + "&password=" + Userpassword_TextBox.Text;
             using (HttpClient client = new HttpClient())
             {

@@ -1,9 +1,9 @@
-﻿<Window x:Class="ChmlFrpLauncher_cs.MainWindow"
+﻿<Window x:Class="ChmlFrp_WPF_Clienter.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ChmlFrpLauncher_cs"
+        xmlns:local="clr-namespace:ChmlFrp_WPF_Clienter"
         mc:Ignorable="d"
         Height="450"
         Width="800"
@@ -20,8 +20,11 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Border  CornerRadius="10,10,0,0" MouseLeftButtonDown="Border_MouseLeftButtonDown" Grid.Row="0" Height="50"
-            Background="#1276DB">
+        <Border  CornerRadius="10,10,0,0"
+                 MouseLeftButtonDown="Border_MouseLeftButtonDown"
+                 Grid.Row="0"
+                 Height="50"
+                 Background="#1276DB">
             <Grid>
                 <Grid Margin="0,0,520,0">
                     <Grid.ColumnDefinitions>
@@ -30,10 +33,11 @@
                     </Grid.ColumnDefinitions>
 
                     <Path Data="{DynamicResource logo}"
-                              Stretch="Fill"
-                              Fill="#CFE2F7"
-                              Width="25"
-                              Height="25" RenderTransformOrigin="0.5,0.5">
+                          Stretch="Fill"
+                          Fill="#CFE2F7"
+                          Width="25"
+                          Height="25"
+                          RenderTransformOrigin="0.5,0.5">
                         <Path.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform ScaleX="-1"/>
@@ -45,14 +49,16 @@
                     </Path>
                     <!--<Grid Grid.Column="1">
                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" >
-                            <TextBlock FontSize="21" Text="CFL" Foreground="#f9f9f9"
+                            <TextBlock FontSize="21" Text="CWC" Foreground="#f9f9f9"
                                FontWeight="Bold" />
                         </StackPanel>
                     </Grid>-->
                 </Grid>
 
                 <Grid Width="280">
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                    <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
                         <Button Foreground="#f9f9f9"
                                 FontWeight="ExtraLight"
                                 Background="#1276DB"
@@ -92,30 +98,35 @@
 
                 <StackPanel HorizontalAlignment="Right"
                             Orientation="Horizontal"
-                            FlowDirection="RightToLeft" Height="50" Width="100">
+                            FlowDirection="RightToLeft"
+                            Height="50"
+                            Width="100">
                     <Grid Width="15"/>
-                    <Button x:Name="btnClose" Margin="5"
+                    <Button x:Name="btnClose"
+                            Margin="5"
                             Style="{StaticResource IconButtonsStyle}"
                             Content="{DynamicResource close}"
                             Click="btnClose_Click"
-                            Tag="IsCloseButton" />
+                            Tag="IsCloseButton"/>
                     <Button x:Name="btnMinimize"
                             Style="{DynamicResource IconButtonsStyle}"
                             Content="{DynamicResource minimize}"
-                            Click="btnMinimize_Click" />
+                            Click="btnMinimize_Click"/>
                 </StackPanel>
             </Grid>
         </Border>
         <Grid Grid.Row="1">
-            <Border Background="#C7D7EE" CornerRadius="0,0,10,10"/>
+            <Border Background="#C7D7EE"
+                    CornerRadius="0,0,10,10"/>
             <Border CornerRadius="0,0,10,10">
                 <Border.Background>
-                    <ImageBrush Opacity="0.8" x:Name="Imagewallpaper"/>
+                    <ImageBrush Opacity="0.8"
+                                x:Name="Imagewallpaper"/>
                 </Border.Background>
             </Border>
             <Border CornerRadius="0,0,10,10">
                 <Frame x:Name="PagesNavigation"
-                           NavigationUIVisibility="Hidden">
+                       NavigationUIVisibility="Hidden">
                 </Frame>
             </Border>
         </Grid>

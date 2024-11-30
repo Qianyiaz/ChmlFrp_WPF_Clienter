@@ -7,11 +7,11 @@ using System.Windows;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("ChmlFrpLauncher-cs")]
-[assembly: AssemblyDescription("ChmlFrpLauncher-cs")]
-[assembly: AssemblyConfiguration("ChmlFrpLauncher-cs")]
-[assembly: AssemblyCompany("ChmlFrpLauncher-cs")]
-[assembly: AssemblyProduct("ChmlFrpLauncher-cs")]
+[assembly: AssemblyTitle("ChmlFrp_WPF_Clienter")]
+[assembly: AssemblyDescription("ChmlFrp_WPF_Clienter")]
+[assembly: AssemblyConfiguration("ChmlFrp_WPF_Clienter")]
+[assembly: AssemblyCompany("ChmlFrp_WPF_Clienter")]
+[assembly: AssemblyProduct("ChmlFrp_WPF_Clienter")]
 [assembly: AssemblyCopyright("Qusay Diaz ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
