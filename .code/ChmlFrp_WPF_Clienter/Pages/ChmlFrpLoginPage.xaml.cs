@@ -10,6 +10,7 @@ using System.Net;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Threading;
+using System;
 
 
 namespace ChmlFrp_WPF_Clienter.Pages
@@ -53,19 +54,20 @@ namespace ChmlFrp_WPF_Clienter.Pages
                 string msg = jsonObject["msg"]?.ToString();
                 if (msg == "登录成功")
                 {
-                    ThreadStart childref = new ThreadStart(Navigation);
-                    Thread childThread = new Thread(childref);
-                    childThread.Start();
-                    return;
+                    timer = new Timer(TimerCallback, null, TimeSpan.FromSeconds(0), Timeout.InfiniteTimeSpan);
                 }
                 TextBox_Username.Text = data["ChmlFrp_WPF_Clienter Setup"]["Username"];
                 TextBox_password.Text = data["ChmlFrp_WPF_Clienter Setup"]["Password"];
             }
         }
-        private void Navigation()
+
+        private void TimerCallback(object state)
         {
-            var ChmlFrpPage = new ChmlfrpPage();
-            NavigationService.Navigate(ChmlFrpPage);
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                var ChmlFrpPage = new ChmlfrpPage();
+                NavigationService.Navigate(ChmlFrpPage);
+            });
         }
 
         private void TextBox_Username_ini(object sender, TextChangedEventArgs e)

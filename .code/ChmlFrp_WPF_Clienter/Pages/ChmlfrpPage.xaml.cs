@@ -16,6 +16,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
     public partial class ChmlfrpPage : Page
     {
         string directoryPath = Directory.GetCurrentDirectory();
+
         public ChmlfrpPage()
         {
             InitializeComponent();
