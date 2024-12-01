@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,22 +10,21 @@ using System.Net;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Threading;
-using ChmlFrp_WPF_Clienter.Classes;
+
 
 namespace ChmlFrp_WPF_Clienter.Pages
 {
     /// <summary>
-    /// ChmFrp.xaml 的交互逻辑
+    /// ChmlFrpLoginPage.xaml 的交互逻辑
     /// </summary>
-    public partial class ChmFrp : Page
+    public partial class ChmlFrpLoginPage : Page
     {
         string directoryPath = Directory.GetCurrentDirectory();
         private Timer timer;
-        public ChmFrp()
+
+        public ChmlFrpLoginPage()
         {
             InitializeComponent();
-            this.DataContext = new ModelClass();
-
             directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_path = Path.Combine(CFL, "temp"); string temp_Username = Path.Combine(CFL, "Setup.ini");
             if (File.Exists(temp_Username))
             {
@@ -60,14 +58,14 @@ namespace ChmlFrp_WPF_Clienter.Pages
                     childThread.Start();
                     return;
                 }
-                ModelClass.Username = data["ChmlFrp_WPF_Clienter Setup"]["Username"];
-                ModelClass.Userpassword = data["ChmlFrp_WPF_Clienter Setup"]["Password"];
+                TextBox_Username.Text = data["ChmlFrp_WPF_Clienter Setup"]["Username"];
+                TextBox_password.Text = data["ChmlFrp_WPF_Clienter Setup"]["Password"];
             }
         }
         private void Navigation()
         {
-                var ChmlFrpPage = new ChmlfrpPage();
-                NavigationService.Navigate(ChmlFrpPage);
+            var ChmlFrpPage = new ChmlfrpPage();
+            NavigationService.Navigate(ChmlFrpPage);
         }
 
         private void TextBox_Username_ini(object sender, TextChangedEventArgs e)
@@ -75,9 +73,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
             directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_Username = Path.Combine(CFL, "Setup.ini");
             var parser = new FileIniDataParser();
             IniData data = parser.ReadFile(temp_Username);
-            string name = ModelClass.Username;
-            name = ModelClass.Username;
-            data["ChmlFrp_WPF_Clienter Setup"]["Username"] = name;
+            data["ChmlFrp_WPF_Clienter Setup"]["Username"] = TextBox_Username.Text;
             parser.WriteFile(temp_Username, data);
         }
 
@@ -86,9 +82,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
             directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_Username = Path.Combine(CFL, "Setup.ini");
             var parser = new FileIniDataParser();
             IniData data = parser.ReadFile(temp_Username);
-            string password = ModelClass.Userpassword;
-            password = ModelClass.Userpassword;
-            data["ChmlFrp_WPF_Clienter Setup"]["Password"] = password;
+            data["ChmlFrp_WPF_Clienter Setup"]["Password"] = TextBox_password.Text;
             parser.WriteFile(temp_Username, data);
         }
 
@@ -96,7 +90,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
         {
             logonButton.Click -= logon;
             directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_path = Path.Combine(CFL, "temp"); string temp_api = Path.Combine(temp_path, "Chmlfrp_api.json");
-            string url = "https://cf-v2.uapis.cn/login?username=" + ModelClass.Username + "&password=" + ModelClass.Userpassword;
+            string url = "https://cf-v2.uapis.cn/login?username=" + TextBox_Username.Text + "&password=" + TextBox_password.Text;
             using (HttpClient client = new HttpClient())
             {
                 try
@@ -116,7 +110,6 @@ namespace ChmlFrp_WPF_Clienter.Pages
             string formattedJson = parsedJson.ToString(Formatting.Indented);
             var jsonObject = JObject.Parse(jsonContent);
             string msg = jsonObject["msg"]?.ToString();
-            //text_msg.Text = msg;
             if (msg == "登录成功")
             {
                 var ChmlFrpPage = new ChmlfrpPage();
@@ -124,8 +117,8 @@ namespace ChmlFrp_WPF_Clienter.Pages
             }
             else
             {
-                ModelClass.Username = null;
-                ModelClass.Userpassword = null;
+                TextBox_Username.Text = null;
+                TextBox_password.Text = null;
                 logonButton.Click += logon;
             }
         }

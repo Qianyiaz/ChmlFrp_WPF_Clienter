@@ -114,8 +114,8 @@
     <Compile Include="Pages\BlankPage.xaml.cs">
       <DependentUpon>BlankPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ChmFrp.xaml.cs">
-      <DependentUpon>ChmFrp.xaml</DependentUpon>
+    <Compile Include="Pages\ChmlFrpLoginPage.xaml.cs">
+      <DependentUpon>ChmlFrpLoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ChmlfrpPage.xaml.cs">
       <DependentUpon>ChmlfrpPage.xaml</DependentUpon>
@@ -142,13 +142,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ChmlFrpLoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Style.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\ChmFrp.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>

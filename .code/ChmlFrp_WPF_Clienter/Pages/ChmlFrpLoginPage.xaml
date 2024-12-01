@@ -1,4 +1,4 @@
-﻿<Page x:Class="ChmlFrp_WPF_Clienter.Pages.ChmFrp"
+﻿<Page x:Class="ChmlFrp_WPF_Clienter.Pages.ChmlFrpLoginPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -30,9 +30,9 @@
                                        FontWeight="Bold"/>
                     <TextBox  TextChanged="TextBox_Username_ini"
                                     Width="150"
+                                    x:Name="TextBox_Username"
                                     Foreground="Black"
                                     BorderBrush="{x:Null}"
-                              Text="{Binding ModelClass.Username}"
                                     FontSize="15">
                         <TextBox.Resources>
                             <Style TargetType="{x:Type TextBox}">
@@ -65,9 +65,9 @@
                                     Width="65"/>
                     <TextBox  TextChanged="TextBox_password_ini"
                                     Width="150"
+                                    x:Name="TextBox_password"
                                     Foreground="Black"
                                     BorderBrush="{x:Null}"
-                              Text="{Binding ModelClass.Userpassword}"
                                     FontSize="15">
                         <TextBox.Resources>
                             <Style TargetType="{x:Type TextBox}">

@@ -103,7 +103,7 @@ namespace ChmlFrp_WPF_Clienter
             ChmlfrpPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             ChmlfrpPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
             //PagesNavigation.Navigate(new Uri("Pages/ChmFrp.xaml", UriKind.RelativeOrAbsolute));
-            Uri uri = new Uri("Pages/ChmFrp.xaml", UriKind.Relative);
+            Uri uri = new Uri("Pages/ChmlFrpLoginPage.xaml", UriKind.Relative);
             PagesNavigation.Source = uri;
         }
 
