@@ -87,13 +87,30 @@
                             <Button Foreground="#f9f9f9"
                                 FontWeight="ExtraLight"
                                 Background="#1276DB"
-                                Content="Chmlfrp"
+                                Content="ChmlFrp"
                                 FontSize="13"
                                 Width="75"
                                 Height="28"
                                 BorderBrush="{x:Null}"
                                 x:Name="ChmlfrpPageButton"
                                 Click="rdChmlfrpPage_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius"
+                                            Value="15"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button Foreground="#f9f9f9"
+                                FontWeight="ExtraLight"
+                                Background="#1276DB"
+                                Content="设置"
+                                FontSize="13"
+                                Width="75"
+                                Height="28"
+                                BorderBrush="{x:Null}"
+                                x:Name="SettingsPageButton"
+                                Click="rdSettingsPage_Click">
                                 <Button.Resources>
                                     <Style TargetType="{x:Type Border}">
                                         <Setter Property="CornerRadius"

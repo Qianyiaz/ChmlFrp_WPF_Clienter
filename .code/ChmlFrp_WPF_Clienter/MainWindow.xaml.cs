@@ -85,10 +85,13 @@ namespace ChmlFrp_WPF_Clienter
         {
             LaunchPageButton.Click -= rdLaunchPage_Click;
             ChmlfrpPageButton.Click += rdChmlfrpPage_Click;
+            SettingsPageButton.Click += rdSettingsPage_Click;
             ChmlfrpPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
             ChmlfrpPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             LaunchPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             LaunchPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
+            SettingsPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
+            SettingsPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             //PagesNavigation.Navigate(new Uri("Pages/LaunchPage.xaml", UriKind.RelativeOrAbsolute));
             Uri uri = new Uri("Pages/LaunchPage.xaml", UriKind.Relative);
             PagesNavigation.Source = uri;
@@ -98,10 +101,13 @@ namespace ChmlFrp_WPF_Clienter
         {
             ChmlfrpPageButton.Click -= rdChmlfrpPage_Click;
             LaunchPageButton.Click += rdLaunchPage_Click;
+            SettingsPageButton.Click += rdSettingsPage_Click;
             LaunchPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
             LaunchPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             ChmlfrpPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             ChmlfrpPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
+            SettingsPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
+            SettingsPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             //PagesNavigation.Navigate(new Uri("Pages/ChmFrp.xaml", UriKind.RelativeOrAbsolute));
             Uri uri = new Uri("Pages/ChmlFrpLoginPage.xaml", UriKind.Relative);
             PagesNavigation.Source = uri;
@@ -110,6 +116,21 @@ namespace ChmlFrp_WPF_Clienter
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
+        }
+
+        private void rdSettingsPage_Click(object sender, RoutedEventArgs e)
+        {
+            ChmlfrpPageButton.Click += rdChmlfrpPage_Click;
+            SettingsPageButton.Click -= rdSettingsPage_Click;
+            LaunchPageButton.Click += rdLaunchPage_Click;
+            LaunchPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
+            LaunchPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
+            ChmlfrpPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
+            ChmlfrpPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
+            SettingsPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
+            SettingsPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
+            Uri uri = new Uri("Pages/BlankPage.xaml", UriKind.Relative);
+            PagesNavigation.Source = uri;
         }
     }
 }
