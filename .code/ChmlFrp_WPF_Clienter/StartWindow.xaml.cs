@@ -12,11 +12,8 @@ namespace ChmlFrp_WPF_Clienter
     {
         private string directoryPath;
         private string frpPath;
-        private string frpIniPath;
-        private string frpExePath;
         private string setupIniPath;
         private string temp_path;
-        private string temp_api_path;
         private string CFLPath;
         private string pictures_path;
         private void InitializePaths()
@@ -24,12 +21,9 @@ namespace ChmlFrp_WPF_Clienter
             directoryPath = Directory.GetCurrentDirectory();
             CFLPath = Path.Combine(directoryPath, "CFL");
             frpPath = Path.Combine(CFLPath, "frp");
-            frpIniPath = Path.Combine(frpPath, "frpc.ini");
-            frpExePath = Path.Combine(frpPath, "frpc.exe");
             setupIniPath = Path.Combine(CFLPath, "Setup.ini");
             temp_path = Path.Combine(CFLPath, "temp");
-            temp_api_path = Path.Combine(temp_path, "Chmlfrp_api.json");
-            pictures_path = Path.Combine(CFLPath, "picture");
+            pictures_path = Path.Combine(CFLPath, "pictures");
         }
         private Timer timer;
 

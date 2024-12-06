@@ -49,11 +49,24 @@ namespace ChmlFrp_WPF_Clienter
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string directoryPath;
+        private string frpPath;
+        private string temp_path;
+        private string CFLPath;
+        private string pictures_path;
+        private void InitializePaths()
+        {
+            directoryPath = Directory.GetCurrentDirectory();
+            CFLPath = Path.Combine(directoryPath, "CFL");
+            frpPath = Path.Combine(CFLPath, "frp");
+            temp_path = Path.Combine(CFLPath, "temp");
+            pictures_path = Path.Combine(CFLPath, "pictures");
+        }
         public MainWindow()
         {
             InitializeComponent();
-            string directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string page_image = Path.Combine(CFL, "pictures");
-            string[] imageFiles = Directory.GetFiles(page_image, "*.*")
+            InitializePaths();
+            string[] imageFiles = Directory.GetFiles(pictures_path, "*.*")
                 .Where(file => file.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
                                file.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
                 .ToArray();
