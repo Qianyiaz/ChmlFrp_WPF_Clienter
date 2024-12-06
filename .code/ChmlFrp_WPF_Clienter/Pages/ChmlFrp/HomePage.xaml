@@ -15,7 +15,7 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="1">
             <Border Opacity="0.8"
-                    CornerRadius="0,0,10,10"
+                    CornerRadius="0,0,10,0"
                     Background="#f9f9f9"/>
             <TextBlock VerticalAlignment="Top" FontSize="15" HorizontalAlignment="Left" Margin="10" Text="账户详情"/>
             <StackPanel Orientation="Vertical">
