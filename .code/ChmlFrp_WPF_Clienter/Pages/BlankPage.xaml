@@ -12,6 +12,7 @@
         <StackPanel Orientation="Vertical"
             HorizontalAlignment="Center"
             VerticalAlignment="Top">
+            <Grid Height="45"></Grid>
             <Image 
                Source="\Icons\FluentEmojiHighContrastConstruction.png" Height="200" Width="250"/>
             <TextBlock HorizontalAlignment="Center" FontSize="25" Text="正在施工中..."/>
