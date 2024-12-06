@@ -116,10 +116,10 @@
     <Compile Include="Pages\ChmlFrpLoginPage.xaml.cs">
       <DependentUpon>ChmlFrpLoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ChmlfrpPage.xaml.cs">
-      <DependentUpon>ChmlfrpPage.xaml</DependentUpon>
+    <Compile Include="Pages\ChmlFrpPage.xaml.cs">
+      <DependentUpon>ChmlFrpPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ChmlFrp\HomePage.xaml.cs">
+    <Compile Include="Pages\ChmlFrpLoginPages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -153,11 +153,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\ChmlfrpPage.xaml">
+    <Page Include="Pages\ChmlFrpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ChmlFrp\HomePage.xaml">
+    <Page Include="Pages\ChmlFrpLoginPages\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

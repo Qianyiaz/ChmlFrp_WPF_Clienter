@@ -87,7 +87,7 @@
                             <Button Foreground="#f9f9f9"
                                 FontWeight="ExtraLight"
                                 Background="#1276DB"
-                                Content="ChmlFrp"
+                                Content="登录"
                                 FontSize="13"
                                 Width="75"
                                 Height="28"
