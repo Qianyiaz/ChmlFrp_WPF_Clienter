@@ -33,5 +33,11 @@ namespace ChmlFrp_WPF_Clienter.Pages
             Uri uri = new Uri("/Pages/Chmlfrp/HomePage.xaml", UriKind.Relative);
             Pages1Navigation.Source = uri;
         }
+
+        private void rdTMA_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Uri uri = new Uri("/Pages/BlankPage.xaml", UriKind.Relative);
+            Pages1Navigation.Source = uri;
+        }
     }
 }

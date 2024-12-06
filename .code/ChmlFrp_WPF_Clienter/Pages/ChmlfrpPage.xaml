@@ -22,10 +22,13 @@
                 VerticalAlignment="Top"
                 Orientation="Vertical">
             <RadioButton IsChecked="True"
-                    Content="首页"
+                    Content="用户管理"
                     Style="{DynamicResource MenuRadioButtonStyle}"
                     Tag="{DynamicResource home}"
                     Click="rdLaunchPage_Click"/>
+
+            <RadioButton Tag="{DynamicResource TMA}" Click="rdTMA_Click" x:Name="rdTMA" FontWeight="Bold" Content="隧道管理" Style="{DynamicResource MenuRadioButtonStyle}"/>
+            
         </StackPanel>
         <Grid Grid.Column="1">
             <Border CornerRadius="0,0,10,10">
