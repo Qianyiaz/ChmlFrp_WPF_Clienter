@@ -14,44 +14,51 @@ namespace ChmlFrp_WPF_Clienter.Pages
     /// </summary>
     public partial class HomePage : Page
     {
+        private string directoryPath;
+        private string frpPath;
+        private string frpIniPath;
+        private string frpExePath;
+        private string setupIniPath;
+        private string temp_path;
+        private string temp_api_path;
+        private string CFLPath;
+        private void InitializePaths()
+        {
+            directoryPath = Directory.GetCurrentDirectory();
+            CFLPath = Path.Combine(directoryPath, "CFL");
+            frpPath = Path.Combine(CFLPath, "frp");
+            frpIniPath = Path.Combine(frpPath, "frpc.ini");
+            frpExePath = Path.Combine(frpPath, "frpc.exe");
+            setupIniPath = Path.Combine(CFLPath, "Setup.ini");
+            temp_path = Path.Combine(CFLPath, "temp");
+            temp_api_path = Path.Combine(temp_path, "Chmlfrp_api.json");
+        }
+
         public HomePage()
         {
             InitializeComponent();
-            //创建路径函数
-            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string frp_path = Path.Combine(CFL, "frp"); string frp_ini = Path.Combine(frp_path, "frpc.ini"); string frp = Path.Combine(frp_path, "frpc.exe"); string ini = Path.Combine(CFL, "Setup.ini");
-            if (IsProcessRunning("frpc", 1))
-            {
-                LaunchButton.Content = "点击关闭 frpc";
-                LaunchButton.Click -= Launch;
-                LaunchButton.Click += Killfrp;
-                return;
-            }
-            if (File.Exists(frp_ini) && File.Exists(frp))
-            {
-                LaunchButton.Content = "启动 frpc";
-            }
+            InitializePaths();
         }
-        string directoryPath = Directory.GetCurrentDirectory();
+
+
         int i = 0;
 
         private void Launch(object sender, RoutedEventArgs e)
         {
             LaunchButton.Click -= Launch;
-            //创建路径函数
-            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string frp_path = Path.Combine(CFL, "frp"); string frp_ini = Path.Combine(frp_path, "frpc.ini"); string frp = Path.Combine(frp_path, "frpc.exe"); string ini = Path.Combine(CFL, "Setup.ini");
-            if (!File.Exists(frp_ini) && !File.Exists(frp))
+            if (!File.Exists(frpIniPath) && !File.Exists(frpPath))
             {
                 LaunchButton.Content = "未找到配置文件";
                 return;
             }
             //创建ini实例
             var parser = new FileIniDataParser();
-            IniData data = parser.ReadFile(ini);
-            data = parser.ReadFile(ini);
+            IniData data = parser.ReadFile(frpIniPath);
+            data = parser.ReadFile(frpIniPath);
             LaunchButton.Content = "正在启动中...";
             if (i == 5) { i = 0; }
-            i++; string logs = Path.Combine(CFL, i + ".logs");
-            ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c " + frp + " -c " + frp_ini + " >" + logs + " 2>&1")
+            i++; string logs = Path.Combine(CFLPath, i + ".logs");
+            ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c " + frpPath + " -c " + frpIniPath + " >" + logs + " 2>&1")
             {
                 RedirectStandardOutput = true,
                 UseShellExecute = false,

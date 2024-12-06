@@ -15,15 +15,30 @@ namespace ChmlFrp_WPF_Clienter.Pages
     /// </summary>
     public partial class ChmlfrpPage : Page
     {
-        string directoryPath = Directory.GetCurrentDirectory();
+        private string directoryPath;
+        private string frpPath;
+        private string frpIniPath;
+        private string frpExePath;
+        private string setupIniPath;
+        private string temp_path;
+        private string temp_api_path;
+        private string CFLPath;
+        private void InitializePaths()
+        {
+            directoryPath = Directory.GetCurrentDirectory();
+            CFLPath = Path.Combine(directoryPath, "CFL");
+            frpPath = Path.Combine(CFLPath, "frp");
+            frpIniPath = Path.Combine(frpPath, "frpc.ini");
+            frpExePath = Path.Combine(frpPath, "frpc.exe");
+            setupIniPath = Path.Combine(CFLPath, "Setup.ini");
+            temp_path = Path.Combine(CFLPath, "temp");
+            temp_api_path = Path.Combine(temp_path, "Chmlfrp_api.json");
+        }
 
         public ChmlfrpPage()
         {
             InitializeComponent();
-            directoryPath = Directory.GetCurrentDirectory();
-            string CFL = Path.Combine(directoryPath, "CFL");
-            string temp_path = Path.Combine(CFL, "temp");
-            string temp_api = Path.Combine(temp_path, "Chmlfrp_api.json");
+            InitializePaths();
             Uri uri = new Uri("/Pages/ChmlFrpLoginPages/HomePage.xaml", UriKind.Relative);
             Pages1Navigation.Source = uri;
         }

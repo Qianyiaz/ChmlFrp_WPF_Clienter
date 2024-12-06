@@ -20,19 +20,42 @@ namespace ChmlFrp_WPF_Clienter.Pages
     /// </summary>
     public partial class ChmlFrpLoginPage : Page
     {
-        string directoryPath = Directory.GetCurrentDirectory();
         private Timer timer;
 
         public ChmlFrpLoginPage()
         {
             InitializeComponent();
-            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_path = Path.Combine(CFL, "temp"); string temp_Username = Path.Combine(CFL, "Setup.ini");
-            if (File.Exists(temp_Username))
+            InitializePaths();
+            InitializeAPIPath();
+        }
+
+        private string directoryPath;
+        private string frpPath;
+        private string frpIniPath;
+        private string frpExePath;
+        private string setupIniPath;
+        private string temp_path;
+        private string temp_api_path;
+        private string CFLPath;
+        private void InitializePaths()
+        {
+            directoryPath = Directory.GetCurrentDirectory();
+            CFLPath = Path.Combine(directoryPath, "CFL");
+            frpPath = Path.Combine(CFLPath, "frp");
+            frpIniPath = Path.Combine(frpPath, "frpc.ini");
+            frpExePath = Path.Combine(frpPath, "frpc.exe");
+            setupIniPath = Path.Combine(CFLPath, "Setup.ini");
+            temp_path = Path.Combine(CFLPath, "temp");
+            temp_api_path = Path.Combine(temp_path, "Chmlfrp_api.json");
+        }
+
+        private void InitializeAPIPath()
+        {
+            if (File.Exists(setupIniPath))
             {
                 IniData data;
                 var parser = new FileIniDataParser();
-                data = parser.ReadFile(temp_Username);
-                directoryPath = Directory.GetCurrentDirectory(); string temp_api = Path.Combine(temp_path, "Chmlfrp_api.json");
+                data = parser.ReadFile(setupIniPath);
                 string url = "https://cf-v2.uapis.cn/login?username=" + data["ChmlFrp_WPF_Clienter Setup"]["Username"] + "&password=" + data["ChmlFrp_WPF_Clienter Setup"]["Password"];
                 using (HttpClient client = new HttpClient())
                 {
@@ -40,14 +63,14 @@ namespace ChmlFrp_WPF_Clienter.Pages
                     {
                         WebClient webClient = new WebClient();
                         webClient.Encoding = Encoding.UTF8;
-                        File.WriteAllText(temp_api, webClient.DownloadString(url));
+                        File.WriteAllText(temp_api_path, webClient.DownloadString(url));
                     }
                     catch
                     {
                         return;
                     }
                 }
-                string jsonContent = File.ReadAllText(temp_api);
+                string jsonContent = File.ReadAllText(temp_api_path);
                 var parsedJson = JToken.Parse(jsonContent);
                 string formattedJson = parsedJson.ToString(Formatting.Indented);
                 var jsonObject = JObject.Parse(jsonContent);
@@ -61,6 +84,8 @@ namespace ChmlFrp_WPF_Clienter.Pages
             }
         }
 
+
+
         private void TimerCallback(object state)
         {
             Application.Current.Dispatcher.Invoke(() =>
@@ -72,26 +97,23 @@ namespace ChmlFrp_WPF_Clienter.Pages
 
         private void TextBox_Username_ini(object sender, TextChangedEventArgs e)
         {
-            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_Username = Path.Combine(CFL, "Setup.ini");
             var parser = new FileIniDataParser();
-            IniData data = parser.ReadFile(temp_Username);
+            IniData data = parser.ReadFile(setupIniPath);
             data["ChmlFrp_WPF_Clienter Setup"]["Username"] = TextBox_Username.Text;
-            parser.WriteFile(temp_Username, data);
+            parser.WriteFile(setupIniPath, data);
         }
 
         private void TextBox_password_ini(object sender, TextChangedEventArgs e)
         {
-            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_Username = Path.Combine(CFL, "Setup.ini");
             var parser = new FileIniDataParser();
-            IniData data = parser.ReadFile(temp_Username);
+            IniData data = parser.ReadFile(setupIniPath);
             data["ChmlFrp_WPF_Clienter Setup"]["Password"] = TextBox_password.Text;
-            parser.WriteFile(temp_Username, data);
+            parser.WriteFile(setupIniPath, data);
         }
 
         private void logon(object sender, RoutedEventArgs e)
         {
             logonButton.Click -= logon;
-            directoryPath = Directory.GetCurrentDirectory(); string CFL = Path.Combine(directoryPath, "CFL"); string temp_path = Path.Combine(CFL, "temp"); string temp_api = Path.Combine(temp_path, "Chmlfrp_api.json");
             string url = "https://cf-v2.uapis.cn/login?username=" + TextBox_Username.Text + "&password=" + TextBox_password.Text;
             using (HttpClient client = new HttpClient())
             {
@@ -99,7 +121,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
                 {
                     WebClient webClient = new WebClient();
                     webClient.Encoding = Encoding.UTF8;
-                    File.WriteAllText(temp_api, webClient.DownloadString(url));
+                    File.WriteAllText(temp_api_path, webClient.DownloadString(url));
                 }
                 catch
                 {
@@ -107,7 +129,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
                 }
             }
 
-            string jsonContent = File.ReadAllText(temp_api);
+            string jsonContent = File.ReadAllText(temp_api_path);
             var parsedJson = JToken.Parse(jsonContent);
             string formattedJson = parsedJson.ToString(Formatting.Indented);
             var jsonObject = JObject.Parse(jsonContent);
