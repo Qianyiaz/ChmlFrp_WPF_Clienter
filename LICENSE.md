@@ -173,6 +173,11 @@
       incurred by, or claims asserted against, such Contributor by reason
       of your accepting any such warranty or additional liability.
 
+   10. The author does not hold any copyright related to Chmlfrp; 
+      the references made are merely quotations, and the corresponding 
+      statements do not represent the official position of Chmlfrp. 
+      If there are any infringements, modifications will be made immediately.
+
    END OF TERMS AND CONDITIONS
 
    Copyright [ChmlFrp_WPF_Clienter] [Qusay Diaz/Qianyiaz(https://github.com/Qianyiaz)]
