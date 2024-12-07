@@ -13,6 +13,8 @@
 
 <br/>
 
+<img src="https://counter.seku.su/cmoe?name=Qianyiaz&theme=r34" /><br>
+
 如果想查看代码可以[点击这里](/.code/ChmlFrp_WPF_Clienter)
 
 <br/>
