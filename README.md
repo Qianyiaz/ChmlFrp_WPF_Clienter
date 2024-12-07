@@ -9,7 +9,7 @@
 
 `ChmlFrp_WPF_Clienter` 是 [frp](https://github.com/fatedier/frp) 的第三方应用，适用于 Windows 11/10 或更低版本。 使用 WPF + C# + .net framework 开发的图形化应用.
 
-<a href="https://github.com/Qianyiaz/ChmlFrp_WPF_Clienter">![Github stars](https://img.shields.io/github/stars/Qianyiaz/ChmlFrp_WPF_Clienter.svg)![Github forks](https://img.shields.io/github/forks/Qianyiaz/ChmlFrp_WPF_Clienter.svg)![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github)![GitHub last commit](https://img.shields.io/github/last-commit/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github)![GitHub release (latest by date)](https://img.shields.io/github/v/release/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github)![GitHub Releases Stats](https://img.shields.io/github/downloads/Qianyiaz/ChmlFrp_WPF_Clienter/total.svg?style=social&logo=github)![GitHub top language](https://img.shields.io/github/languages/top/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github&label=C%20%23)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github)
+<a href="https://github.com/Qianyiaz/ChmlFrp_WPF_Clienter">![Github stars](https://img.shields.io/github/stars/Qianyiaz/ChmlFrp_WPF_Clienter.svg)![Github forks](https://img.shields.io/github/forks/Qianyiaz/ChmlFrp_WPF_Clienter.svg)![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github)![GitHub last commit](https://img.shields.io/github/last-commit/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github)![GitHub release (latest by date)](https://img.shields.io/github/v/release/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github)![GitHub Releases Stats](https://img.shields.io/github/downloads/Qianyiaz/ChmlFrp_WPF_Clienter/total.svg?style=social&logo=github)![GitHub top language](https://img.shields.io/github/languages/top/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github&label=C%23)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github)
 
 <br/>
     
@@ -35,10 +35,14 @@
  </picture>
 </a>
 
-## 友情链接
+- 给个star吧！！！求求了。Σ(っ °Д °;)っ
+
+## 相关链接
 
 - [ ] [Xingcheng-Chmlfrp-Lanucher](https://github.com/FengXiang2233/Xingcheng-Chmlfrp-Lanucher)
-- [ ] [ChmlFrp Github](https://github.com/TechCat-Team/ChmlFrp-Frp)
+- [ ] [ChmlFrp-Frp Github](https://github.com/TechCat-Team/ChmlFrp-Frp)
+- [ ] [ChmlFrp_WPF_Clienter Gitee](https://gitee.com/Qianyiaz/ChmlFrp_WPF_Clienter)
+- [ ] [ChmlFrp_WPF_Clienter Gitcode](https://gitcode.com/Qyzgj/ChmlFrp_WPF_Clienter)
 
 <br/>
 
