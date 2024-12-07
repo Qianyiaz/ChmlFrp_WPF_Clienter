@@ -14,30 +14,29 @@ namespace ChmlFrp_WPF_Clienter.Pages
     /// </summary>
     public partial class HomePage : Page
     {
-        private string directoryPath;
+        //private string directoryPath;
         private string frpPath;
         private string frpIniPath;
-        private string frpExePath;
-        private string setupIniPath;
-        private string temp_path;
-        private string temp_api_path;
-        private string CFLPath;
-        private void InitializePaths()
-        {
-            directoryPath = Directory.GetCurrentDirectory();
-            CFLPath = Path.Combine(directoryPath, "CFL");
-            frpPath = Path.Combine(CFLPath, "frp");
-            frpIniPath = Path.Combine(frpPath, "frpc.ini");
-            frpExePath = Path.Combine(frpPath, "frpc.exe");
-            setupIniPath = Path.Combine(CFLPath, "Setup.ini");
-            temp_path = Path.Combine(CFLPath, "temp");
-            temp_api_path = Path.Combine(temp_path, "Chmlfrp_api.json");
-        }
+        //private string frpExePath;
+        //private string setupIniPath;
+        //private string temp_path;
+        //private string temp_api_path;
+        private string cflPath;
+        //private string pictures_path;
 
         public HomePage()
         {
             InitializeComponent();
-            InitializePaths();
+            ClienterClass ClienterClass = new ClienterClass();
+            //directoryPath = ClienterClass.DirectoryPath();
+            cflPath = ClienterClass.CFLPath();
+            frpPath = ClienterClass.FrpPath();
+            frpIniPath = ClienterClass.FrpIniPath();
+            //frpExePath = ClienterClass.FrpExePath();
+            //setupIniPath = ClienterClass.SetupIniPath();
+            //temp_path = ClienterClass.Temp_path();
+            //temp_api_path = ClienterClass.Temp_api_path();
+            //pictures_path = ClienterClass.Pictures_path();
         }
 
 
@@ -57,7 +56,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
             data = parser.ReadFile(frpIniPath);
             LaunchButton.Content = "正在启动中...";
             if (i == 5) { i = 0; }
-            i++; string logs = Path.Combine(CFLPath, i + ".logs");
+            i++; string logs = Path.Combine(cflPath, i + ".logs");
             ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c " + frpPath + " -c " + frpIniPath + " >" + logs + " 2>&1")
             {
                 RedirectStandardOutput = true,

@@ -7,6 +7,7 @@ using System;
 using System.Windows.Media.Imaging;
 using System.Net;
 using System.Windows;
+using static System.Net.WebRequestMethods;
 
 namespace ChmlFrp_WPF_Clienter.Pages.ChmlFrp
 {
@@ -15,36 +16,36 @@ namespace ChmlFrp_WPF_Clienter.Pages.ChmlFrp
     /// </summary>
     public partial class HomePage : Page
     {
-        private string directoryPath;
-        private string frpPath;
-        private string frpIniPath;
-        private string frpExePath;
-        private string setupIniPath;
+        //private string directoryPath;
+        //private string frpPath;
+        //private string frpIniPath;
+        //private string frpExePath;
+        //private string setupIniPath;
         private string temp_path;
         private string temp_api_path;
-        private string CFLPath;
-        private void InitializePaths()
-        {
-            directoryPath = Directory.GetCurrentDirectory();
-            CFLPath = Path.Combine(directoryPath, "CFL");
-            frpPath = Path.Combine(CFLPath, "frp");
-            frpIniPath = Path.Combine(frpPath, "frpc.ini");
-            frpExePath = Path.Combine(frpPath, "frpc.exe");
-            setupIniPath = Path.Combine(CFLPath, "Setup.ini");
-            temp_path = Path.Combine(CFLPath, "temp");
-            temp_api_path = Path.Combine(temp_path, "Chmlfrp_api.json");
-        }
+        //private string cflPath;
+        //private string pictures_path;
 
         public HomePage()
         {
             InitializeComponent();
-            InitializePaths();
+            ClienterClass ClienterClass = new ClienterClass();
+            //directoryPath = ClienterClass.DirectoryPath();
+            //cflPath = ClienterClass.CFLPath();
+            //frpPath = ClienterClass.FrpPath();
+            //frpIniPath = ClienterClass.FrpIniPath();
+            //frpExePath = ClienterClass.FrpExePath();
+            //setupIniPath = ClienterClass.SetupIniPath();
+            temp_path = ClienterClass.Temp_path();
+            temp_api_path = ClienterClass.Temp_api_path();
+            //pictures_path = ClienterClass.Pictures_path();
             InitializesetPaths();
         }
 
+
         private void InitializesetPaths()
         {
-            string jsonContent = File.ReadAllText(temp_api_path);
+            string jsonContent = System.IO.File.ReadAllText(temp_api_path);
             var jsonObject = JObject.Parse(jsonContent);
             string url = jsonObject["data"]["userimg"]?.ToString();
             string temp_UserImage = Path.Combine(temp_path, "temp_UserImage.png");
@@ -74,10 +75,7 @@ namespace ChmlFrp_WPF_Clienter.Pages.ChmlFrp
         private void TokenClick(object sender, System.Windows.RoutedEventArgs e)
         {
             Token.Click -= TokenClick;
-            string CFL = Path.Combine(directoryPath, "CFL");
-            string temp_path = Path.Combine(CFL, "temp");
-            string temp_api = Path.Combine(temp_path, "Chmlfrp_api.json");
-            string jsonContent = File.ReadAllText(temp_api);
+            string jsonContent = System.IO.File.ReadAllText(temp_api_path);
             var jsonObject = JObject.Parse(jsonContent);
             if (Token.Content.ToString() == jsonObject["data"]["usertoken"]?.ToString())
             {
@@ -91,3 +89,4 @@ namespace ChmlFrp_WPF_Clienter.Pages.ChmlFrp
         }
     }
 }
+

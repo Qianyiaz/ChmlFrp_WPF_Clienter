@@ -49,23 +49,29 @@ namespace ChmlFrp_WPF_Clienter
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string directoryPath;
-        private string frpPath;
-        private string temp_path;
-        private string CFLPath;
+        //private string directoryPath;
+        //private string frpPath;
+        //private string frpIniPath;
+        //private string frpExePath;
+        //private string setupIniPath;
+        //private string temp_path;
+        //private string temp_api_path;
+        //private string cflPath;
         private string pictures_path;
-        private void InitializePaths()
-        {
-            directoryPath = Directory.GetCurrentDirectory();
-            CFLPath = Path.Combine(directoryPath, "CFL");
-            frpPath = Path.Combine(CFLPath, "frp");
-            temp_path = Path.Combine(CFLPath, "temp");
-            pictures_path = Path.Combine(CFLPath, "pictures");
-        }
+
         public MainWindow()
         {
             InitializeComponent();
-            InitializePaths();
+            ClienterClass ClienterClass = new ClienterClass();
+            //directoryPath = ClienterClass.DirectoryPath();
+            //cflPath = ClienterClass.CFLPath();
+            //frpPath = ClienterClass.FrpPath();
+            //frpIniPath = ClienterClass.FrpIniPath();
+            //frpExePath = ClienterClass.FrpExePath();
+            //setupIniPath = ClienterClass.SetupIniPath();
+            //temp_path = ClienterClass.Temp_path();
+            //temp_api_path = ClienterClass.Temp_api_path();
+            pictures_path = ClienterClass.Pictures_path();
             string[] imageFiles = Directory.GetFiles(pictures_path, "*.*")
                 .Where(file => file.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
                                file.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
