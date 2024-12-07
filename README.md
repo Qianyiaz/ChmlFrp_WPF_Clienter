@@ -12,13 +12,13 @@
 <a href="https://github.com/Qianyiaz/ChmlFrp_WPF_Clienter">![Github stars](https://img.shields.io/github/stars/Qianyiaz/ChmlFrp_WPF_Clienter.svg)![Github forks](https://img.shields.io/github/forks/Qianyiaz/ChmlFrp_WPF_Clienter.svg)![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github)![GitHub last commit](https://img.shields.io/github/last-commit/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github)![GitHub release (latest by date)](https://img.shields.io/github/v/release/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github)![GitHub Releases Stats](https://img.shields.io/github/downloads/Qianyiaz/ChmlFrp_WPF_Clienter/total.svg?style=social&logo=github)![GitHub top language](https://img.shields.io/github/languages/top/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github&label=C%23)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Qianyiaz/ChmlFrp_WPF_Clienter?style=social&logo=github)
 
 <br/>
-    
+
 如果想查看代码可以[点击这里](/.code/ChmlFrp_WPF_Clienter)
 
 <br/>
 
 <div align="left">
-    
+
 ## Memo on Bugs
 
 - [ ] 1. startwindow 启动检测进程退出，发现有没有都退出。＜（＾－＾）＞ 已修复
@@ -47,5 +47,5 @@
 <br/>
 
 <div align="center">
-    
-###### 如果想合作请进入我的主页，打开billbill，私信交流。或邮箱<2976779544@qq.com>/Qyz@Qyz.email.cn。QQ号：2976779544
+
+###### 如果想合作请进入我的主页，打开billbill，私信交流。或邮箱<Qusay_Diaz.github@outlook.com>。QQ号：2976779544

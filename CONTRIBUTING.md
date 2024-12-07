@@ -13,9 +13,11 @@ Before submitting any contributions, please make sure you have read and agree to
 
 2. **Create a Branch**  
    Create a new branch for your changes in your local repository:
+
    ```bash
    git checkout -b your-feature-branch
 
-### Useful Notes:
+### Useful Notes
+
 - Make sure to replace placeholder links such as `link_to_your_contributor_license_agreement` and `discussion channel link` with the actual URLs.
 - Adjust the steps or sections as necessary to fit the specifics of your project.
