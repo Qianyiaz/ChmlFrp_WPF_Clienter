@@ -41,7 +41,7 @@ namespace ChmlFrp_WPF_Clienter
             //temp_api_path = ClienterClass.Temp_api_path();
             pictures_path = ClienterClass.Pictures_path();
             if (IsProcessRunning("ChmlFrpLauncher", 2)) Close(); //检测到有两个ChmlFrpLauncher就退出
-            //进入 2 s 的计时
+            //进入 1 s 的计时
             timer = new Timer(TimerCallback, null, TimeSpan.FromSeconds(1), Timeout.InfiniteTimeSpan);
         }
 

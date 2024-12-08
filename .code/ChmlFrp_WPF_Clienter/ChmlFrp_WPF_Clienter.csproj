@@ -117,11 +117,17 @@
     <Compile Include="Pages\ChmlFrpLoginPage.xaml.cs">
       <DependentUpon>ChmlFrpLoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ChmlFrpLoginPages\TMAPage.xaml.cs">
+      <DependentUpon>TMAPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ChmlFrpPage.xaml.cs">
       <DependentUpon>ChmlFrpPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ChmlFrpLoginPages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NothingsPage.xaml.cs">
+      <DependentUpon>NothingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -143,6 +149,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ChmlFrpLoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ChmlFrpLoginPages\TMAPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NothingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

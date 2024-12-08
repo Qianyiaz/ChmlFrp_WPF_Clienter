@@ -129,11 +129,15 @@
                         <Grid Width="15"/>
                         <Button x:Name="btnClose"
                             Margin="5"
+                            Height="25"
+                            Width="25"
                             Style="{StaticResource IconButtonsStyle}"
                             Content="{DynamicResource close}"
                             Click="btnClose_Click"
                             Tag="IsCloseButton"/>
                         <Button x:Name="btnMinimize"
+                            Height="25"
+                            Width="25"
                             Style="{DynamicResource IconButtonsStyle}"
                             Content="{DynamicResource minimize}"
                             Click="btnMinimize_Click"/>

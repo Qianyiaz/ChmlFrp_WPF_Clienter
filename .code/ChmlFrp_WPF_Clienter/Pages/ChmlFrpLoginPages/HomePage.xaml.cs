@@ -8,6 +8,7 @@ using System.Windows.Media.Imaging;
 using System.Net;
 using System.Windows;
 using static System.Net.WebRequestMethods;
+using System.Threading;
 
 namespace ChmlFrp_WPF_Clienter.Pages.ChmlFrp
 {
@@ -25,7 +26,6 @@ namespace ChmlFrp_WPF_Clienter.Pages.ChmlFrp
         private string temp_api_path;
         //private string cflPath;
         //private string pictures_path;
-
         public HomePage()
         {
             InitializeComponent();

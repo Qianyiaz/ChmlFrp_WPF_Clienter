@@ -50,7 +50,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
 
         private void rdTMA_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Uri uri = new Uri("/Pages/BlankPage.xaml", UriKind.Relative);
+            Uri uri = new Uri("/Pages/ChmlFrpLoginPages/TMAPage.xaml", UriKind.Relative);
             Pages1Navigation.Source = uri;
         }
     }
