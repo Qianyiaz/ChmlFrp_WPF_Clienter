@@ -1,8 +1,9 @@
 name: Build .NET Framework Application
+
 on:
   push:
     paths:
-      - ".code/ChmlFrp_WPF_Clienter**"
+      - ".code/ChmlFrp_WPF_Clienter/**"
       - ".github/workflows/**"
   pull_request:
     paths:
@@ -17,11 +18,13 @@ jobs:
     strategy:
       matrix:
         configuration: [Release]
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Set Describe
         shell: bash
         run: |
@@ -34,23 +37,24 @@ jobs:
       - name: Build
         run: msbuild ".code\\ChmlFrp_WPF_Clienter.sln" -p:Configuration=${{ matrix.configuration }}
 
-      - name: Upload a Build Artifact to Github
+      - name: Upload a Build Artifact to GitHub
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.configuration }}-Beta-${{ env.describe }}
           path: .code\ChmlFrp_WPF_Clienter\bin\Release\ChmlFrp_WPF_Clienter.exe
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8' 
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8' 
 
-    - name: Install dependencies
-      run: |
-        git clone https://github.com/zaxtyson/LanZouCloud-API.git
-        cd LanZouCloud-API
-        pip install -r requirements.txt
-        pip install pyyaml
+      - name: Install dependencies
+        run: |
+          git clone https://github.com/zaxtyson/LanZouCloud-API.git
+          cd LanZouCloud-API
+          pip install -r requirements.txt
+          pip install pyyaml
 
-    - name: Upload a Build Artifact to lanzouyun
-      run: python .github\workflows\Upload.py
+      - name: Upload a Build Artifact to Lanzouyun
+        run: python .github\workflows\Upload.py
+
