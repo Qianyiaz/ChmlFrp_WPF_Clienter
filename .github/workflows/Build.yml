@@ -40,8 +40,10 @@ jobs:
       - name: Upload a Build Artifact to GitHub
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.configuration }}-Beta-${{ env.describe }}
+          name: ${{ matrix.configuration }}-Beta${{ env.describe }}-0.0.0.3
           path: .code\ChmlFrp_WPF_Clienter\bin\Release\ChmlFrp_WPF_Clienter.exe
+<<<<<<< HEAD
+=======
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -57,3 +59,7 @@ jobs:
         env:
           USERNAME: ${{ secrets.LAN_ZOU_USERNAME }} 
           PASSWORD: ${{ secrets.LAN_ZOU_PASSWORD }}  
+<<<<<<< Updated upstream
+=======
+>>>>>>> 4499f9e0f337932a915f460021f2c27504a4292c
+>>>>>>> Stashed changes
