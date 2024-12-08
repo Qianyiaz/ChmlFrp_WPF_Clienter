@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         configuration: [Release]
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,7 +46,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8' 
+          python-version: "3.8"
 
       - name: Install dependencies
         run: |
@@ -56,5 +56,6 @@ jobs:
           pip install pyyaml
 
       - name: Upload a Build Artifact to Lanzouyun
-        run: python .github\workflows\Upload.py
-
+        run: |
+          cd LanZouCloud-API
+          python .github\workflows\Upload.py
