@@ -51,7 +51,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install lanzou-api
-          pip install -r requirements.txt
           pip install pyyaml
 
       - name: Upload a Build Artifact to Lanzouyun
