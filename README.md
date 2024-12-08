@@ -31,11 +31,11 @@
 
 ## Star History
 
-<a href="https://star-history.com/#Qianyiaz/ChmlFrp_WPF_Clienter&Date">
+<a href="https://star-history.com/#Qianyiaz/ChmlFrp_WPF_Clienter&Timeline">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Qianyiaz/ChmlFrp_WPF_Clienter&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Qianyiaz/ChmlFrp_WPF_Clienter&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Qianyiaz/ChmlFrp_WPF_Clienter&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Qianyiaz/ChmlFrp_WPF_Clienter&type=Timeline&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Qianyiaz/ChmlFrp_WPF_Clienter&type=Timeline" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Qianyiaz/ChmlFrp_WPF_Clienter&type=Timeline" />
  </picture>
 </a>
 
