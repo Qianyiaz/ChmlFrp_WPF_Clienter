@@ -51,8 +51,9 @@ jobs:
       - name: Install dependencies
         run: |
           pip install lanzou-api
-          pip install pyyaml
 
       - name: Upload a Build Artifact to Lanzouyun
-        run: |
-          python .github\workflows\Upload.py
+        run: python .github/workflows/Upload.py
+        env:
+          USERNAME: ${{ secrets.LAN_ZOU_USERNAME }} 
+          PASSWORD: ${{ secrets.LAN_ZOU_PASSWORD }}  
