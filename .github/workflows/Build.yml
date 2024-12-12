@@ -30,9 +30,14 @@ jobs:
         run: |
           describe=`git describe --tags --always`
           echo "describe=$describe" >> $GITHUB_ENV
-          $version = (Get-Content ".code\ChmlFrp_WPF_Clienter\AssemblyInfo.cs" -Raw) -match 'AssemblyVersion\("([^"]+)"\)' | Out-Null; $matches[1]$version
+          
+      - name: Set Version
+        shell: bash
+        run: |
+          $version = (Get-Content ".code\ChmlFrp_WPF_Clienter\AssemblyInfo.cs" -Raw) -match 'AssemblyVersion\("([^"]+)"\)' | Out-Null; $matches[1]
+          $version
           Write-Host "version=$version" >> $GITHUB_ENV
-
+          
       - name: Setup MSBuild.exe
         uses: microsoft/setup-msbuild@v2
 
