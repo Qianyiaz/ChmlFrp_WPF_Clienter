@@ -34,7 +34,7 @@ jobs:
       - name: Set Version
         shell: pwsh
         run: |
-         $version = (Get-Content ".code\ChmlFrp_WPF_Clienter\AssemblyInfo.cs" -Raw) -match 'AssemblyVersion\("([^"]+)"\)' | Out-Null; $matches[1]
+         $version = (Get-Content ".code/ChmlFrp_WPF_Clienter/Properties/AssemblyInfo.cs" -Raw) -match 'AssemblyVersion\("([^"]+)"\)' | Out-Null; $matches[1]
          Write-Host "version=$version" >> $env:GITHUB_ENV
           
       - name: Setup MSBuild.exe
