@@ -37,12 +37,16 @@ jobs:
       - name: Build
         run: msbuild ".code\\ChmlFrp_WPF_Clienter.sln" -p:Configuration=${{ matrix.configuration }}
 
+      - name: Move Executable to Root
+        run: |
+          Move-Item -Path .code\ChmlFrp_WPF_Clienter\bin\Release\ChmlFrp_WPF_Clienter.exe -Destination .\
+
       - name: Upload a Build Artifact to GitHub
         uses: actions/upload-artifact@v4
         with:
             name: ${{ matrix.configuration }}-Pre-alpha${{ env.describe }}-0.0.0.3-Windows
             path: |
-             .code\ChmlFrp_WPF_Clienter\bin\Release\ChmlFrp_WPF_Clienter.exe
+             ChmlFrp_WPF_Clienter.exe
              README.md
              LICENSE.md
              
