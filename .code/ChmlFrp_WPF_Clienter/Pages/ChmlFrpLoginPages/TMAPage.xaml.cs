@@ -53,6 +53,7 @@ namespace ChmlFrp_WPF_Clienter.Pages.ChmlFrpLoginPages
             temp_api_path = ClienterClass.Temp_api_path();
             pictures_path = ClienterClass.Pictures_path();
             InitializesetPaths();
+            NodeTextBlock_1_3_2.IsReadOnly = true;
         }
 
         public void InitializesetPaths()
@@ -78,57 +79,22 @@ namespace ChmlFrp_WPF_Clienter.Pages.ChmlFrpLoginPages
             jsonObject = JObject.Parse(jsonContent);
             if(jsonObject["msg"]?.ToString() == "获取隧道数据成功")
             {
-                
                 foreach (var tunnel in jsonObject["data"])
                 {
-                    string nodeValue = tunnel["tunnelName"]?.ToString();
-                    if (nodeValue == null)
+                    i++;
+                    if (i == 1)
                     {
-                        if (i == 1)
-                        {
+                        NodeTextBlock_1_1.Text = tunnel["name"]?.ToString();
+                        NodeTextBlock_1_2.Text = tunnel["id"]?.ToString();
+                        string state = tunnel["state"]?.ToString();
+                        if (state == "true") NodeTextBlock_1_3_2.Text = "在线";
+                        if (state == "false") NodeTextBlock_1_3_2.Text = "离线"; NodeTextBlock_1_3_1.Background = new SolidColorBrush(Colors.LightYellow); NodeTextBlock_1_3_2.Foreground = new SolidColorBrush(Colors.Yellow);
+                    }
 
-                        }
-                        if (i == 2)
-                        { 
-                        }
-                        if (i == 3)
-                        {
-                        }
-                        if (i == 4)
-                        {
-                        }
-                        return;
-                    }
-                    else
-                    {
-                        i++;
-                        if (i == 1)
-                        {
-                            node1.Text = nodeValue;
-                        } if (i == 2)
-                        {
-                            node4.Text = nodeValue;
-                        }
-                        if(i == 3){
-                            node7.Text = nodeValue;
-                        }
-                        if(i == 4)
-                        {
-                            node10.Text = nodeValue;
-                        }
-                        if(i >= 5)
-                        {
-                            i = 0;
-                        }
-                    }
+                    i = 0;
                 }
-
-
-
             } else
             {
-                NothingsPage newPage = new NothingsPage();
-                PagesNavigation2.Navigate(newPage);
                 return;
             }
         }
