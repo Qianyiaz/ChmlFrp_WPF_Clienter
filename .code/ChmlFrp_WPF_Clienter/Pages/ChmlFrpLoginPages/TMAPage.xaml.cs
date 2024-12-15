@@ -89,14 +89,49 @@ namespace ChmlFrp_WPF_Clienter.Pages.ChmlFrpLoginPages
                         string state = tunnel["state"]?.ToString();
                         if (state == "true") NodeTextBlock_1_3_2.Text = "在线";
                         if (state == "false") NodeTextBlock_1_3_2.Text = "离线"; NodeTextBlock_1_3_1.Background = new SolidColorBrush(Colors.LightYellow); NodeTextBlock_1_3_2.Foreground = new SolidColorBrush(Colors.Yellow);
+                        NodeTextBlock_1_4_2.Text = tunnel["node"]?.ToString();
+                        NodeTextBlock_1_5_2.Text = tunnel["localip"]?.ToString() + " - " + tunnel["type"]?.ToString();
                     }
+                    if (i == 2)
+                    {
+                        //NodeTextBlock_1_1.Text = tunnel["name"]?.ToString();
+                        //NodeTextBlock_1_2.Text = tunnel["id"]?.ToString();
+                        //string state = tunnel["state"]?.ToString();
+                        //if (state == "true") NodeTextBlock_1_3_2.Text = "在线";
+                        //if (state == "false") NodeTextBlock_1_3_2.Text = "离线"; NodeTextBlock_1_3_1.Background = new SolidColorBrush(Colors.LightYellow); NodeTextBlock_1_3_2.Foreground = new SolidColorBrush(Colors.Yellow);
+                        //NodeTextBlock_1_4_2.Text = tunnel["node"]?.ToString();
+                        //NodeTextBlock_1_5_2.Text = tunnel["localip"]?.ToString() + " - " + tunnel["type"]?.ToString();
+                    }
+                    if (i == 3)
+                    {
+                        //NodeTextBlock_1_1.Text = tunnel["name"]?.ToString();
+                        //NodeTextBlock_1_2.Text = tunnel["id"]?.ToString();
+                        //string state = tunnel["state"]?.ToString();
+                        //if (state == "true") NodeTextBlock_1_3_2.Text = "在线";
+                        //if (state == "false") NodeTextBlock_1_3_2.Text = "离线"; NodeTextBlock_1_3_1.Background = new SolidColorBrush(Colors.LightYellow); NodeTextBlock_1_3_2.Foreground = new SolidColorBrush(Colors.Yellow);
+                        //NodeTextBlock_1_4_2.Text = tunnel["node"]?.ToString();
+                        //NodeTextBlock_1_5_2.Text = tunnel["localip"]?.ToString() + " - " + tunnel["type"]?.ToString();
+                    }
+                    if (i == 4)
+                    {
+                        //NodeTextBlock_1_1.Text = tunnel["name"]?.ToString();
+                        //NodeTextBlock_1_2.Text = tunnel["id"]?.ToString();
+                        //string state = tunnel["state"]?.ToString();
+                        //if (state == "true") NodeTextBlock_1_3_2.Text = "在线";
+                        //if (state == "false") NodeTextBlock_1_3_2.Text = "离线"; NodeTextBlock_1_3_1.Background = new SolidColorBrush(Colors.LightYellow); NodeTextBlock_1_3_2.Foreground = new SolidColorBrush(Colors.Yellow);
+                        //NodeTextBlock_1_4_2.Text = tunnel["node"]?.ToString();
+                        //NodeTextBlock_1_5_2.Text = tunnel["localip"]?.ToString() + " - " + tunnel["type"]?.ToString();
+                    }
+                    if (i >= 5)
+                    {
 
-                    i = 0;
+                    }
                 }
             } else
             {
                 return;
             }
+            i = 0;
         }
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
