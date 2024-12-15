@@ -31,9 +31,16 @@
 //                  不见满街漂亮妹，哪个归得程序员？
 */
 
+using ChmlFrp_WPF_Clienter.Pages;
+using IniParser.Model;
+using IniParser;
+using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -53,9 +60,9 @@ namespace ChmlFrp_WPF_Clienter
         //private string frpPath;
         //private string frpIniPath;
         //private string frpExePath;
-        //private string setupIniPath;
+        private string setupIniPath;
         //private string temp_path;
-        //private string temp_api_path;
+        private string temp_api_path;
         //private string cflPath;
         private string pictures_path;
 
@@ -68,9 +75,9 @@ namespace ChmlFrp_WPF_Clienter
             //frpPath = ClienterClass.FrpPath();
             //frpIniPath = ClienterClass.FrpIniPath();
             //frpExePath = ClienterClass.FrpExePath();
-            //setupIniPath = ClienterClass.SetupIniPath();
+            setupIniPath = ClienterClass.SetupIniPath();
             //temp_path = ClienterClass.Temp_path();
-            //temp_api_path = ClienterClass.Temp_api_path();
+            temp_api_path = ClienterClass.Temp_api_path();
             pictures_path = ClienterClass.Pictures_path();
             string[] imageFiles = Directory.GetFiles(pictures_path, "*.*")
                 .Where(file => file.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
@@ -86,8 +93,7 @@ namespace ChmlFrp_WPF_Clienter
             }
             LaunchPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             LaunchPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
-            Uri uri = new Uri("Pages/LaunchPage.xaml", UriKind.Relative);
-            PagesNavigation.Source = uri;
+            PagesNavigation.Navigate(new LaunchPage());
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -111,13 +117,30 @@ namespace ChmlFrp_WPF_Clienter
             LaunchPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
             SettingsPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
             SettingsPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
-            //PagesNavigation.Navigate(new Uri("Pages/LaunchPage.xaml", UriKind.RelativeOrAbsolute));
-            Uri uri = new Uri("Pages/LaunchPage.xaml", UriKind.Relative);
-            PagesNavigation.Source = uri;
+            PagesNavigation.Navigate(new LaunchPage());
         }
 
         private void rdChmlfrpPage_Click(object sender, RoutedEventArgs e)
         {
+            IniData data;
+            var parser = new FileIniDataParser();
+            data = parser.ReadFile(setupIniPath);
+            string url = "https://cf-v2.uapis.cn/login?username=" + data["ChmlFrp_WPF_Clienter Setup"]["Username"] + "&password=" + data["ChmlFrp_WPF_Clienter Setup"]["Password"];
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    WebClient webClient = new WebClient();
+                    webClient.Encoding = Encoding.UTF8;
+                    File.WriteAllText(temp_api_path, webClient.DownloadString(url));
+                }
+                catch
+                {
+                }
+            }
+            string jsonContent = File.ReadAllText(temp_api_path);
+            var jsonObject = JObject.Parse(jsonContent);
+            string msg = jsonObject["msg"]?.ToString();
             ChmlfrpPageButton.Click -= rdChmlfrpPage_Click;
             LaunchPageButton.Click += rdLaunchPage_Click;
             SettingsPageButton.Click += rdSettingsPage_Click;
@@ -127,9 +150,12 @@ namespace ChmlFrp_WPF_Clienter
             ChmlfrpPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
             SettingsPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
             SettingsPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
-            //PagesNavigation.Navigate(new Uri("Pages/ChmFrp.xaml", UriKind.RelativeOrAbsolute));
-            Uri uri = new Uri("Pages/ChmlFrpLoginPage.xaml", UriKind.Relative);
-            PagesNavigation.Source = uri;
+            if (msg == "登录成功")
+            {
+                PagesNavigation.Navigate(new ChmlfrpPage());
+                return;
+            }
+            PagesNavigation.Navigate(new ChmlFrpLoginPage());
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -148,8 +174,7 @@ namespace ChmlFrp_WPF_Clienter
             ChmlfrpPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             SettingsPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             SettingsPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
-            Uri uri = new Uri("Pages/BlankPage.xaml", UriKind.Relative);
-            PagesNavigation.Source = uri;
+            PagesNavigation.Navigate(new BlankPage());
         }
     }
 }

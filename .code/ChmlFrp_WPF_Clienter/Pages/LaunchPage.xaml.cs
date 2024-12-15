@@ -12,7 +12,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
     /// <summary>
     /// Lógica de interacción para HomePage.xaml
     /// </summary>
-    public partial class HomePage : Page
+    public partial class LaunchPage : Page
     {
         //private string directoryPath;
         private string frpPath;
@@ -24,7 +24,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
         private string cflPath;
         //private string pictures_path;
 
-        public HomePage()
+        public LaunchPage()
         {
             InitializeComponent();
             ClienterClass ClienterClass = new ClienterClass();

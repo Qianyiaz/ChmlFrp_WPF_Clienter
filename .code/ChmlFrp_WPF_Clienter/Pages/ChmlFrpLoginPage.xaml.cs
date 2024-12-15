@@ -9,8 +9,6 @@ using System.Net.Http;
 using System.Net;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
-using System.Threading;
-using System;
 
 
 namespace ChmlFrp_WPF_Clienter.Pages
@@ -20,8 +18,6 @@ namespace ChmlFrp_WPF_Clienter.Pages
     /// </summary>
     public partial class ChmlFrpLoginPage : Page
     {
-        private Timer timer;
-
         public ChmlFrpLoginPage()
         {
             InitializeComponent();
@@ -35,7 +31,11 @@ namespace ChmlFrp_WPF_Clienter.Pages
             //temp_path = ClienterClass.Temp_path();
             temp_api_path = ClienterClass.Temp_api_path();
             //pictures_path = ClienterClass.Pictures_path();
-            InitializeAPIPath();
+            IniData data;
+            var parser = new FileIniDataParser();
+            data = parser.ReadFile(setupIniPath);
+            TextBox_Username.Text = data["ChmlFrp_WPF_Clienter Setup"]["Username"];
+            TextBox_password.Text = data["ChmlFrp_WPF_Clienter Setup"]["Password"];
         }
 
         //private string directoryPath;
@@ -48,51 +48,6 @@ namespace ChmlFrp_WPF_Clienter.Pages
         //private string cflPath;
         //private string pictures_path;
 
-        private void InitializeAPIPath()
-        {
-            if (File.Exists(setupIniPath))
-            {
-                IniData data;
-                var parser = new FileIniDataParser();
-                data = parser.ReadFile(setupIniPath);
-                string url = "https://cf-v2.uapis.cn/login?username=" + data["ChmlFrp_WPF_Clienter Setup"]["Username"] + "&password=" + data["ChmlFrp_WPF_Clienter Setup"]["Password"];
-                using (HttpClient client = new HttpClient())
-                {
-                    try
-                    {
-                        WebClient webClient = new WebClient();
-                        webClient.Encoding = Encoding.UTF8;
-                        File.WriteAllText(temp_api_path, webClient.DownloadString(url));
-                    }
-                    catch
-                    {
-                        return;
-                    }
-                }
-                string jsonContent = File.ReadAllText(temp_api_path);
-                var parsedJson = JToken.Parse(jsonContent);
-                string formattedJson = parsedJson.ToString(Formatting.Indented);
-                var jsonObject = JObject.Parse(jsonContent);
-                string msg = jsonObject["msg"]?.ToString();
-                if (msg == "登录成功")
-                {
-                    timer = new Timer(TimerCallback, null, TimeSpan.FromSeconds(0), Timeout.InfiniteTimeSpan);
-                }
-                TextBox_Username.Text = data["ChmlFrp_WPF_Clienter Setup"]["Username"];
-                TextBox_password.Text = data["ChmlFrp_WPF_Clienter Setup"]["Password"];
-            }
-        }
-
-
-
-        private void TimerCallback(object state)
-        {
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                var ChmlFrpPage = new ChmlfrpPage();
-                NavigationService.Navigate(ChmlFrpPage);
-            });
-        }
 
         private void TextBox_Username_ini(object sender, TextChangedEventArgs e)
         {
@@ -135,8 +90,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
             string msg = jsonObject["msg"]?.ToString();
             if (msg == "登录成功")
             {
-                var ChmlFrpPage = new ChmlfrpPage();
-                NavigationService.Navigate(ChmlFrpPage);
+                NavigationService.Navigate(new ChmlfrpPage());
             }
             else
             {
