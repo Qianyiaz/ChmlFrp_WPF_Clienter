@@ -13,7 +13,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
     /// <summary>
     /// ChmlfrpPage.xaml 的交互逻辑
     /// </summary>
-    public partial class ChmlfrpPage : Page
+    public partial class ChmlFrphomePage : Page
     {
         //private string directoryPath;
         //private string frpPath;
@@ -25,7 +25,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
         //private string cflPath;
         //private string pictures_path;
 
-        public ChmlfrpPage()
+        public ChmlFrphomePage()
         {
             InitializeComponent();
             //ClienterClass ClienterClass = new ClienterClass();
@@ -38,19 +38,19 @@ namespace ChmlFrp_WPF_Clienter.Pages
             //temp_path = ClienterClass.Temp_path();
             //temp_api_path = ClienterClass.Temp_api_path();
             //pictures_path = ClienterClass.Pictures_path();
-            Uri uri = new Uri("/Pages/ChmlFrpLoginPages/HomePage.xaml", UriKind.Relative);
+            Uri uri = new Uri("/Pages/ChmlFrpPages/ChmlFrpLoginedPages/HomePage.xaml", UriKind.Relative);
             Pages1Navigation.Source = uri;
         }
 
         private void rdLaunchPage_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Uri uri = new Uri("/Pages/ChmlFrpLoginPages/HomePage.xaml", UriKind.Relative);
+            Uri uri = new Uri("/Pages/ChmlFrpPages/ChmlFrpLoginedPages/HomePage.xaml", UriKind.Relative);
             Pages1Navigation.Source = uri;
         }
 
         private void rdTMA_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Uri uri = new Uri("/Pages/ChmlFrpLoginPages/TMAPage.xaml", UriKind.Relative);
+            Uri uri = new Uri("/Pages/ChmlFrpPages/ChmlFrpLoginedPages/TMAPage.xaml", UriKind.Relative);
             Pages1Navigation.Source = uri;
         }
     }

@@ -152,7 +152,7 @@ namespace ChmlFrp_WPF_Clienter
             SettingsPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             if (msg == "登录成功")
             {
-                PagesNavigation.Navigate(new ChmlfrpPage());
+                PagesNavigation.Navigate(new ChmlFrphomePage());
                 return;
             }
             PagesNavigation.Navigate(new ChmlFrpLoginPage());

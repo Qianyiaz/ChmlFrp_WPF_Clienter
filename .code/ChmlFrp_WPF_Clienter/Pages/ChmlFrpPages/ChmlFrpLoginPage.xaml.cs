@@ -90,7 +90,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
             string msg = jsonObject["msg"]?.ToString();
             if (msg == "登录成功")
             {
-                NavigationService.Navigate(new ChmlfrpPage());
+                NavigationService.Navigate(new ChmlFrphomePage());
             }
             else
             {

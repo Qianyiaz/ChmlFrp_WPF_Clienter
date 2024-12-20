@@ -16,12 +16,9 @@
         Background="Transparent"
         WindowState="Normal"
         Title="ChmlFrpLauncher">
+    
 
-    <!--<WindowChrome.WindowChrome >
-        <WindowChrome ResizeBorderThickness="20" GlassFrameThickness="-1"/>
-    </WindowChrome.WindowChrome>-->
-
-    <Border Margin="15" Background="Transparent" CornerRadius="10" >
+    <Border Margin="15" Background="Transparent">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>

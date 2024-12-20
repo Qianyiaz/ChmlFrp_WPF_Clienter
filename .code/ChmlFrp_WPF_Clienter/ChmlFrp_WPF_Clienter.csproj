@@ -84,11 +84,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="INIFileParser, Version=2.5.2.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
-      <HintPath>..\packages\ini-parser.2.5.2\lib\net20\INIFileParser.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\INIFileParser.dll</HintPath>
     </Reference>
     <Reference Include="netstandard" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -114,20 +116,20 @@
     <Compile Include="Pages\BlankPage.xaml.cs">
       <DependentUpon>BlankPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ChmlFrpLoginPage.xaml.cs">
+    <Compile Include="Pages\ChmlFrpPages\ChmlFrpLoginPage.xaml.cs">
       <DependentUpon>ChmlFrpLoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ChmlFrpLoginPages\TMAPage.xaml.cs">
+    <Compile Include="Pages\ChmlFrpPages\ChmlFrpLoginedPages\TMAPage.xaml.cs">
       <DependentUpon>TMAPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ChmlFrpPage.xaml.cs">
-      <DependentUpon>ChmlFrpPage.xaml</DependentUpon>
+    <Compile Include="Pages\ChmlFrpPages\ChmlFrpHomePage.xaml.cs">
+      <DependentUpon>ChmlFrpHomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ChmlFrpLoginPages\HomePage.xaml.cs">
+    <Compile Include="Pages\ChmlFrpPages\ChmlFrpLoginedPages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\NothingsPage.xaml.cs">
-      <DependentUpon>NothingsPage.xaml</DependentUpon>
+    <Compile Include="Pages\SettingPages\SettingHomePage.xaml.cs">
+      <DependentUpon>SettingHomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -137,7 +139,7 @@
     <Compile Include="StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Pages\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Icons\Icons.xaml">
@@ -148,15 +150,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ChmlFrpLoginPage.xaml">
+    <Page Include="Pages\ChmlFrpPages\ChmlFrpLoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ChmlFrpLoginPages\TMAPage.xaml">
+    <Page Include="Pages\ChmlFrpPages\ChmlFrpLoginedPages\TMAPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\NothingsPage.xaml">
+    <Page Include="Pages\SettingPages\SettingHomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -168,15 +170,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\ChmlFrpPage.xaml">
+    <Page Include="Pages\ChmlFrpPages\ChmlFrpHomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ChmlFrpLoginPages\HomePage.xaml">
+    <Page Include="Pages\ChmlFrpPages\ChmlFrpLoginedPages\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\LaunchPage.xaml">
+    <Page Include="Pages\LaunchPages\LaunchPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,13 +190,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Pages\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\LaunchPage.xaml.cs">
+    <Compile Include="Pages\LaunchPages\LaunchPage.xaml.cs">
       <DependentUpon>LaunchPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -209,7 +211,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -239,7 +240,10 @@
   <ItemGroup>
     <Resource Include="Icons\FluentEmojiHighContrastConstruction.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Dll\INIFileParser.dll" />
+    <Content Include="Dll\Newtonsoft.Json.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterResolveReferences">
     <ItemGroup>
