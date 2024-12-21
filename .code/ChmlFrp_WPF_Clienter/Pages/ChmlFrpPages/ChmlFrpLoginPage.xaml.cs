@@ -18,51 +18,33 @@ namespace ChmlFrp_WPF_Clienter.Pages
     /// </summary>
     public partial class ChmlFrpLoginPage : Page
     {
+        private ClienterClass clienterClass;
+
         public ChmlFrpLoginPage()
         {
             InitializeComponent();
-            ClienterClass ClienterClass = new ClienterClass();
-            //directoryPath = ClienterClass.DirectoryPath();
-            //cflPath = ClienterClass.CFLPath();
-            //frpPath = ClienterClass.FrpPath();
-            //frpIniPath = ClienterClass.FrpIniPath();
-            //frpExePath = ClienterClass.FrpExePath();
-            setupIniPath = ClienterClass.SetupIniPath();
-            //temp_path = ClienterClass.Temp_path();
-            temp_api_path = ClienterClass.Temp_api_path();
-            //pictures_path = ClienterClass.Pictures_path();
+            clienterClass = new ClienterClass();
             IniData data;
             var parser = new FileIniDataParser();
-            data = parser.ReadFile(setupIniPath);
+            data = parser.ReadFile(clienterClass.setupIniPath);
             TextBox_Username.Text = data["ChmlFrp_WPF_Clienter Setup"]["Username"];
             TextBox_password.Text = data["ChmlFrp_WPF_Clienter Setup"]["Password"];
         }
 
-        //private string directoryPath;
-        //private string frpPath;
-        //private string frpIniPath;
-        //private string frpExePath;
-        private string setupIniPath;
-        //private string temp_path;
-        private string temp_api_path;
-        //private string cflPath;
-        //private string pictures_path;
-
-
         private void TextBox_Username_ini(object sender, TextChangedEventArgs e)
         {
             var parser = new FileIniDataParser();
-            IniData data = parser.ReadFile(setupIniPath);
+            IniData data = parser.ReadFile(clienterClass.setupIniPath);
             data["ChmlFrp_WPF_Clienter Setup"]["Username"] = TextBox_Username.Text;
-            parser.WriteFile(setupIniPath, data);
+            parser.WriteFile(clienterClass.setupIniPath, data);
         }
 
         private void TextBox_password_ini(object sender, TextChangedEventArgs e)
         {
             var parser = new FileIniDataParser();
-            IniData data = parser.ReadFile(setupIniPath);
+            IniData data = parser.ReadFile(clienterClass.setupIniPath);
             data["ChmlFrp_WPF_Clienter Setup"]["Password"] = TextBox_password.Text;
-            parser.WriteFile(setupIniPath, data);
+            parser.WriteFile(clienterClass.setupIniPath, data);
         }
 
         private void logon(object sender, RoutedEventArgs e)
@@ -75,7 +57,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
                 {
                     WebClient webClient = new WebClient();
                     webClient.Encoding = Encoding.UTF8;
-                    File.WriteAllText(temp_api_path, webClient.DownloadString(url));
+                    File.WriteAllText(clienterClass.temp_api_path, webClient.DownloadString(url));
                 }
                 catch
                 {
@@ -83,7 +65,7 @@ namespace ChmlFrp_WPF_Clienter.Pages
                 }
             }
 
-            string jsonContent = File.ReadAllText(temp_api_path);
+            string jsonContent = File.ReadAllText(clienterClass.temp_api_path);
             var parsedJson = JToken.Parse(jsonContent);
             string formattedJson = parsedJson.ToString(Formatting.Indented);
             var jsonObject = JObject.Parse(jsonContent);

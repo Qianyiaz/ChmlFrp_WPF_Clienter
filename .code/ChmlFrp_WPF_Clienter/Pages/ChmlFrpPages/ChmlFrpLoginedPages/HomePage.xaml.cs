@@ -17,38 +17,22 @@ namespace ChmlFrp_WPF_Clienter.Pages.ChmlFrp
     /// </summary>
     public partial class HomePage : Page
     {
-        //private string directoryPath;
-        //private string frpPath;
-        //private string frpIniPath;
-        //private string frpExePath;
-        //private string setupIniPath;
-        private string temp_path;
-        private string temp_api_path;
-        //private string cflPath;
-        //private string pictures_path;
+        private ClienterClass clienterClass;
+
         public HomePage()
         {
             InitializeComponent();
-            ClienterClass ClienterClass = new ClienterClass();
-            //directoryPath = ClienterClass.DirectoryPath();
-            //cflPath = ClienterClass.CFLPath();
-            //frpPath = ClienterClass.FrpPath();
-            //frpIniPath = ClienterClass.FrpIniPath();
-            //frpExePath = ClienterClass.FrpExePath();
-            //setupIniPath = ClienterClass.SetupIniPath();
-            temp_path = ClienterClass.Temp_path();
-            temp_api_path = ClienterClass.Temp_api_path();
-            //pictures_path = ClienterClass.Pictures_path();
+            clienterClass = new ClienterClass();
             InitializesetPaths();
         }
 
 
         private void InitializesetPaths()
         {
-            string jsonContent = System.IO.File.ReadAllText(temp_api_path);
+            string jsonContent = System.IO.File.ReadAllText(clienterClass.temp_api_path);
             var jsonObject = JObject.Parse(jsonContent);
             string url = jsonObject["data"]["userimg"]?.ToString();
-            string temp_UserImage = Path.Combine(temp_path, "temp_UserImage.png");
+            string temp_UserImage = Path.Combine(clienterClass.temp_path, "temp_UserImage.png");
             try
             {
                 using (WebClient client = new WebClient())
@@ -75,7 +59,7 @@ namespace ChmlFrp_WPF_Clienter.Pages.ChmlFrp
         private void TokenClick(object sender, System.Windows.RoutedEventArgs e)
         {
             Token.Click -= TokenClick;
-            string jsonContent = System.IO.File.ReadAllText(temp_api_path);
+            string jsonContent = System.IO.File.ReadAllText(clienterClass.temp_api_path);
             var jsonObject = JObject.Parse(jsonContent);
             if (Token.Content.ToString() == jsonObject["data"]["usertoken"]?.ToString())
             {

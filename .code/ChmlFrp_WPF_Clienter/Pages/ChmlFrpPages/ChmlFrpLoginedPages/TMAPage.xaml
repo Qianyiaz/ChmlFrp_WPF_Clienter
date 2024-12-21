@@ -21,9 +21,30 @@
                                 HorizontalAlignment="Right"
                                 VerticalAlignment="Center">
                         <Button Margin="25"
+                                BorderBrush="#5B7FFF"
                             Style="{StaticResource IconButtonsStyletwo}"
                             Content="{DynamicResource refresh}"
                             Click="btnRefresh_Click"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" 
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom">
+                        <Button Style="{StaticResource IconButtonsStyletwo}"
+                            Content="{DynamicResource Left}"
+                            Click="btnLeft_Click"
+                                x:Name="Leftbutton"
+                                BorderBrush="#5B7FFF"
+                                Height="25"
+                                Width="25"
+                                Margin="5"/>
+                        <Button Style="{StaticResource IconButtonsStyletwo}"
+                            Content="{DynamicResource Right}"
+                            Click="btnRight_Click"
+                                x:Name="Rightbutton"
+                                BorderBrush="#5B7FFF"
+                                Height="25"
+                                Width="25"
+                                Margin="5"/>
                     </StackPanel>
                 </Grid>
             </Border>
@@ -38,56 +59,129 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
+            <Grid Grid.Row="0" x:Name="ParentGrid1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    <Border x:Name="Border_name1" Margin="5" Background="#f9f9f9" Opacity="0.8" CornerRadius="10">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="15" x:Name="NodeTextBlock_1_1" Text="我是擎天柱" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                    <TextBlock FontSize="12" x:Name="NodeTextBlock_1_2" Text="我是擎天柱" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                </StackPanel>
+                <Border x:Name="Border_name1" Margin="5" Background="#f9f9f9" Opacity="0.8" CornerRadius="10" Grid.Row="0" Grid.Column="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="15" x:Name="NodeTextBlock_1_1" Text="我是擎天柱" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock FontSize="12" x:Name="NodeTextBlock_1_2" Text="我是擎天柱" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            </StackPanel>
 
-                                <Border x:Name="NodeTextBlock_1_3_1" Background="#33CC66" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" CornerRadius="5">
-                                    <TextBox FontSize="15"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_1_3_2" Background="Transparent" Foreground="Green"  Text="我是擎天柱" VerticalAlignment="Center"/>
-                                </Border>
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="5,0,0,0">
-                                    <Border x:Name="NodeTextBlock_1_4_1" Background="Cyan" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="5">
-                                        <TextBox FontSize="12"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_1_4_2" Background="Transparent" Foreground="#1276DB"  Text="我是擎天柱" VerticalAlignment="Center"/>
-                                    </Border>
-                                    <Border x:Name="NodeTextBlock_1_5_1" Background="Cyan" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="5" Margin="5,0,0,0">
-                                        <TextBox FontSize="12"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_1_5_2" Background="Transparent" Foreground="#1276DB"  Text="我是擎天柱" VerticalAlignment="Center"/>
-                                    </Border>
-                                </StackPanel>
-                            </Grid>
+                            <Border x:Name="NodeTextBlock_1_3_1" Background="#33CC66" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" CornerRadius="5">
+                                <TextBox FontSize="15"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_1_3_2" Background="Transparent" Foreground="Green"  Text="我是擎天柱" VerticalAlignment="Center"/>
+                            </Border>
                         </Grid>
-                    </Border>
-                </Grid>
-                <Grid Grid.Column="1">
+                        <Grid Grid.Row="1">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="5,0,0,0">
+                                <Border x:Name="NodeTextBlock_1_4_1" Background="Cyan" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="5">
+                                    <TextBox FontSize="12"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_1_4_2" Background="Transparent" Foreground="#1276DB"  Text="我是擎天柱" VerticalAlignment="Center"/>
+                                </Border>
+                                <Border x:Name="NodeTextBlock_1_5_1" Background="Cyan" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="5" Margin="5,0,0,0">
+                                    <TextBox FontSize="12"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_1_5_2" Background="Transparent" Foreground="#1276DB"  Text="我是擎天柱" VerticalAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+                <Border x:Name="Border_name2" Margin="5" Background="#f9f9f9" Opacity="0.8" CornerRadius="10" Grid.Row="0" Grid.Column="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="15" x:Name="NodeTextBlock_2_1" Text="我是擎天柱" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock FontSize="12" x:Name="NodeTextBlock_2_2" Text="我是擎天柱" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            </StackPanel>
 
-                </Grid>
+                            <Border x:Name="NodeTextBlock_2_3_1" Background="#33CC66" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" CornerRadius="5">
+                                <TextBox FontSize="15"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_2_3_2" Background="Transparent" Foreground="Green"  Text="我是擎天柱" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="5,0,0,0">
+                                <Border x:Name="NodeTextBlock_2_4_1" Background="Cyan" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="5">
+                                    <TextBox FontSize="12"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_2_4_2" Background="Transparent" Foreground="#1276DB"  Text="我是擎天柱" VerticalAlignment="Center"/>
+                                </Border>
+                                <Border x:Name="NodeTextBlock_2_5_1" Background="Cyan" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="5" Margin="5,0,0,0">
+                                    <TextBox FontSize="12"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_2_5_2" Background="Transparent" Foreground="#1276DB"  Text="我是擎天柱" VerticalAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
             </Grid>
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" x:Name="ParentGrid2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
+                <Border x:Name="Border_name3" Margin="5" Background="#f9f9f9" Opacity="0.8" CornerRadius="10" Grid.Row="1" Grid.Column="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="15" x:Name="NodeTextBlock_3_1" Text="我是擎天柱" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock FontSize="12" x:Name="NodeTextBlock_3_2" Text="我是擎天柱" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            </StackPanel>
 
-                </Grid>
-                <Grid Grid.Column="1">
-                    
-                </Grid>
+                            <Border x:Name="NodeTextBlock_3_3_1" Background="#33CC66" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" CornerRadius="5">
+                                <TextBox FontSize="15"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_3_3_2" Background="Transparent" Foreground="Green"  Text="我是擎天柱" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="5,0,0,0">
+                                <Border x:Name="NodeTextBlock_3_4_1" Background="Cyan" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="5">
+                                    <TextBox FontSize="12"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_3_4_2" Background="Transparent" Foreground="#1276DB"  Text="我是擎天柱" VerticalAlignment="Center"/>
+                                </Border>
+                                <Border x:Name="NodeTextBlock_3_5_1" Background="Cyan" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="5" Margin="5,0,0,0">
+                                    <TextBox FontSize="12"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_3_5_2" Background="Transparent" Foreground="#1276DB"  Text="我是擎天柱" VerticalAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+                <Border x:Name="Border_name4" Margin="5" Background="#f9f9f9" Opacity="0.8" CornerRadius="10" Grid.Row="1" Grid.Column="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="15" x:Name="NodeTextBlock_4_1" Text="我是擎天柱" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock FontSize="12" x:Name="NodeTextBlock_4_2" Text="我是擎天柱" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            </StackPanel>
+
+                            <Border x:Name="NodeTextBlock_4_3_1" Background="#33CC66" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" CornerRadius="5">
+                                <TextBox FontSize="15"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_4_3_2" Background="Transparent" Foreground="Green"  Text="我是擎天柱" VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="5,0,0,0">
+                                <Border x:Name="NodeTextBlock_4_4_1" Background="Cyan" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="5">
+                                    <TextBox FontSize="12"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_4_4_2" Background="Transparent" Foreground="#1276DB"  Text="我是擎天柱" VerticalAlignment="Center"/>
+                                </Border>
+                                <Border x:Name="NodeTextBlock_4_5_1" Background="Cyan" HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="5" Margin="5,0,0,0">
+                                    <TextBox FontSize="12"  BorderThickness="0" Opacity="0.8" x:Name="NodeTextBlock_4_5_2" Background="Transparent" Foreground="#1276DB"  Text="我是擎天柱" VerticalAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
             </Grid>
         </Grid>
     </Grid>

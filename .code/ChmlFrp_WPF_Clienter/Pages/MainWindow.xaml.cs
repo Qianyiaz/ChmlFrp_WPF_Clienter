@@ -1,4 +1,5 @@
 ﻿/*
+temp_api_path = ClienterClass.temp_api_path;
 //                            _ooOoo_  
 //                           o8888888o  
 //                           88" . "88  
@@ -56,30 +57,12 @@ namespace ChmlFrp_WPF_Clienter
     /// </summary>
     public partial class MainWindow : Window
     {
-        //private string directoryPath;
-        //private string frpPath;
-        //private string frpIniPath;
-        //private string frpExePath;
-        private string setupIniPath;
-        //private string temp_path;
-        private string temp_api_path;
-        //private string cflPath;
-        private string pictures_path;
-
+        private ClienterClass clienterClass;
         public MainWindow()
         {
             InitializeComponent();
-            ClienterClass ClienterClass = new ClienterClass();
-            //directoryPath = ClienterClass.DirectoryPath();
-            //cflPath = ClienterClass.CFLPath();
-            //frpPath = ClienterClass.FrpPath();
-            //frpIniPath = ClienterClass.FrpIniPath();
-            //frpExePath = ClienterClass.FrpExePath();
-            setupIniPath = ClienterClass.SetupIniPath();
-            //temp_path = ClienterClass.Temp_path();
-            temp_api_path = ClienterClass.Temp_api_path();
-            pictures_path = ClienterClass.Pictures_path();
-            string[] imageFiles = Directory.GetFiles(pictures_path, "*.*")
+            clienterClass = new ClienterClass();
+            string[] imageFiles = Directory.GetFiles(clienterClass.pictures_path, "*.*")
                 .Where(file => file.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
                                file.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
                 .ToArray();
@@ -124,7 +107,7 @@ namespace ChmlFrp_WPF_Clienter
         {
             IniData data;
             var parser = new FileIniDataParser();
-            data = parser.ReadFile(setupIniPath);
+            data = parser.ReadFile(clienterClass.setupIniPath);
             string url = "https://cf-v2.uapis.cn/login?username=" + data["ChmlFrp_WPF_Clienter Setup"]["Username"] + "&password=" + data["ChmlFrp_WPF_Clienter Setup"]["Password"];
             using (HttpClient client = new HttpClient())
             {
@@ -132,13 +115,13 @@ namespace ChmlFrp_WPF_Clienter
                 {
                     WebClient webClient = new WebClient();
                     webClient.Encoding = Encoding.UTF8;
-                    File.WriteAllText(temp_api_path, webClient.DownloadString(url));
+                    File.WriteAllText(clienterClass.                                                                            temp_api_path, webClient.DownloadString(url));
                 }
                 catch
                 {
                 }
             }
-            string jsonContent = File.ReadAllText(temp_api_path);
+            string jsonContent = File.ReadAllText(clienterClass.temp_api_path);
             var jsonObject = JObject.Parse(jsonContent);
             string msg = jsonObject["msg"]?.ToString();
             ChmlfrpPageButton.Click -= rdChmlfrpPage_Click;
@@ -174,7 +157,7 @@ namespace ChmlFrp_WPF_Clienter
             ChmlfrpPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             SettingsPageButton.SetValue(Button.BackgroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f9f9f9")));
             SettingsPageButton.SetValue(Button.ForegroundProperty, new SolidColorBrush((Color)ColorConverter.ConvertFromString("#1276DB")));
-            PagesNavigation.Navigate(new BlankPage());
+            PagesNavigation.Navigate(new SettingHomePage());
         }
     }
 }

@@ -14,50 +14,31 @@ namespace ChmlFrp_WPF_Clienter.Pages
     /// </summary>
     public partial class LaunchPage : Page
     {
-        //private string directoryPath;
-        private string frpPath;
-        private string frpIniPath;
-        //private string frpExePath;
-        //private string setupIniPath;
-        //private string temp_path;
-        //private string temp_api_path;
-        private string cflPath;
-        //private string pictures_path;
+        private ClienterClass clienterClass;
 
         public LaunchPage()
         {
             InitializeComponent();
-            ClienterClass ClienterClass = new ClienterClass();
-            //directoryPath = ClienterClass.DirectoryPath();
-            cflPath = ClienterClass.CFLPath();
-            frpPath = ClienterClass.FrpPath();
-            frpIniPath = ClienterClass.FrpIniPath();
-            //frpExePath = ClienterClass.FrpExePath();
-            //setupIniPath = ClienterClass.SetupIniPath();
-            //temp_path = ClienterClass.Temp_path();
-            //temp_api_path = ClienterClass.Temp_api_path();
-            //pictures_path = ClienterClass.Pictures_path();
+            clienterClass = new ClienterClass();
         }
-
 
         int i = 0;
 
         private void Launch(object sender, RoutedEventArgs e)
         {
             LaunchButton.Click -= Launch;
-            if (!File.Exists(frpIniPath) && !File.Exists(frpPath))
+            if (!File.Exists(clienterClass.frpIniPath) && !File.Exists(clienterClass.frpPath))
             {
                 LaunchButton.Content = "未找到配置文件";
                 return;
             }
             //创建ini实例
             var parser = new FileIniDataParser();
-            IniData data = parser.ReadFile(frpIniPath);
-            data = parser.ReadFile(frpIniPath);
+            IniData data = parser.ReadFile(clienterClass.frpIniPath);
             LaunchButton.Content = "正在启动中...";
             if (i == 5) { i = 0; }
-            i++; string logs = Path.Combine(cflPath, i + ".logs");
-            ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c " + frpPath + " -c " + frpIniPath + " >" + logs + " 2>&1")
+            i++; string logs = Path.Combine(clienterClass.cflPath, i + ".logs");
+            ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", "/c " + clienterClass.frpPath + " -c " + clienterClass.frpIniPath + " >" + logs + " 2>&1")
             {
                 RedirectStandardOutput = true,
                 UseShellExecute = false,
